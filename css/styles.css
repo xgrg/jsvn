@@ -1,8 +1,48 @@
 body {
   margin:30 auto;
-  width:600px;
+  max-width:400px;
   padding:10 10;
   font-family: 'Raleway', sans-serif;
   color:#F0F0F0;
   background-color:#0E0E0E;
+  font-size: 11px;
+}
+.nav-fade span{
+  background : black;
+   display: inline-block;
+   transition: background 2s ease-in-out;
+   -moz-transition: background 2s ease-in-out;
+   -webkit-transition: background 2s ease-in-out;
+}
+a, a:link, a:visited {
+  color:#EFEFEF;
+
+}
+
+#imagebox {
+   width: 150px;
+   height: 200px;
+   //border: 1px solid white
+}
+
+#imagebox img {
+   width: 100%;
+}
+
+#textbox {
+  padding:5px;
+  overflow-y: auto;
+  border: 1px solid #1a1a1a;
+  background-color: #0f0f0f;
+  height: 200px;
+}
+
+.choice{
+  padding:5px;
+  border: 1px solid #2e2e2e;
+  background-color: #1f1f1f;
+  margin:2px;
+}
+.gobtn{
+  text-align: right
 }

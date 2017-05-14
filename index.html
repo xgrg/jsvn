@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="utf-8">
+
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="js/animate.css">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
 </head>
 <body>
@@ -27,12 +30,35 @@
 
   <div id="imagebox">
   </div>
-  <div id="dialogbox">
+  <div id="textbox">
+    <div id="dialogbox">
+    </div>
+    <div id="choicebox">
+    </div>
   </div>
 
 
   <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript">
+  (function() {
+
+  var img = document.getElementById('imagebox').firstChild;
+  img.onload = function() {
+      if(img.height > img.width) {
+          img.height = '100%';
+          img.width = 'auto';
+      }
+  };
+
+  }());
+  </script>
   <script src="js/jquery-2.2.0.min.js"></script>
+  <script>
+    var vartable = {};
+    var cards_to_play = [];
+    var storylets = [];
+  </script>
+  <script src="js/storylets.js"></script>
   <script type="text/javascript" src="js/scene.js"></script>
 
 </body>

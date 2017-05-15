@@ -9,6 +9,12 @@ $.fn.extend({
     }
 });
 
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+};
+
+
 var QueryString = function () {
   // This function is anonymous, is executed immediately and
   // the return value is assigned to QueryString!
@@ -41,13 +47,31 @@ function copyMap(m){
   return newMap;
 }
 
-function addDialog(line, effect){
-   if (effect === undefined){
-     effect = "fadeIn"
+function clearDialog(effect){
+  if (effect === undefined) effect = "fadeOut";
+  function clear(){
+    $('#dialogbox').html("");
+  }
+  function fadeAll(effect, clear){
+    $("#dialogbox div").each(function(){
+      $(this).animateCss(effect);
+    })
+    clear();
+  };
+  fadeAll(effect, clear);
+}
+
+function addDialog(line, effect, clear){
+   if (effect === undefined) effect = "fadeIn"
+   if (clear !== undefined && clear == true){
+     clearDialog();
    }
+
    html = $('#dialogbox').html();
-   $('#dialogbox').html(html + "<div class=\"animated " + effect + "\">"
+   $('#dialogbox').html(html + "<div class=\"last\">"
       + line+ "</div>");
+   $(".last").animateCss(effect);
+   $(".last").removeClass("last");
 }
 
 function addLink(text, vars, id){
@@ -57,11 +81,30 @@ function addLink(text, vars, id){
   console.log(newtable)
   b64 = unescape(encodeURIComponent(Base64.encode(JSON.stringify(newtable))))
   line = "<div><span>"+text+"</span></div> <br><div class=\"gobtn\"><a href=\"?d="+b64+"\">Go.</a></div>";
+
   $("div#choice"+id).html(line);
   $("div#choice"+id).addClass("choice")
-  $('div#choice'+id).animateCss('fadeIn');
+  $('#choice'+id).animateCss('fadeIn');
 }
 
+function playSequence(sequence, i){
+  if (i===undefined){
+    i=0;
+  }
+
+  var accelerate = false;
+  interval = sequence[i][1]
+  if (accelerate == true) interval = 1000;
+  sequence[i][0]();
+  if (i<sequence.length-1){
+    window.setTimeout(
+      function(){
+        playSequence(sequence, i+1)
+      }, interval);
+  }
+
+
+}
 
 function displayChoice(choices, i, interval){
   if (i===undefined){
@@ -94,17 +137,20 @@ function initChoice(choices){
 }
 
 function displayImage(img){
-  html = "<img src=\"./images/"+img+".jpg\" class=\"animated fadeIn\">"
+  html = "<img src=\"./images/"+img+".jpg\">"
   $("#imagebox").html(html);
+  $("#imagebox img").animateCss("fadeIn")
 }
 
 function loadScene(scene){
-  scene['storylet']();
-  addDialog("&nbsp");
-  // add three choices
-  if (scene['choices'] !== undefined){
-    initChoice(scene['choices']);
-  }
+  scene['storylet'](function(){
+    addDialog("&nbsp");
+    console.log($("#choice1"));
+    // add three choices
+    if (scene['choices'] !== undefined){
+      initChoice(scene['choices']);
+    }
+  })
 }
 
 function update_cards(){
@@ -115,24 +161,26 @@ function update_cards(){
   }
 }
 
-
 $( document ).ready(function() {
   var b64 = QueryString.d;
   if (b64 !== undefined){
     d = Base64.decode(decodeURIComponent(escape(b64)));
-    d = d.replace('\0', '')
-    
+    d = d.replaceAll('\0', '')
+
+    console.log(d)
     vartable = JSON.parse(d);
   }
 
   update_cards();
 
   console.log(cards_to_play)
-  random = Math.floor((Math.random() * cards_to_play.length));
-  console.log(random)
-  card = storylets[cards_to_play[random]];
-  loadScene(card)
-  cards_to_play.splice(random, 1);
+  if (cards_to_play.length != 0){
+    random = Math.floor((Math.random() * cards_to_play.length));
+    console.log(random)
+    card = storylets[cards_to_play[random]];
+    loadScene(card)
+    cards_to_play.splice(random, 1);
+  }
 
 
 });

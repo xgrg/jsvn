@@ -1,12 +1,17 @@
 body {
-  margin:30 auto;
-  max-width:400px;
-  padding:10 10;
   font-family: 'Raleway', sans-serif;
   color:#F0F0F0;
   background-color:#0E0E0E;
   font-size: 11px;
+  //border: 1px solid red
+
 }
+
+#bodybox{
+  background-color:#0E0E0E;
+  //border: 1px solid white
+}
+
 .nav-fade span{
   background : black;
    display: inline-block;
@@ -20,21 +25,18 @@ a, a:link, a:visited {
 }
 
 #imagebox {
-   width: 150px;
-   height: 200px;
-   //border: 1px solid white
+  // border: 1px solid white
+   background-color:#0E0E0E;
+
 }
 
-#imagebox img {
-   width: 100%;
-}
+
 
 #textbox {
-  padding:5px;
   overflow-y: auto;
   border: 1px solid #1a1a1a;
   background-color: #0f0f0f;
-  height: 200px;
+  //border: 1px solid white
 }
 
 .choice{

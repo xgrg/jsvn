@@ -138,8 +138,11 @@ function initChoice(choices){
 
 function displayImage(img){
   html = "<img src=\"./images/"+img+".jpg\">"
+
   $("#imagebox").html(html);
+  adjustimg();
   $("#imagebox img").animateCss("fadeIn")
+
 }
 
 function loadScene(scene){

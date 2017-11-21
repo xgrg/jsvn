@@ -29,14 +29,14 @@ scene1 = {
   storylet:
   function(choice){
     playSequence([[function(){addDialog('Hey there.')}, 5000],
-      [function(){addDialog('Please listen to me. Carefully.', "fadeIn", true)}, 4000],
-      [function(){addDialog('We know little from each other.', 'fadeIn', true)}, 3000],
-      [function(){addDialog('But I do care about you.', 'fadeIn')}, 3000],
+      [function(){addDialog('Please listen to me. Carefully.', "fadeIn", true)}, 1000],
+      [function(){addDialog('We know little from each other.', 'fadeIn', true)}, 1000],
+      [function(){addDialog('But I do care about you.', 'fadeIn')}, 1000],
       [function(){displayImage('guitar')}, 2000],
-      [function(){addDialog('All these moments just being by your side...', 'fadeIn', true)}, 4000],
-      [function(){addDialog('You probably ignore it but I could not live without them.')}, 4000],
-      [function(){addDialog('You are my oxygen. My reason to be here.', "fadeIn", true)}, 4000],
-      [function(){addDialog('Without knowing you make me a better person.', "fadeIn", true)}, 4000],
+      [function(){addDialog('All these moments just being by your side...', 'fadeIn', true)}, 1000],
+      [function(){addDialog('You probably ignore it but I could not live without them.')}, 1000],
+      [function(){addDialog('You are my oxygen. My reason to be here.', "fadeIn", true)}, 1000],
+      [function(){addDialog('Without knowing you make me a better person.', "fadeIn", true)}, 1000],
       [choice,0]]
     )},
 
@@ -52,14 +52,14 @@ scene2 = {
   storylet:
   function(choice){
     playSequence([[function(){displayImage('girl')}, 2000],
-      [function(){addDialog('Please believe what I am going to say.')}, 4000],
-      [function(){addDialog('You probably already know what this is about. You are so smart.', 'fadeIn', true)}, 3000],
-      [function(){addDialog('Then since you know, just don\'t do this.', 'fadeIn')}, 3000],
+      [function(){addDialog('Please believe what I am going to say.')}, 1000],
+      [function(){addDialog('You probably already know what this is about. You are so smart.', 'fadeIn', true)}, 1000],
+      [function(){addDialog('Then since you know, just don\'t do this.', 'fadeIn')}, 1000],
       [function(){displayImage('thinking')}, 2000],
-      [function(){addDialog('No matter the circumstances. Just don\'t do it.', 'fadeIn', true)}, 4000],
-      [function(){addDialog('I will be here to protect you.')}, 4000],
-      [function(){addDialog('&nbsp;')}, 4000],
-      [function(){addDialog('- I am not sure...')}, 4000],
+      [function(){addDialog('No matter the circumstances. Just don\'t do it.', 'fadeIn', true)}, 1000],
+      [function(){addDialog('I will be here to protect you.')}, 1000],
+      [function(){addDialog('&nbsp;')}, 1000],
+      [function(){addDialog('- I am not sure...')}, 1000],
       [choice,0]]
     )},
 

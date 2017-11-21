@@ -3,8 +3,8 @@ from markdown_to_json.scripts import md_to_json
 import json, string, sys
 
 md_fp = sys.argv[1]
-json_fp = sys.argv[2]
-js_fp = sys.argv[3]
+json_fp = sys.argv[2] if len(sys.argv)>2 else md_fp.replace('.md','.json')
+js_fp = sys.argv[3] if len(sys.argv)>3 else md_fp.replace('.md','.js')
 print sys.argv
 
 md_to_json.jsonify_markdown(md_fp, json_fp, 2)

@@ -7,13 +7,13 @@ Hey there.
 We know little from each other.
 But I do care about you.
 
-## Code
-vartable['sc'] = 1;
-
+## Choices
+### OK.
+sc:1
 -------------------------------------------------------------------------------
 # scene2
 ## Qualities
-return (vartable['sc']==1);
+return (vartable['sc']=="1");
 
 ## Image
 guitar
@@ -26,13 +26,13 @@ Without knowing you make me a better person.
 
 ## Choices
 ### Hey
-vartable['name'] = "Greg";
-vartable['sc'] = 2;
+name:Greg
+sc:2
 
 -------------------------------------------------------------------------------
 # scene3
 ## Qualities
-return (vartable['sc']==2 && vartable['decision']===undefined);
+return (vartable['sc']=="2" && vartable['decision']===undefined);
 
 ## Image
 girl
@@ -42,13 +42,14 @@ Please believe what I am going to say.
 You probably already know what this is about. You are so smart.
 Then since you know, just don\'t do this.
 
-## Code
-vartable['sc'] = 3;
+## Choices
+### OK.
+sc:3
 
 -------------------------------------------------------------------------------
 # scene4
 ## Qualities
-return (vartable['sc']==3 && vartable['decision']===undefined);
+return (vartable['sc']=="3" && vartable['decision']===undefined);
 
 ## Image
 thinking
@@ -62,9 +63,9 @@ I am not sure...
 ## Choices
 
 ### Do it.
-vartable['decision'] = 'doit';
+decision:doit
 ### Do not do it.
-vartable['decision'] = 'doit';
+decision:dontdoit
 
 -------------------------------------------------------------------------------
 # scene5

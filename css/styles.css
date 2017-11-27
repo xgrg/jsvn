@@ -25,7 +25,9 @@ a, a:link, a:visited {
 }
 
 #imagebox {
-  // border: 1px solid white
+  // border: 1px solid white;
+   overflow-x:hidden;
+   overflow-y:hidden;
    background-color:#0E0E0E;
 
 }

@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
 </head>
 <body>
-  <button id="request">Request document</button>
-  <div id="orientation"></div>
+  <button id="request" style="opacity:0">Request document</button>
+  <div id="orientation" style="opacity:0"></div>
   <div id="bodybox">
       <div id="imagebox"></div>
       <div id="textbox">
@@ -39,8 +39,8 @@
     }
 
     function adjustimg(){
-      console.log("adjust")
-        $('#imagebox img').css({'height': h/2})
+      console.log("adjust2")
+        $('#imagebox img').css({'max-height': h/2, 'width':w})
                                 //'border': '1px solid white'})
     }
 

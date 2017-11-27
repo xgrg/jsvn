@@ -129,7 +129,8 @@ function initChoice(choices){
     if (choices[i-1].length == 2 || choices[i-1][2]() == true){
       availChoices.push(choices[i-1]);
       html = $('#choicebox').html();
-      html = html + "<div id=\"choice"+ i +"\"></div>";
+      j = availChoices.length;
+      html = html + "<div id=\"choice"+ j +"\"></div>";
       $('#choicebox').html(html);
     }
   }

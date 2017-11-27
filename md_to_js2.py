@@ -38,10 +38,12 @@ def get_storylet_code(code):
 
 def get_choice(code):
     res = ''
-    if_func = ''
+
     for k,v in code.items():
         d = {}
+        if_func = ''
         for i, each in enumerate(v.split('\n')):
+
             if ':' in each:
                 k1, v1 = each.replace(' ','').split(':')
                 d[k1] = v1

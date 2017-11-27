@@ -38,13 +38,16 @@ def get_storylet_code(code):
 
 def get_choice(code):
     res = ''
+    if_func = ''
     for k,v in code.items():
         d = {}
-        for each in v.split('\n'):
+        for i, each in enumerate(v.split('\n')):
             if ':' in each:
                 k1, v1 = each.replace(' ','').split(':')
                 d[k1] = v1
-        res = res + '["%s", %s],'%(k,json.dumps(d))
+            if each.startswith('@if'):
+                if_func = ',%s'%'\n'.join(v.split('\n')[i+1:])
+        res = res + '["%s", %s%s],'%(k,json.dumps(d), if_func)
 
     #print 'res', res
     return 'choices:[%s]'%res

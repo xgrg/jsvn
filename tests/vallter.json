@@ -1,0 +1,430 @@
+{
+  "SceneChoixLangues": {
+    "Qualities": "return (vartable['sc']===undefined);", 
+    "Text": "Choisissez une langue.\n<br>\nTria una llengua.", 
+    "Choices": {
+      "Fran\u00c3\u00a7ais": "sc:0\nlang:fr", 
+      "Catalan": "sc:0\nlang:ca"
+    }
+  }, 
+  "FrScene1": {
+    "Qualities": "return (vartable['lang']=='fr' && vartable['sc']=='0');", 
+    "Image": "vallter", 
+    "Text": "<i>13 heures 30, route de Vallter, Pyr\u00c3\u00a9n\u00c3\u00a9es Catalanes</i>\n<br>\nLes degr\u00c3\u00a9s fondent \u00c3\u00a0 mesure que s\u00e2\u0080\u0099encha\u00c3\u00aenent les virages. A l\u00e2\u0080\u0099approche du parking quasi-vide de la station de Vallter 2000, le compteur indique 4 timides degr\u00c3\u00a9s.\n<br>\nLe temps d\u00e2\u0080\u0099enfiler quelques couches suppl\u00c3\u00a9mentaires, d\u00e2\u0080\u0099une derni\u00c3\u00a8re v\u00c3\u00a9rification du sac et d\u00e2\u0080\u0099un rapide casse-cro\u00c3\u00bbte et je serai pr\u00c3\u00aat(e) \u00c3\u00a0 partir.", 
+    "Choices": {
+      "J\u00e2\u0080\u0099enfile mon coupe-vent.": "sc:1\nequip:coupe-vent", 
+      "J\u00e2\u0080\u0099enfile polaire, doudoune et coupe-vent.": "sc:1\nequip:polaire", 
+      "R\u00c3\u00a9flexion faite, je pars en t-shirt.": "sc:1\nequip:tshirt"
+    }
+  }, 
+  "FrScene2": {
+    "Qualities": "return (vartable['sc']==='1');", 
+    "Image": "vallter2", 
+    "Text": "<i>14 heures, d\u00c3\u00a9part de la station de Vallter</i>\n<br>\nLe chemin d\u00c3\u00a9bute en mont\u00c3\u00a9e suivant le trac\u00c3\u00a9 du GR10.\nLa station s\u00e2\u0080\u0099\u00c3\u00a9loigne progressivement dans le dos.\n<br>\nBien que les t\u00c3\u00a9l\u00c3\u00a9si\u00c3\u00a8ges soient \u00c3\u00a0 l\u00e2\u0080\u0099arr\u00c3\u00aat, quelques t\u00c3\u00a2ches de neige semblent signaler que la saison de ski est en phase d\u00e2\u0080\u0099approche.\nLa mont\u00c3\u00a9e s\u00e2\u0080\u0099effectue sans encombres.", 
+    "Choices": {
+      "La mont\u00c3\u00a9e donne chaud. Je retire ma polaire.": "sc:Scene_croise_marcheurs\n@if\nfunction(){return (vartable['equip']=='polaire')}", 
+      "Continuer": "sc:Scene_croise_marcheurs"
+    }
+  }, 
+  "FrScene_croise_marcheurs": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']==='Scene_croise_marcheurs');", 
+    "Text": "Je salue quelques marcheurs en les croisant dans leur descente.. C\u00e2\u0080\u0099est en effet davantage une heure de fin de parcours que de d\u00c3\u00a9but...  \n<br>\nL\u00e2\u0080\u0099un d\u00e2\u0080\u0099entre eux, v\u00c3\u00aatu d\u00e2\u0080\u0099un combinaison de secouriste rouge, s\u00e2\u0080\u0099adresse \u00c3\u00a0 moi :\n<br>\n<i>\\\"- Bon dia, on vas ?  Cap al pic de la Dona ?\\\"</i>", 
+    "Choices": {
+      "Si, puja i baixa (mensonge)": "sc:mensonge", 
+      "No, cap al refugi del Alemany (v\u00c3\u00a9rit\u00c3\u00a9)": "sc:verite", 
+      "Ne pas r\u00c3\u00a9pondre et poursuivre sa route.": "sc:nepasrepondre"
+    }
+  }, 
+  "FrScene_mensonge": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']==='mensonge');", 
+    "Text": "L'homme me lance un regard sceptique et poursuit sa descente.\n<br>\nJe poursuis la mont\u00c3\u00a9e.", 
+    "Choices": {
+      "Continuer": "sc:2"
+    }
+  }, 
+  "FrScene_nepasrepondre": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']==='nepasrepondre');", 
+    "Text": "Je poursuis la mont\u00c3\u00a9e sans daigner r\u00c3\u00a9pondre \u00c3\u00a0 l'homme, qui ne peut refr\u00c3\u00a9ner un sursaut de surprise.", 
+    "Choices": {
+      "Continuer": "sc:2"
+    }
+  }, 
+  "FrScene_verite": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']==='verite');", 
+    "Text": "<i>\\\"- Que tinguis bona ruta.\\\"</i>\n<br>\nJe poursuis la mont\u00c3\u00a9e.", 
+    "Choices": {
+      "Continuer": "sc:2"
+    }
+  }, 
+  "FrScene3": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"2\");", 
+    "Image": "borne", 
+    "Text": "A l\u00e2\u0080\u0099arriv\u00c3\u00a9e \u00c3\u00a0 la Porteille de Mantet, une borne indique la fronti\u00c3\u00a8re avec la France. La montre indique 15 heures.", 
+    "Choices": {
+      "Il est tard pour passer au Nord. Je redescends vers Vallter.": "sc:back-to-vallter", 
+      "Je continue.": "sc:3", 
+      "Le vent souffle au col. J'enfile mon coupe-vent pour poursuivre la route.": "sc:3\n@if\nfunction(){return (vartable['equip']=='tshirt')}"
+    }
+  }, 
+  "FrScene3b": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"back-to-vallter\");", 
+    "Text": "La s\u00c3\u00a9curit\u00c3\u00a9 avant tout. Je redescends vers Vallter et suis de retour \u00c3\u00a0 la voiture avant m\u00c3\u00aame le coucher du soleil.\n<br>\nMais une chose est s\u00c3\u00bbre : je reviendrai.\n<br>\nFin.", 
+    "Choices": {
+      "Recommencer": "sc:0"
+    }
+  }, 
+  "FrScene4": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"3\");", 
+    "Image": "vallee", 
+    "Text": "Le passage du col laisse entrevoir du c\u00c3\u00b4t\u00c3\u00a9 Nord une vall\u00c3\u00a9e bois\u00c3\u00a9e tirant droit vers le petit village de Mantet.\n<br>\nA mesure que l\u00e2\u0080\u0099ombre la recouvre, la temp\u00c3\u00a9rature se fait de plus en plus fra\u00c3\u00aeche.\nLes taches \u00c3\u00a9parses de neige sont \u00c3\u00a0 pr\u00c3\u00a9sent de fiers n\u00c3\u00a9v\u00c3\u00a9s.\nLa descente est sans difficult\u00c3\u00a9, le pas est s\u00c3\u00bbr jusqu\u00e2\u0080\u0099\u00c3\u00a0 atteindre l\u00e2\u0080\u0099or\u00c3\u00a9e du bois.", 
+    "Choices": {
+      "Continuer": "sc:4"
+    }
+  }, 
+  "FrScene5": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"4\");", 
+    "Image": "bois", 
+    "Text": "Le chemin longe sagement un ruisseau portant \u00c3\u00a9galement les premi\u00c3\u00a8res marques de l\u00e2\u0080\u0099hiver approchant.\n<br>\nLes balises se suivent le long du sentier.", 
+    "Choices": {
+      "Continuer": "sc:5"
+    }
+  }, 
+  "FrScene6": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"5\");", 
+    "Image": "berger", 
+    "Text": "Une cabane appara\u00c3\u00aet au fond sur la gauche.", 
+    "Choices": {
+      "C\u00e2\u0080\u0099est hors du sentier. Je poursuis ma route sans y pr\u00c3\u00aater attention.": "sc:7", 
+      "Je me rapproche.": "sc:6"
+    }
+  }, 
+  "FrScene7": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"6\");", 
+    "Image": "berger2", 
+    "Text": "Les volets sont ferm\u00c3\u00a9s.\nLa chemin\u00c3\u00a9e ne fume pas.\n<br>\nSeul un cr\u00c3\u00a2ne de vache accueille les randonneurs de passage.\n<br>\nUne serrure sur la porte.\nCe doit \u00c3\u00aatre la cabane du berger.\nFerm\u00c3\u00a9e, sans surprise.\n<br>\nQuelques beaux morceaux de bois jonchent le sol devant la cabane.\n<br>\nA proximit\u00c3\u00a9, sur une large pierre plate, se lit l\u00e2\u0080\u0099inscription grav\u00c3\u00a9e <i>\u00e2\u0080\u009cRefuge \u00c3\u00a0 250 m\u00e2\u0080\u009d</i>.", 
+    "Choices": {
+      "Je reprends ma route": "sc:7", 
+      "Je ramasse un morceau de bois avant de poursuivre mon chemin": "sc:7"
+    }
+  }, 
+  "FrScene8": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"7\");", 
+    "Image": "alemany", 
+    "Text": "Je tombe sur une nouvelle cabane, ouverte cette fois-ci. C\u00e2\u0080\u0099est le <i>refuge de l\u00e2\u0080\u0099Alemany</i>.", 
+    "Choices": {
+      "Continuer": "sc:8"
+    }
+  }, 
+  "FrScene9": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"8\");", 
+    "Image": "interieur", 
+    "Text": "A l\u00e2\u0080\u0099int\u00c3\u00a9rieur, tout le confort d\u00e2\u0080\u0099un refuge libre.\nChemin\u00c3\u00a9e, table, bancs, scie, balai, pelle, et couchages superpos\u00c3\u00a9s.\nDans un coin de la cabane repose un tas de branches de pins aux aiguilles encore vertes.\n<br>\nIl n\u00e2\u0080\u0099est pas encore 17 heures mais la vall\u00c3\u00a9e est d\u00c3\u00a9j\u00c3\u00a0 plong\u00c3\u00a9e dans l\u00e2\u0080\u0099ombre.", 
+    "Choices": {
+      "J\u00e2\u0080\u0099ouvre les volets": "sc:9", 
+      "Pas de temps \u00c3\u00a0 perdre. Il faut couper du bois avant que la nuit ne tombe.": "sc:9"
+    }
+  }, 
+  "FrScene10": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"9\");", 
+    "Text": "Pas de bois sec \u00c3\u00a0 proximit\u00c3\u00a9 et la plupart des arbres aux alentours de la cabane pr\u00c3\u00a9sentent d\u00c3\u00a9j\u00c3\u00a0 des marques de pr\u00c3\u00a9l\u00c3\u00a8vement.\nNe restent que d\u00e2\u0080\u0099\u00c3\u00a9normes troncs au sol.\n<br>\nJ\u00e2\u0080\u0099entreprends de scier l\u00e2\u0080\u0099un d\u00e2\u0080\u0099entre eux \u00c3\u00a0 son extr\u00c3\u00a9mit\u00c3\u00a9.\n<br>\nLa pi\u00c3\u00a8ce est lourde et demandera certainement \u00c3\u00a0 \u00c3\u00aatre d\u00c3\u00a9bit\u00c3\u00a9e de nouveau \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur de la cabane.", 
+    "Choices": {
+      "Continuer": "sc:10"
+    }
+  }, 
+  "FrScene11": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"10\");", 
+    "Text": "A 18 heures, il fait d\u00c3\u00a9j\u00c3\u00a0 nuit et le thermom\u00c3\u00a8tre \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur du refuge ne d\u00c3\u00a9passe gu\u00c3\u00a8re 0\u00c2\u00b0C.\n<br>\nJe d\u00c3\u00a9marre un feu avec des pommes de pins et quelques branches. Le bois est vert et peine \u00c3\u00a0 prendre feu.\n<br>\nJ\u00e2\u0080\u0099allume une bougie que je place au coeur du foyer. Les aiguilles cr\u00c3\u00a9pitent, r\u00c3\u00a9sistent...", 
+    "Choices": {
+      "Continuer": "sc:11"
+    }
+  }, 
+  "FrScene12": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"11\");", 
+    "Image": "feu", 
+    "Text": "Le feu finit par d\u00c3\u00a9marrer.\n<br>\nJ\u00e2\u0080\u0099ins\u00c3\u00a8re le premier morceau de b\u00c3\u00bbche et place le second \u00c3\u00a0 proximit\u00c3\u00a9, dans l\u00e2\u0080\u0099espoir de le faire s\u00c3\u00a9cher le plus possible.\nLe po\u00c3\u00aale dispense une chaleur agr\u00c3\u00a9able mais qui chute tr\u00c3\u00a8s rapidement d\u00c3\u00a8s lors qu\u00e2\u0080\u0099on s\u00e2\u0080\u0099en \u00c3\u00a9carte.", 
+    "Choices": {
+      "Continuer": "sc:12"
+    }
+  }, 
+  "FrScene13": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"12\");", 
+    "Image": "tisane", 
+    "Text": "Une fois le d\u00c3\u00aener termin\u00c3\u00a9, il n\u00e2\u0080\u0099est pas encore 21 heures mais je m\u00e2\u0080\u0099appr\u00c3\u00aate \u00c3\u00a0 enfiler mon sac de couchage.\n<br>\nAvant cela, je prends soin de ranger les affaires, en pr\u00c3\u00a9vision d\u00e2\u0080\u0099\u00c3\u00a9ventuels visiteurs nocturnes.", 
+    "Choices": {
+      "Je cache le sac-\u00c3\u00a0-dos sous un banc.": "sc:13\nsac:banc", 
+      "J\u00e2\u0080\u0099accroche le sac \u00c3\u00a0 l\u00e2\u0080\u0099un des clous plant\u00c3\u00a9s aux murs de la cabane": "sc:13\nsac:clou", 
+      "Je retire la nourriture du sac et la suspends \u00c3\u00a0 l\u00e2\u0080\u0099un des fils traversant la pi\u00c3\u00a8ce.": "sc:13\nsac:nourriture"
+    }
+  }, 
+  "FrScene14nourrit": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"13\" && vartable['sac']=='nourriture');", 
+    "Text": "Avec le feu se consumant tranquillement, et les quelques couvertures du refuge en suppl\u00c3\u00a9ment, la nuit passera en \u00c3\u00a9tant prot\u00c3\u00a9g\u00c3\u00a9 du froid.", 
+    "Choices": {
+      "Continuer": "sc:14"
+    }
+  }, 
+  "FrScene14clou": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"13\" && vartable['sac']=='clou');", 
+    "Text": "Au milieu de la nuit, de petits bruits perturbent mon sommeil.\n<br>\nJ'ouvre l'oeil et inspecte les lieux.\nUne souris est affair\u00c3\u00a9e autour de mon sac pendu et grignote une de mes barres \u00c3\u00a9nerg\u00c3\u00a9tiques \u00c3\u00a0 travers l'une des poches !\n<br>\nJe chasse la voleuse et entreprends de suspendre la nourriture hors du sac au bout d'un fil.\n<br>\nLe reste de la nuit sera d'une tranquilit\u00c3\u00a9 absolue.", 
+    "Choices": {
+      "Continuer": "sc:14"
+    }
+  }, 
+  "FrScene14banc": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"13\" && vartable['sac']=='banc');", 
+    "Text": "Le lendemain, le feu est \u00c3\u00a9teint, il fait 4 degr\u00c3\u00a9s \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur et il neige au dehors.\n<br>\nJ'entreprends de rassembler mes affaires et... HORREUR !\n<br>\nLes poches de mon sac ont \u00c3\u00a9t\u00c3\u00a9 rong\u00c3\u00a9es de toutes parts pendant la nuit par des visiteurs nocturnes !\n<br>\nUne bonne partie de mes r\u00c3\u00a9serves en nourriture est bonne \u00c3\u00a0 \u00c3\u00aatre jet\u00c3\u00a9e.\n<br>\nTout en pestant de cette m\u00c3\u00a9saventure, je finis de me pr\u00c3\u00a9parer pour le d\u00c3\u00a9part.", 
+    "Choices": {
+      "Continuer": "sc:15"
+    }
+  }, 
+  "FrScene15": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"14\" && vartable['sac']!='banc');", 
+    "Image": "neige", 
+    "Text": "Le lendemain, le feu est \u00c3\u00a9teint, il fait 4 degr\u00c3\u00a9s \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur et il neige au dehors.\n<br>\nJe rallume le feu et y place le dernier morceau de b\u00c3\u00bbche, le temps du petit-d\u00c3\u00a9jeuner.\n<br>\nJ\u00e2\u0080\u0099\u00c3\u00a9teins le feu avec de la neige, l\u00c3\u00a9guant la derni\u00c3\u00a8re b\u00c3\u00bbche aux prochains occupants, rassemble les affaires et me pr\u00c3\u00a9pare pour le d\u00c3\u00a9part.", 
+    "Choices": {
+      "Continuer": "sc:15"
+    }
+  }, 
+  "FrScene16": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"15\");", 
+    "Image": "presque-mantet", 
+    "Text": "La neige fait place au grand ciel bleu.\n<br>\nEn contrebas se devinent quelques maisons.", 
+    "Choices": {
+      "Continuer": "sc:16"
+    }
+  }, 
+  "FrScene17": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"16\");", 
+    "Image": "vue-mantet", 
+    "Text": "Il s\u00e2\u0080\u0099agit du village de Mantet, baign\u00c3\u00a9 par la lumi\u00c3\u00a8re du soleil automnal.", 
+    "Choices": {
+      "Continuer": "sc:17"
+    }
+  }, 
+  "FrScene18": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"17\");", 
+    "Image": "panneau", 
+    "Text": "Je poursuis la descente et parviens au village.\n<br>\nIl est 12 heures 30.", 
+    "Choices": {
+      "Continuer": "sc:18"
+    }
+  }, 
+  "FrScene19": {
+    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"18\");", 
+    "Image": "mantet", 
+    "Text": "A suivre.", 
+    "Choices": {
+      "Recommencer": "sc:0"
+    }
+  }, 
+  "CaScene1": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==0);", 
+    "Image": "vallter", 
+    "Text": "<i>Dos quarts de un, carretera de Vallter, Pirineus Catalans</i>\n<br>\nLes degr\u00c3\u00a9s fondent \u00c3\u00a0 mesure que s\u00e2\u0080\u0099encha\u00c3\u00aenent les virages. A l\u00e2\u0080\u0099approche du parking quasi-vide de la station de Vallter 2000, le compteur indique 4 timides degr\u00c3\u00a9s.\n<br>\nLe temps d\u00e2\u0080\u0099enfiler quelques couches suppl\u00c3\u00a9mentaires, d\u00e2\u0080\u0099une derni\u00c3\u00a8re v\u00c3\u00a9rification du sac et d\u00e2\u0080\u0099un rapide casse-cro\u00c3\u00bbte et je serai pr\u00c3\u00aat(e) \u00c3\u00a0 partir.", 
+    "Choices": {
+      "J\u00e2\u0080\u0099enfile mon coupe-vent.": "sc:1\nequip:coupe-vent", 
+      "J\u00e2\u0080\u0099enfile polaire, doudoune et coupe-vent.": "sc:1\nequip:polaire", 
+      "R\u00c3\u00a9flexion faite, je pars en t-shirt.": "sc:1\nequip:tshirt"
+    }
+  }, 
+  "CaScene2": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='1');", 
+    "Image": "vallter2", 
+    "Text": "<i>14 heures, d\u00c3\u00a9part de la station de Vallter</i>\n<br>\nLe chemin d\u00c3\u00a9bute en mont\u00c3\u00a9e suivant le trac\u00c3\u00a9 du GR10.\nLa station s\u00e2\u0080\u0099\u00c3\u00a9loigne progressivement dans le dos.\n<br>\nBien que les t\u00c3\u00a9l\u00c3\u00a9si\u00c3\u00a8ges soient \u00c3\u00a0 l\u00e2\u0080\u0099arr\u00c3\u00aat, quelques t\u00c3\u00a2ches de neige semblent signaler que la saison de ski est en phase d\u00e2\u0080\u0099approche.\nLa mont\u00c3\u00a9e s\u00e2\u0080\u0099effectue sans encombres.", 
+    "Choices": {
+      "La mont\u00c3\u00a9e donne chaud. Je retire ma polaire.": "sc:Scene_croise_marcheurs\n@if\nfunction(){return (vartable['equip']=='polaire')}", 
+      "Continuer": "sc:Scene_croise_marcheurs"
+    }
+  }, 
+  "CaScene_croise_marcheurs": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='Scene_croise_marcheurs');", 
+    "Text": "Je salue quelques marcheurs en les croisant dans leur descente.. C\u00e2\u0080\u0099est en effet davantage une heure de fin de parcours que de d\u00c3\u00a9but...  \n<br>\nL\u00e2\u0080\u0099un d\u00e2\u0080\u0099entre eux, v\u00c3\u00aatu d\u00e2\u0080\u0099un combinaison de secouriste rouge, s\u00e2\u0080\u0099adresse \u00c3\u00a0 moi :\n<br>\n<i>\\\"- Bon dia, on vas ?  Cap al pic de la Dona ?\\\"</i>", 
+    "Choices": {
+      "Si, puja i baixa (mensonge)": "sc:mensonge", 
+      "No, cap al refugi del Alemany (v\u00c3\u00a9rit\u00c3\u00a9)": "sc:verite", 
+      "Ne pas r\u00c3\u00a9pondre et poursuivre sa route.": "sc:nepasrepondre"
+    }
+  }, 
+  "CaScene_mensonge": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='mensonge');", 
+    "Text": "L'homme me lance un regard sceptique et poursuit sa descente.\n<br>\nJe poursuis la mont\u00c3\u00a9e.", 
+    "Choices": {
+      "Continuer": "sc:2"
+    }
+  }, 
+  "CaScene_nepasrepondre": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='nepasrepondre');", 
+    "Text": "Je poursuis la mont\u00c3\u00a9e sans daigner r\u00c3\u00a9pondre \u00c3\u00a0 l'homme, qui ne peut refr\u00c3\u00a9ner un sursaut de surprise.", 
+    "Choices": {
+      "Continuer": "sc:2"
+    }
+  }, 
+  "CaScene_verite": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='verite');", 
+    "Text": "<i>\\\"- Que tinguis bona ruta.\\\"</i>\n<br>\nJe poursuis la mont\u00c3\u00a9e.", 
+    "Choices": {
+      "Continuer": "sc:2"
+    }
+  }, 
+  "CaScene3": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"2\");", 
+    "Image": "borne", 
+    "Text": "A l\u00e2\u0080\u0099arriv\u00c3\u00a9e \u00c3\u00a0 la Porteille de Mantet, une borne indique la fronti\u00c3\u00a8re avec la France. La montre indique 15 heures.", 
+    "Choices": {
+      "Il est tard pour passer au Nord. Je redescends vers Vallter.": "sc:back-to-vallter", 
+      "Je continue.": "sc:3", 
+      "Le vent souffle au col. J'enfile mon coupe-vent pour poursuivre la route.": "sc:3\n@if\nfunction(){return (vartable['equip']=='tshirt')}"
+    }
+  }, 
+  "CaScene3b": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"back-to-vallter\");", 
+    "Text": "La s\u00c3\u00a9curit\u00c3\u00a9 avant tout. Je redescends vers Vallter et suis de retour \u00c3\u00a0 la voiture avant m\u00c3\u00aame le coucher du soleil.\n<br>\nMais une chose est s\u00c3\u00bbre : je reviendrai.\n<br>\nFin.", 
+    "Choices": {
+      "Recommencer": "sc:0"
+    }
+  }, 
+  "CaScene4": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"3\");", 
+    "Image": "vallee", 
+    "Text": "Le passage du col laisse entrevoir du c\u00c3\u00b4t\u00c3\u00a9 Nord une vall\u00c3\u00a9e bois\u00c3\u00a9e tirant droit vers le petit village de Mantet.\n<br>\nA mesure que l\u00e2\u0080\u0099ombre la recouvre, la temp\u00c3\u00a9rature se fait de plus en plus fra\u00c3\u00aeche.\nLes taches \u00c3\u00a9parses de neige sont \u00c3\u00a0 pr\u00c3\u00a9sent de fiers n\u00c3\u00a9v\u00c3\u00a9s.\nLa descente est sans difficult\u00c3\u00a9, le pas est s\u00c3\u00bbr jusqu\u00e2\u0080\u0099\u00c3\u00a0 atteindre l\u00e2\u0080\u0099or\u00c3\u00a9e du bois.", 
+    "Choices": {
+      "Continuer": "sc:4"
+    }
+  }, 
+  "CaScene5": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"4\");", 
+    "Image": "bois", 
+    "Text": "Le chemin longe sagement un ruisseau portant \u00c3\u00a9galement les premi\u00c3\u00a8res marques de l\u00e2\u0080\u0099hiver approchant.\n<br>\nLes balises se suivent le long du sentier.", 
+    "Choices": {
+      "Continuer": "sc:5"
+    }
+  }, 
+  "CaScene6": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"5\");", 
+    "Image": "berger", 
+    "Text": "Une cabane appara\u00c3\u00aet au fond sur la gauche.", 
+    "Choices": {
+      "C\u00e2\u0080\u0099est hors du sentier. Je poursuis ma route sans y pr\u00c3\u00aater attention.": "sc:7", 
+      "Je me rapproche.": "sc:6"
+    }
+  }, 
+  "CaScene7": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"6\");", 
+    "Image": "berger2", 
+    "Text": "Les volets sont ferm\u00c3\u00a9s.\nLa chemin\u00c3\u00a9e ne fume pas.\n<br>\nSeul un cr\u00c3\u00a2ne de vache accueille les randonneurs de passage.\n<br>\nUne serrure sur la porte.\nCe doit \u00c3\u00aatre la cabane du berger.\nFerm\u00c3\u00a9e, sans surprise.\n<br>\nQuelques beaux morceaux de bois jonchent le sol devant la cabane.\n<br>\nA proximit\u00c3\u00a9, sur une large pierre plate, se lit l\u00e2\u0080\u0099inscription grav\u00c3\u00a9e <i>\u00e2\u0080\u009cRefuge \u00c3\u00a0 250 m\u00e2\u0080\u009d</i>.", 
+    "Choices": {
+      "Je reprends ma route": "sc:7", 
+      "Je ramasse un morceau de bois avant de poursuivre mon chemin": "sc:7"
+    }
+  }, 
+  "CaScene8": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"7\");", 
+    "Image": "alemany", 
+    "Text": "Je tombe sur une nouvelle cabane, ouverte cette fois-ci. C\u00e2\u0080\u0099est le <i>refuge de l\u00e2\u0080\u0099Alemany</i>.", 
+    "Choices": {
+      "Continuer": "sc:8"
+    }
+  }, 
+  "CaScene9": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"8\");", 
+    "Image": "interieur", 
+    "Text": "A l\u00e2\u0080\u0099int\u00c3\u00a9rieur, tout le confort d\u00e2\u0080\u0099un refuge libre.\nChemin\u00c3\u00a9e, table, bancs, scie, balai, pelle, et couchages superpos\u00c3\u00a9s.\nDans un coin de la cabane repose un tas de branches de pins aux aiguilles encore vertes.\n<br>\nIl n\u00e2\u0080\u0099est pas encore 17 heures mais la vall\u00c3\u00a9e est d\u00c3\u00a9j\u00c3\u00a0 plong\u00c3\u00a9e dans l\u00e2\u0080\u0099ombre.", 
+    "Choices": {
+      "J\u00e2\u0080\u0099ouvre les volets": "sc:9", 
+      "Pas de temps \u00c3\u00a0 perdre. Il faut couper du bois avant que la nuit ne tombe.": "sc:9"
+    }
+  }, 
+  "CaScene10": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"9\");", 
+    "Text": "Pas de bois sec \u00c3\u00a0 proximit\u00c3\u00a9 et la plupart des arbres aux alentours de la cabane pr\u00c3\u00a9sentent d\u00c3\u00a9j\u00c3\u00a0 des marques de pr\u00c3\u00a9l\u00c3\u00a8vement.\nNe restent que d\u00e2\u0080\u0099\u00c3\u00a9normes troncs au sol.\n<br>\nJ\u00e2\u0080\u0099entreprends de scier l\u00e2\u0080\u0099un d\u00e2\u0080\u0099entre eux \u00c3\u00a0 son extr\u00c3\u00a9mit\u00c3\u00a9.\n<br>\nLa pi\u00c3\u00a8ce est lourde et demandera certainement \u00c3\u00a0 \u00c3\u00aatre d\u00c3\u00a9bit\u00c3\u00a9e de nouveau \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur de la cabane.", 
+    "Choices": {
+      "Continuer": "sc:10"
+    }
+  }, 
+  "CaScene11": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"10\");", 
+    "Text": "A 18 heures, il fait d\u00c3\u00a9j\u00c3\u00a0 nuit et le thermom\u00c3\u00a8tre \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur du refuge ne d\u00c3\u00a9passe gu\u00c3\u00a8re 0\u00c2\u00b0C.\n<br>\nJe d\u00c3\u00a9marre un feu avec des pommes de pins et quelques branches. Le bois est vert et peine \u00c3\u00a0 prendre feu.\n<br>\nJ\u00e2\u0080\u0099allume une bougie que je place au coeur du foyer. Les aiguilles cr\u00c3\u00a9pitent, r\u00c3\u00a9sistent...", 
+    "Choices": {
+      "Continuer": "sc:11"
+    }
+  }, 
+  "CaScene12": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"11\");", 
+    "Image": "feu", 
+    "Text": "Le feu finit par d\u00c3\u00a9marrer.\n<br>\nJ\u00e2\u0080\u0099ins\u00c3\u00a8re le premier morceau de b\u00c3\u00bbche et place le second \u00c3\u00a0 proximit\u00c3\u00a9, dans l\u00e2\u0080\u0099espoir de le faire s\u00c3\u00a9cher le plus possible.\nLe po\u00c3\u00aale dispense une chaleur agr\u00c3\u00a9able mais qui chute tr\u00c3\u00a8s rapidement d\u00c3\u00a8s lors qu\u00e2\u0080\u0099on s\u00e2\u0080\u0099en \u00c3\u00a9carte.", 
+    "Choices": {
+      "Continuer": "sc:12"
+    }
+  }, 
+  "CaScene13": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"12\");", 
+    "Image": "tisane", 
+    "Text": "Une fois le d\u00c3\u00aener termin\u00c3\u00a9, il n\u00e2\u0080\u0099est pas encore 21 heures mais je m\u00e2\u0080\u0099appr\u00c3\u00aate \u00c3\u00a0 enfiler mon sac de couchage.\n<br>\nAvant cela, je prends soin de ranger les affaires, en pr\u00c3\u00a9vision d\u00e2\u0080\u0099\u00c3\u00a9ventuels visiteurs nocturnes.", 
+    "Choices": {
+      "Je cache le sac-\u00c3\u00a0-dos sous un banc.": "sc:13\nsac:banc", 
+      "J\u00e2\u0080\u0099accroche le sac \u00c3\u00a0 l\u00e2\u0080\u0099un des clous plant\u00c3\u00a9s aux murs de la cabane": "sc:13\nsac:clou", 
+      "Je retire la nourriture du sac et la suspends \u00c3\u00a0 l\u00e2\u0080\u0099un des fils traversant la pi\u00c3\u00a8ce.": "sc:13\nsac:nourriture"
+    }
+  }, 
+  "CaScene14nourrit": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"13\" && vartable['sac']=='nourriture');", 
+    "Text": "Avec le feu se consumant tranquillement, et les quelques couvertures du refuge en suppl\u00c3\u00a9ment, la nuit passera en \u00c3\u00a9tant prot\u00c3\u00a9g\u00c3\u00a9 du froid.", 
+    "Choices": {
+      "Continuer": "sc:14"
+    }
+  }, 
+  "CaScene14clou": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"13\" && vartable['sac']=='clou');", 
+    "Text": "Au milieu de la nuit, de petits bruits perturbent mon sommeil.\n<br>\nJ'ouvre l'oeil et inspecte les lieux.\nUne souris est affair\u00c3\u00a9e autour de mon sac pendu et grignote une de mes barres \u00c3\u00a9nerg\u00c3\u00a9tiques \u00c3\u00a0 travers l'une des poches !\n<br>\nJe chasse la voleuse et entreprends de suspendre la nourriture hors du sac au bout d'un fil.\n<br>\nLe reste de la nuit sera d'une tranquilit\u00c3\u00a9 absolue.", 
+    "Choices": {
+      "Continuer": "sc:14"
+    }
+  }, 
+  "CaScene14banc": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"13\" && vartable['sac']=='banc');", 
+    "Text": "Le lendemain, le feu est \u00c3\u00a9teint, il fait 4 degr\u00c3\u00a9s \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur et il neige au dehors.\n<br>\nJ'entreprends de rassembler mes affaires et... HORREUR !\n<br>\nLes poches de mon sac ont \u00c3\u00a9t\u00c3\u00a9 rong\u00c3\u00a9es de toutes parts pendant la nuit par des visiteurs nocturnes !\n<br>\nUne bonne partie de mes r\u00c3\u00a9serves en nourriture est bonne \u00c3\u00a0 \u00c3\u00aatre jet\u00c3\u00a9e.\n<br>\nTout en pestant de cette m\u00c3\u00a9saventure, je finis de me pr\u00c3\u00a9parer pour le d\u00c3\u00a9part.", 
+    "Choices": {
+      "Continuer": "sc:15"
+    }
+  }, 
+  "CaScene15": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"14\" && vartable['sac']!='banc');", 
+    "Image": "neige", 
+    "Text": "Le lendemain, le feu est \u00c3\u00a9teint, il fait 4 degr\u00c3\u00a9s \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur et il neige au dehors.\n<br>\nJe rallume le feu et y place le dernier morceau de b\u00c3\u00bbche, le temps du petit-d\u00c3\u00a9jeuner.\n<br>\nJ\u00e2\u0080\u0099\u00c3\u00a9teins le feu avec de la neige, l\u00c3\u00a9guant la derni\u00c3\u00a8re b\u00c3\u00bbche aux prochains occupants, rassemble les affaires et me pr\u00c3\u00a9pare pour le d\u00c3\u00a9part.", 
+    "Choices": {
+      "Continuer": "sc:15"
+    }
+  }, 
+  "CaScene16": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"15\");", 
+    "Image": "presque-mantet", 
+    "Text": "La neige fait place au grand ciel bleu.\n<br>\nEn contrebas se devinent quelques maisons.", 
+    "Choices": {
+      "Continuer": "sc:16"
+    }
+  }, 
+  "CaScene17": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"16\");", 
+    "Image": "vue-mantet", 
+    "Text": "Il s\u00e2\u0080\u0099agit du village de Mantet, baign\u00c3\u00a9 par la lumi\u00c3\u00a8re du soleil automnal.", 
+    "Choices": {
+      "Continuer": "sc:17"
+    }
+  }, 
+  "CaScene18": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"17\");", 
+    "Image": "panneau", 
+    "Text": "Je poursuis la descente et parviens au village.\n<br>\nIl est 12 heures 30.", 
+    "Choices": {
+      "Continuer": "sc:18"
+    }
+  }, 
+  "CaScene19": {
+    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"18\");", 
+    "Image": "mantet", 
+    "Text": "A suivre.", 
+    "Choices": {
+      "Recommencer": "sc:0"
+    }
+  }
+}

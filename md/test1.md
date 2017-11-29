@@ -25,9 +25,13 @@ You are my oxygen. My reason to be here.
 Without knowing you make me a better person.
 
 ## Choices
-### Hey
+### Hey je m'appelle Greg
 name:Greg
 sc:2
+### Hey je m'appelle Christophe
+name:Christophe
+sc:2
+
 
 -------------------------------------------------------------------------------
 # scene3
@@ -45,6 +49,13 @@ Then since you know, just don\'t do this.
 ## Choices
 ### OK.
 sc:3
+
+### Salut Christophe
+sc:1
+@if
+function(){
+  return (vartable['name']=='Christophe')
+}
 
 -------------------------------------------------------------------------------
 # scene4

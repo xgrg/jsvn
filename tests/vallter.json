@@ -172,7 +172,7 @@
   }, 
   "FrScene14banc": {
     "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"13\" && vartable['sac']=='banc');", 
-    "Text": "Le lendemain, le feu est \u00c3\u00a9teint, il fait 4 degr\u00c3\u00a9s \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur et il neige au dehors.\n<br>\nJ'entreprends de rassembler mes affaires et... HORREUR !\n<br>\nLes poches de mon sac ont \u00c3\u00a9t\u00c3\u00a9 rong\u00c3\u00a9es de toutes parts pendant la nuit par des visiteurs nocturnes !\n<br>\nUne bonne partie de mes r\u00c3\u00a9serves en nourriture est bonne \u00c3\u00a0 \u00c3\u00aatre jet\u00c3\u00a9e.\n<br>\nTout en pestant de cette m\u00c3\u00a9saventure, je finis de me pr\u00c3\u00a9parer pour le d\u00c3\u00a9part.", 
+    "Text": "Le lendemain, le feu est \u00c3\u00a9teint, il fait 4 degr\u00c3\u00a9s \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur et il neige au dehors.\n<br>\nJ'entreprends de rassembler mes affaires et... HORREUR !\n<br>\nLes poches de mon sac ont \u00c3\u00a9t\u00c3\u00a9 rong\u00c3\u00a9es de toutes parts par des visiteurs nocturnes !\n<br>\nUne bonne partie de mes r\u00c3\u00a9serves en nourriture est bonne \u00c3\u00a0 \u00c3\u00aatre jet\u00c3\u00a9e.\n<br>\nTout en pestant de cette m\u00c3\u00a9saventure, je finis de me pr\u00c3\u00a9parer pour le d\u00c3\u00a9part.", 
     "Choices": {
       "Continuer": "sc:15"
     }
@@ -320,7 +320,7 @@
   "CaScene8": {
     "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"7\");", 
     "Image": "alemany", 
-    "Text": "Je tombe sur une nouvelle cabane, ouverte cette fois-ci. C\u00e2\u0080\u0099est le <i>refuge de l\u00e2\u0080\u0099Alemany</i>.", 
+    "Text": "Je tombe sur une nouvelle cabane, ouverte. C\u00e2\u0080\u0099est le <i>refuge de l\u00e2\u0080\u0099Alemany</i>.", 
     "Choices": {
       "Continuer": "sc:8"
     }
@@ -382,7 +382,7 @@
   }, 
   "CaScene14banc": {
     "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"13\" && vartable['sac']=='banc');", 
-    "Text": "Le lendemain, le feu est \u00c3\u00a9teint, il fait 4 degr\u00c3\u00a9s \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur et il neige au dehors.\n<br>\nJ'entreprends de rassembler mes affaires et... HORREUR !\n<br>\nLes poches de mon sac ont \u00c3\u00a9t\u00c3\u00a9 rong\u00c3\u00a9es de toutes parts pendant la nuit par des visiteurs nocturnes !\n<br>\nUne bonne partie de mes r\u00c3\u00a9serves en nourriture est bonne \u00c3\u00a0 \u00c3\u00aatre jet\u00c3\u00a9e.\n<br>\nTout en pestant de cette m\u00c3\u00a9saventure, je finis de me pr\u00c3\u00a9parer pour le d\u00c3\u00a9part.", 
+    "Text": "Le lendemain, le feu est \u00c3\u00a9teint, il fait 4 degr\u00c3\u00a9s \u00c3\u00a0 l\u00e2\u0080\u0099int\u00c3\u00a9rieur et il neige au dehors.\n<br>\nJ'entreprends de rassembler mes affaires et... HORREUR !\n<br>\nLes poches de mon sac ont \u00c3\u00a9t\u00c3\u00a9 rong\u00c3\u00a9es de toutes parts pendant la nuit par des visiteurs nocturnes !\n<br>\nUne partie consid\u00c3\u00a9rable de mes r\u00c3\u00a9serves en nourriture est bonne \u00c3\u00a0 \u00c3\u00aatre jet\u00c3\u00a9e.\n<br>\nTout en pestant de cette m\u00c3\u00a9saventure, je finis de me pr\u00c3\u00a9parer pour le d\u00c3\u00a9part.", 
     "Choices": {
       "Continuer": "sc:15"
     }

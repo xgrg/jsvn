@@ -27,7 +27,7 @@ jobs:
           command: |
             python -m virtualenv virtualenv
             . virtualenv/bin/activate
-            pip install nose coverage
+            pip install nose coverage markdown_to_json
 
 
       # run tests!

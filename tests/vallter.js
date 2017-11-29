@@ -4,7 +4,7 @@ CaScene8 = {
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("alemany")}, 1000],
-    [function(){addDialog("Je tombe sur une nouvelle cabane, ouverte cette fois-ci. C’est le <i>refuge de l’Alemany</i>.", "fadeIn")}, 1000],
+    [function(){addDialog("Je tombe sur une nouvelle cabane, ouverte. C’est le <i>refuge de l’Alemany</i>.", "fadeIn")}, 1000],
     [choice, 0]])
   },
 choices:[["Continuer", {"sc": "8"}],]
@@ -398,7 +398,7 @@ CaScene14banc = {
     [function(){addDialog("<br>", "fadeIn")}, 1000],
     [function(){addDialog("Les poches de mon sac ont été rongées de toutes parts pendant la nuit par des visiteurs nocturnes !", "fadeIn")}, 1000],
     [function(){addDialog("<br>", "fadeIn")}, 1000],
-    [function(){addDialog("Une bonne partie de mes réserves en nourriture est bonne à être jetée.", "fadeIn")}, 1000],
+    [function(){addDialog("Une partie considérable de mes réserves en nourriture est bonne à être jetée.", "fadeIn")}, 1000],
     [function(){addDialog("<br>", "fadeIn")}, 1000],
     [function(){addDialog("Tout en pestant de cette mésaventure, je finis de me préparer pour le départ.", "fadeIn")}, 1000],
     [choice, 0]])
@@ -607,7 +607,7 @@ FrScene14banc = {
     [function(){addDialog("<br>", "fadeIn")}, 1000],
     [function(){addDialog("J'entreprends de rassembler mes affaires et... HORREUR !", "fadeIn")}, 1000],
     [function(){addDialog("<br>", "fadeIn")}, 1000],
-    [function(){addDialog("Les poches de mon sac ont été rongées de toutes parts pendant la nuit par des visiteurs nocturnes !", "fadeIn")}, 1000],
+    [function(){addDialog("Les poches de mon sac ont été rongées de toutes parts par des visiteurs nocturnes !", "fadeIn")}, 1000],
     [function(){addDialog("<br>", "fadeIn")}, 1000],
     [function(){addDialog("Une bonne partie de mes réserves en nourriture est bonne à être jetée.", "fadeIn")}, 1000],
     [function(){addDialog("<br>", "fadeIn")}, 1000],

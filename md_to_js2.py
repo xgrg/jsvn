@@ -2,23 +2,7 @@
 from markdown_to_json.scripts import md_to_json
 import json, string, sys
 
-md_fp = sys.argv[1]
-json_fp = sys.argv[2] if len(sys.argv)>2 else md_fp.replace('.md','.json')
-js_fp = sys.argv[3] if len(sys.argv)>3 else md_fp.replace('.md','.js')
-print sys.argv
 
-lines = open(md_fp).readlines()
-w = open(md_fp+'1', 'w')
-for each in lines:
-    if not '------------------' in each:
-       w.write(each)
-w.close()
-
-md_to_json.jsonify_markdown(md_fp+'1', json_fp, 2)
-j = json.load(open(json_fp))
-
-from pprint import pprint
-#pprint(j)
 
 def get_sequence(code):
     return ''
@@ -51,9 +35,26 @@ def get_choice(code):
                 if_func = ',%s'%'\n'.join(v.split('\n')[i+1:])
         res = res + '["%s", %s%s],'%(k,json.dumps(d), if_func)
 
-    #print 'res', res
     return 'choices:[%s]'%res
 
+
+md_fp = sys.argv[1]
+json_fp = sys.argv[2] if len(sys.argv)>2 else md_fp.replace('.md','.json')
+js_fp = sys.argv[3] if len(sys.argv)>3 else md_fp.replace('.md','.js')
+print sys.argv
+
+lines = open(md_fp).readlines()
+w = open(md_fp+'1', 'w')
+for each in lines:
+    if not '----' in each:
+       w.write(each)
+w.close()
+
+md_to_json.jsonify_markdown(md_fp+'1', json_fp, 2)
+j = json.load(open(json_fp))
+
+from pprint import pprint
+#pprint(j)
 
 js = ''
 for sc_name, sc in j.items():

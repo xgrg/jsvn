@@ -2,11 +2,6 @@
 from markdown_to_json.scripts import md_to_json
 import json, string, sys
 
-
-
-def get_sequence(code):
-    return ''
-
 def get_playsequence(code):
     seq = ''
     for each in code.split('\n'):

@@ -12,7 +12,7 @@ jobs:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.1
+      - image: circleci/python:2.7.13
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -25,8 +25,8 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python -m venv venv
-            . venv/bin/activate
+            python -m virtualenv virtualenv
+            . virtualenv/bin/activate
             pip install nose coverage
 
 
@@ -34,7 +34,7 @@ jobs:
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
+            . virtualenv/bin/activate
             ls
             pwd
             nosetests --nocapture tests

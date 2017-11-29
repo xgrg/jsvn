@@ -65,7 +65,9 @@ def get_javascript(j):
 
 
 if __name__ == '__main__':
-
+    import jsvn
+    jsvn.toto()
+    
     import json, argparse
     parser = argparse.ArgumentParser(description='Converts Markdown code to Javascript\
         that can run as scenes', prog='md_to_js2',

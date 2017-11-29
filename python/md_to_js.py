@@ -1,8 +1,24 @@
 #! /usr/bin/env python
 
+def markdown_to_js(md_fp, json_fp, js_fp):
+    import jsvn, json
+    # Creates a new .md file without lines full of --------
+    # This new file is named [markdown_file].md1
+    jsvn.remove_minuslines(md_fp)
+
+    # Creates a Json from Markdown
+    from markdown_to_json.scripts import md_to_json
+    md_to_json.jsonify_markdown(md_fp+'1', json_fp, 2)
+
+    # Generates JS from Json
+    j = json.load(open(json_fp))
+    js = jsvn.get_javascript(j)
+    w = open(js_fp, 'w')
+    w.write(js)
+    w.close()
 
 if __name__ == '__main__':
-    import jsvn, json, argparse
+    import argparse
 
     # Parsing options
     parser = argparse.ArgumentParser(description='Converts Markdown code to Javascript\
@@ -20,18 +36,4 @@ if __name__ == '__main__':
     js_fp = args.js if not args.js is None else md_fp.replace('.md','.js')
 
     print md_fp, json_fp, js_fp
-
-    # Creates a new .md file without lines full of --------
-    # This new file is named [markdown_file].md1
-    jsvn.remove_minuslines(md_fp)
-
-    # Creates a Json from Markdown
-    from markdown_to_json.scripts import md_to_json
-    md_to_json.jsonify_markdown(md_fp+'1', json_fp, 2)
-
-    # Generates JS from Json
-    j = json.load(open(json_fp))
-    js = jsvn.get_javascript(j)
-    w = open(js_fp, 'w')
-    w.write(js)
-    w.close()
+    markdown_to_js(md_fp, json_fp, js_fp)

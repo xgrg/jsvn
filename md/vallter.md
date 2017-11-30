@@ -377,7 +377,7 @@ Les poches de mon sac ont été rongées de toutes parts par des visiteurs noctu
 <br>
 Une bonne partie de mes réserves en nourriture est bonne à être jetée.
 <br>
-Tout en pestant de cette mésaventure, je finis de me préparer pour le départ.
+Tout en pestant contre cette mésaventure, je finis de me préparer pour le départ.
 
 ## Choices
 ### Continuer

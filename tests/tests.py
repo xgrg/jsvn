@@ -15,7 +15,7 @@ def test_vallter2():
     js_fp = './tests/vallter.js'
     import sys
     reload(sys)
-    sys.setdefaultencoding('iso-8859-1')
+    sys.setdefaultencoding('utf-8')
 
     import markdown_to_json
     from markdown_to_json.vendor.docopt import docopt

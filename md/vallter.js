@@ -319,7 +319,7 @@ FrScene14banc = {
     [function(){addDialog("<br>", "fadeIn")}, 1000],
     [function(){addDialog("Une bonne partie de mes réserves en nourriture est bonne à être jetée.", "fadeIn")}, 1000],
     [function(){addDialog("<br>", "fadeIn")}, 1000],
-    [function(){addDialog("Tout en pestant de cette mésaventure, je finis de me préparer pour le départ.", "fadeIn")}, 1000],
+    [function(){addDialog("Tout en pestant contre cette mésaventure, je finis de me préparer pour le départ.", "fadeIn")}, 1000],
     [choice, 0]])
   },
 choices:[["Continuer", {"sc": "15"}],]

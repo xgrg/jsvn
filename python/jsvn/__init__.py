@@ -3,7 +3,7 @@ import json
 def get_playsequence(code):
     seq = ''
     for each in code.split('\n'):
-        print each
+        #print each
 
         eachcode = '{addDialog("%s", "fadeIn")}, 1000'%each
         seq = seq + '    [function()%s],\n'%(eachcode)
@@ -59,7 +59,7 @@ def get_javascript(j):
     for sc_name, _ in j.items():
         pushlist = pushlist + '  storylets.push(%s);\n'%sc_name
     js = js + '$(document).ready(function(){\n%s});'%pushlist
-    print ''
+    #print ''
     #print js
     return js
 

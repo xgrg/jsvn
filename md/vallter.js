@@ -403,7 +403,7 @@ CaScene1 = {
     [function(){addDialog("<br>", "fadeIn")}, 1000],
     [function(){addDialog("Els graus devallen a mesura que es segueixin les corbes. A prop del parquing casi buit de la estació de Vallter 2000, el termometre indica 4 petits graus.", "fadeIn")}, 1000],
     [function(){addDialog("<br>", "fadeIn")}, 1000],
-    [function(){addDialog("Desprès de que em posi unes capes més, que faci una ultima verificació de la motxilla i un ràpid entrepà, i estaré llest per sortir.", "fadeIn")}, 1000],
+    [function(){addDialog("Desprès de que em posés unes capes més, que fes una ultima verificació de la motxilla i un ràpid entrepà, i estaré llest per sortir.", "fadeIn")}, 1000],
     [choice, 0]])
   },
 choices:[["Portaré la meva jaqueta tallavent.", {"sc": "1", "equip": "coupe-vent"}],["Portaré el forro polar, abric i jaqueta tallavent.", {"sc": "1", "equip": "polaire"}],["Ho he pensat, i finalment surto amb la samarreta.", {"sc": "1", "equip": "tshirt"}],]

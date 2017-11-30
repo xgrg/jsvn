@@ -21,6 +21,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
+            git config --global user.email goperto@gmail.com
             python -m virtualenv virtualenv
             . virtualenv/bin/activate
             pip install nose coverage markdown_to_json ghp-import

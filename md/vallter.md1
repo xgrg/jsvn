@@ -14,7 +14,6 @@ lang:fr
 ### Catalan
 sc:0
 lang:ca
------------------
 # FrScene1
 ## Qualities
 return (vartable['lang']=='fr' && vartable['sc']=='0');
@@ -39,7 +38,6 @@ equip:polaire
 ### Réflexion faite, je pars en t-shirt.
 sc:1
 equip:tshirt
------------------------------------------------
 # FrScene2
 ## Qualities
 return (vartable['sc']==='1');
@@ -63,7 +61,6 @@ sc:Scene_croise_marcheurs
 function(){return (vartable['equip']=='polaire')}
 ### Continuer
 sc:Scene_croise_marcheurs
--------
 # FrScene_croise_marcheurs
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==='Scene_croise_marcheurs');
@@ -82,7 +79,6 @@ sc:mensonge
 sc:verite
 ### Ne pas répondre et poursuivre sa route.
 sc:nepasrepondre
------------------------------------------------
 # FrScene_mensonge
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==='mensonge');
@@ -95,7 +91,6 @@ Je poursuis la montée.
 ## Choices
 ### Continuer
 sc:2
------------------------------------------------
 # FrScene_nepasrepondre
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==='nepasrepondre');
@@ -106,7 +101,6 @@ Je poursuis la montée sans daigner répondre à l'homme, qui ne peut refréner 
 ## Choices
 ### Continuer
 sc:2
------------------------------------------------
 # FrScene_verite
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==='verite');
@@ -119,7 +113,6 @@ Je poursuis la montée.
 ## Choices
 ### Continuer
 sc:2
------------------------------------------------
 # FrScene3
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="2");
@@ -139,7 +132,6 @@ sc:3
 sc:3
 @if
 function(){return (vartable['equip']=='tshirt')}
------------------------------------------------
 # FrScene3b
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="back-to-vallter");
@@ -154,7 +146,6 @@ Fin.
 ## Choices
 ### Recommencer
 sc:0
------------------------------------------------
 # FrScene4
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="3");
@@ -171,7 +162,6 @@ La descente est sans difficulté, le pas est sûr jusqu’à atteindre l’orée
 ## Choices
 ### Continuer
 sc:4
------------------------------------------------
 # FrScene5
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="4");
@@ -187,7 +177,6 @@ Les balises se suivent le long du sentier.
 ## Choices
 ### Continuer
 sc:5
------------------------------------------------
 # FrScene6
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="5");
@@ -203,7 +192,6 @@ Une cabane apparaît au fond sur la gauche.
 sc:7
 ### Je me rapproche.
 sc:6
------------------------------------------------
 # FrScene7
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="6");
@@ -230,7 +218,6 @@ A proximité, sur une large pierre plate, se lit l’inscription gravée <i>“R
 sc:7
 ### Je ramasse un morceau de bois avant de poursuivre mon chemin
 sc:7
------------------------------------------------
 # FrScene8
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="7");
@@ -244,7 +231,6 @@ Je tombe sur une nouvelle cabane, ouverte cette fois-ci. C’est le <i>refuge de
 ## Choices
 ### Continuer
 sc:8
------------------------------------------------
 # FrScene9
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="8");
@@ -264,7 +250,6 @@ Il n’est pas encore 17 heures mais la vallée est déjà plongée dans l’omb
 sc:9
 ### Pas de temps à perdre. Il faut couper du bois avant que la nuit ne tombe.
 sc:9
------------------------------------------------
 # FrScene10
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="9");
@@ -280,7 +265,6 @@ La pièce est lourde et demandera certainement à être débitée de nouveau à 
 ## Choices
 ### Continuer
 sc:10
------------------------------------------------
 # FrScene11
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="10");
@@ -295,7 +279,6 @@ J’allume une bougie que je place au coeur du foyer. Les aiguilles crépitent, 
 ## Choices
 ### Continuer
 sc:11
------------------------------------------------
 # FrScene12
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="11");
@@ -312,7 +295,6 @@ Le poêle dispense une chaleur agréable mais qui chute très rapidement dès lo
 ## Choices
 ### Continuer
 sc:12
------------------------------------------------
 # FrScene13
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="12");
@@ -335,7 +317,6 @@ sac:clou
 ### Je retire la nourriture du sac et la suspends à l’un des fils traversant la pièce.
 sc:13
 sac:nourriture
------------------------------------------------
 # FrScene14nourrit
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='nourriture');
@@ -346,7 +327,6 @@ Avec le feu se consumant tranquillement, et les quelques couvertures du refuge e
 ## Choices
 ### Continuer
 sc:14
------------------------------------------------
 # FrScene14clou
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='clou');
@@ -363,7 +343,6 @@ Le reste de la nuit sera d'une tranquilité absolue.
 ## Choices
 ### Continuer
 sc:14
------------------------------------------------
 # FrScene14banc
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='banc');
@@ -382,7 +361,6 @@ Tout en pestant de cette mésaventure, je finis de me préparer pour le départ.
 ## Choices
 ### Continuer
 sc:15
------------------------------------------------
 # FrScene15
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="14" && vartable['sac']!='banc');
@@ -400,7 +378,6 @@ J’éteins le feu avec de la neige, léguant la dernière bûche aux prochains 
 ## Choices
 ### Continuer
 sc:15
------------------------------------------------
 # FrScene16
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="15");
@@ -416,7 +393,6 @@ En contrebas se devinent quelques maisons.
 ## Choices
 ### Continuer
 sc:16
------------------------------------------------
 # FrScene17
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="16");
@@ -430,7 +406,6 @@ Il s’agit du village de Mantet, baigné par la lumière du soleil automnal.
 ## Choices
 ### Continuer
 sc:17
------------------------------------------------
 # FrScene18
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="17");
@@ -446,7 +421,6 @@ Il est 12 heures 30.
 ## Choices
 ### Continuer
 sc:18
------------------------------------------------
 # FrScene19
 ## Qualities
 return (vartable['lang']==='fr' && vartable['sc']==="18");
@@ -460,7 +434,6 @@ A suivre.
 ## Choices
 ### Recommencer
 sc:0
------------------
 # CaScene1
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==0);
@@ -485,7 +458,6 @@ equip:polaire
 ### Réflexion faite, je pars en t-shirt.
 sc:1
 equip:tshirt
------------------------------------------------
 # CaScene2
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==='1');
@@ -509,7 +481,6 @@ sc:Scene_croise_marcheurs
 function(){return (vartable['equip']=='polaire')}
 ### Continuer
 sc:Scene_croise_marcheurs
--------
 # CaScene_croise_marcheurs
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==='Scene_croise_marcheurs');
@@ -528,7 +499,6 @@ sc:mensonge
 sc:verite
 ### Ne pas répondre et poursuivre sa route.
 sc:nepasrepondre
------------------------------------------------
 # CaScene_mensonge
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==='mensonge');
@@ -541,7 +511,6 @@ Je poursuis la montée.
 ## Choices
 ### Continuer
 sc:2
------------------------------------------------
 # CaScene_nepasrepondre
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==='nepasrepondre');
@@ -552,7 +521,6 @@ Je poursuis la montée sans daigner répondre à l'homme, qui ne peut refréner 
 ## Choices
 ### Continuer
 sc:2
------------------------------------------------
 # CaScene_verite
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==='verite');
@@ -565,7 +533,6 @@ Je poursuis la montée.
 ## Choices
 ### Continuer
 sc:2
------------------------------------------------
 # CaScene3
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="2");
@@ -585,7 +552,6 @@ sc:3
 sc:3
 @if
 function(){return (vartable['equip']=='tshirt')}
------------------------------------------------
 # CaScene3b
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="back-to-vallter");
@@ -600,7 +566,6 @@ Fin.
 ## Choices
 ### Recommencer
 sc:0
------------------------------------------------
 # CaScene4
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="3");
@@ -617,7 +582,6 @@ La descente est sans difficulté, le pas est sûr jusqu’à atteindre l’orée
 ## Choices
 ### Continuer
 sc:4
------------------------------------------------
 # CaScene5
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="4");
@@ -633,7 +597,6 @@ Les balises se suivent le long du sentier.
 ## Choices
 ### Continuer
 sc:5
------------------------------------------------
 # CaScene6
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="5");
@@ -649,7 +612,6 @@ Une cabane apparaît au fond sur la gauche.
 sc:7
 ### Je me rapproche.
 sc:6
------------------------------------------------
 # CaScene7
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="6");
@@ -676,7 +638,6 @@ A proximité, sur une large pierre plate, se lit l’inscription gravée <i>“R
 sc:7
 ### Je ramasse un morceau de bois avant de poursuivre mon chemin
 sc:7
------------------------------------------------
 # CaScene8
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="7");
@@ -690,7 +651,6 @@ Je tombe sur une nouvelle cabane, ouverte. C’est le <i>refuge de l’Alemany</
 ## Choices
 ### Continuer
 sc:8
------------------------------------------------
 # CaScene9
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="8");
@@ -710,7 +670,6 @@ Il n’est pas encore 17 heures mais la vallée est déjà plongée dans l’omb
 sc:9
 ### Pas de temps à perdre. Il faut couper du bois avant que la nuit ne tombe.
 sc:9
------------------------------------------------
 # CaScene10
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="9");
@@ -726,7 +685,6 @@ La pièce est lourde et demandera certainement à être débitée de nouveau à 
 ## Choices
 ### Continuer
 sc:10
------------------------------------------------
 # CaScene11
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="10");
@@ -741,7 +699,6 @@ J’allume une bougie que je place au coeur du foyer. Les aiguilles crépitent, 
 ## Choices
 ### Continuer
 sc:11
------------------------------------------------
 # CaScene12
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="11");
@@ -758,7 +715,6 @@ Le poêle dispense une chaleur agréable mais qui chute très rapidement dès lo
 ## Choices
 ### Continuer
 sc:12
------------------------------------------------
 # CaScene13
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="12");
@@ -781,7 +737,6 @@ sac:clou
 ### Je retire la nourriture du sac et la suspends à l’un des fils traversant la pièce.
 sc:13
 sac:nourriture
------------------------------------------------
 # CaScene14nourrit
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='nourriture');
@@ -792,7 +747,6 @@ Avec le feu se consumant tranquillement, et les quelques couvertures du refuge e
 ## Choices
 ### Continuer
 sc:14
------------------------------------------------
 # CaScene14clou
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='clou');
@@ -809,7 +763,6 @@ Le reste de la nuit sera d'une tranquilité absolue.
 ## Choices
 ### Continuer
 sc:14
------------------------------------------------
 # CaScene14banc
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='banc');
@@ -828,7 +781,6 @@ Tout en pestant de cette mésaventure, je finis de me préparer pour le départ.
 ## Choices
 ### Continuer
 sc:15
------------------------------------------------
 # CaScene15
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="14" && vartable['sac']!='banc');
@@ -846,7 +798,6 @@ J’éteins le feu avec de la neige, léguant la dernière bûche aux prochains 
 ## Choices
 ### Continuer
 sc:15
------------------------------------------------
 # CaScene16
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="15");
@@ -862,7 +813,6 @@ En contrebas se devinent quelques maisons.
 ## Choices
 ### Continuer
 sc:16
------------------------------------------------
 # CaScene17
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="16");
@@ -876,7 +826,6 @@ Il s’agit du village de Mantet, baigné par la lumière du soleil automnal.
 ## Choices
 ### Continuer
 sc:17
------------------------------------------------
 # CaScene18
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="17");
@@ -892,7 +841,6 @@ Il est 12 heures 30.
 ## Choices
 ### Continuer
 sc:18
------------------------------------------------
 # CaScene19
 ## Qualities
 return (vartable['lang']==='ca' && vartable['sc']==="18");

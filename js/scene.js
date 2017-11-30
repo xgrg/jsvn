@@ -80,7 +80,7 @@ function addLink(text, vars, id){
     newtable[i] = vars[i];
   console.log(newtable)
   b64 = unescape(encodeURIComponent(Base64.encode(JSON.stringify(newtable))))
-  line = "<div><span>"+text+"</span></div> <br><div class=\"gobtn\"><a href=\"?d="+b64+"\">Go.</a></div>";
+  line = "<div><span>"+text+"</span></div> <br><div class=\"gobtn\"><a href=\"?f="+scenefile+"&d="+b64+"\">Go.</a></div>";
 
   $("div#choice"+id).html(line);
   $("div#choice"+id).addClass("choice")
@@ -102,8 +102,6 @@ function playSequence(sequence, i){
         playSequence(sequence, i+1)
       }, interval);
   }
-
-
 }
 
 function displayChoice(choices, i, interval){
@@ -165,16 +163,24 @@ function update_cards(){
   }
 }
 
-$( document ).ready(function() {
-  var b64 = QueryString.d;
-  if (b64 !== undefined){
-    d = Base64.decode(decodeURIComponent(escape(b64)));
-    d = d.replaceAll('\0', '')
+function loadScript(url, callback)
+{
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
 
-    console.log(d)
-    vartable = JSON.parse(d);
-  }
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
 
+    // Fire the loading
+    head.appendChild(script);
+}
+
+function run_machine() {
   update_cards();
 
   console.log(cards_to_play)
@@ -185,6 +191,23 @@ $( document ).ready(function() {
     loadScene(card)
     cards_to_play.splice(random, 1);
   }
+}
 
 
+// MAIN FUNCTION
+
+$( document ).ready(function() {
+  var f = QueryString.f;
+  var b64 = QueryString.d;
+  console.log('file ' + f)
+  if (b64 !== undefined){
+    d = Base64.decode(decodeURIComponent(escape(b64)));
+    d = d.replaceAll('\0', '')
+    console.log(d)
+    vartable = JSON.parse(d);
+  }
+  if (f===undefined){ f = 'vallter'}
+  scenefile = f;
+
+  loadScript('md/'+f+'.js', run_machine)
 });

@@ -37,4 +37,4 @@ jobs:
             . virtualenv/bin/activate
             ls
             pwd
-            nosetests --nocapture tests
+            nosetests --nocapture --with-coverage tests

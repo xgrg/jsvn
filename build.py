@@ -13,5 +13,5 @@ github_pages_branch = 'gh-pages'
 
 
 os.system('ghp-import -m "Generate JSVN site" -b %s %s'%(github_pages_branch, outputdir))
-#os.system('git push origin %s'%github_pages_branch)
-#os.system('rm -rf build/')
+os.system('git push origin %s'%github_pages_branch)
+os.system('rm -rf build/')

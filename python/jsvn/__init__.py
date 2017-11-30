@@ -62,3 +62,40 @@ def get_javascript(j):
     print ''
     #print js
     return js
+
+def jsonify_markdown(md_fp):
+    import sys
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+
+    import markdown_to_json
+    from markdown_to_json.vendor.docopt import docopt
+    from markdown_to_json.vendor import CommonMark
+
+    from markdown_to_json.markdown_to_json import Renderer, CMarkASTNester
+
+    import logging
+    logging.basicConfig(
+        format="%(message)s", stream=sys.stderr, level=logging.INFO)
+
+    def get_markdown_ast(markdown_file):
+        try:
+            f = open(markdown_file, 'r')
+            return CommonMark.DocParser().parse(f.read())
+        except:
+            logging.error("Error: Can't open {0} for reading".format(
+                markdown_file))
+            sys.exit(1)
+        finally:
+            f.close()
+
+    def jsonify_markdown(markdown_file):
+        nester = CMarkASTNester()
+        renderer = Renderer()
+        ast = get_markdown_ast(markdown_file)
+        nested = nester.nest(ast)
+        rendered = renderer.stringify_dict(nested)
+        return rendered
+
+    res = jsonify_markdown(md_fp)
+    return res

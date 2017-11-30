@@ -1,0 +1,52 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  color:#F0F0F0;
+  background-color:#0E0E0E;
+  font-size: 11px;
+  //border: 1px solid red
+
+}
+
+#bodybox{
+  background-color:#0E0E0E;
+  //border: 1px solid white
+}
+
+.nav-fade span{
+  background : black;
+   display: inline-block;
+   transition: background 2s ease-in-out;
+   -moz-transition: background 2s ease-in-out;
+   -webkit-transition: background 2s ease-in-out;
+}
+a, a:link, a:visited {
+  color:#EFEFEF;
+
+}
+
+#imagebox {
+  // border: 1px solid white;
+   overflow-x:hidden;
+   overflow-y:hidden;
+   background-color:#0E0E0E;
+
+}
+
+
+
+#textbox {
+  overflow-y: auto;
+  border: 1px solid #1a1a1a;
+  background-color: #0f0f0f;
+  //border: 1px solid white
+}
+
+.choice{
+  padding:5px;
+  border: 1px solid #2e2e2e;
+  background-color: #1f1f1f;
+  margin:2px;
+}
+.gobtn{
+  text-align: right
+}

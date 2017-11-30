@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="js/animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
+</head>
+<body>
+  <button id="request" style="opacity:0">Request document</button>
+  <div id="orientation" style="opacity:0"></div>
+  <div id="bodybox">
+      <div id="imagebox"></div>
+      <div id="textbox">
+        <div id="dialogbox"></div>
+        <div id="choicebox"></div>
+      </div>
+  </div>
+
+
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/jquery-2.2.0.min.js"></script>
+  <script src="js/screenfull.min.js"></script>
+
+  <script type="text/javascript">
+    h = window.innerHeight
+    w = window.innerWidth
+    if (w<h){ orientation = 'vertical'; }
+    else { orientation = 'horizontal' }
+    if (orientation == 'horizontal'){
+      h = h - 150;
+      w = h/1.5;
+    }
+    else {
+      w = w - 10;
+      h = w*1.4;
+    }
+
+    function adjustimg(){
+      console.log("adjust2")
+        $('#imagebox img').css({'max-height': h/2, 'width':w})
+                                //'border': '1px solid white'})
+    }
+
+    var img = document.getElementById('imagebox').firstChild;
+		$('#request').click(function () {
+      screenfull.request($('#bodybox')[0]);
+    });
+
+    var vartable = {};
+    var cards_to_play = [];
+    var storylets = [];
+
+    $("#orientation").text(orientation + ' ' + w + ' / ' + h)
+
+    if (orientation == 'horizontal'){
+      $('#bodybox').css({'width': w})
+      $('body').css({'font-size':'20px',
+                     'width':w})
+      $('#textbox').css({'padding': '20px',
+                         'height': h/2,
+                         'width': w*.94})
+      $('#imagebox').css({'width': w*.98,
+                          'height': h/2})
+    }
+    else if (orientation == 'vertical' || orientation == '0'){
+      $('#bodybox').css({'width': w-15,
+                      'margin':'0px'})
+      $('body').css({'font-size':'11px',
+                     'width':w-10})
+      $('#imagebox').css({'width': w-14,
+                          'height': h/2})
+      $('#textbox').css({'padding': '10px',
+                         'height': h/2,
+                         'width': w-34})
+    }
+
+  </script>
+
+
+  <script src="md/vallter.js"></script>
+
+  <script src="js/scene.js"></script>
+
+</body>
+</html>

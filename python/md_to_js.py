@@ -1,7 +1,9 @@
 #! /usr/bin/env python
 
 def markdown_to_js(md_fp, json_fp, js_fp):
-    import jsvn, json
+    import jsvn, json, sys
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
     # Creates a new .md file without lines full of --------
     # This new file is named [markdown_file].md1
     jsvn.remove_minuslines(md_fp)

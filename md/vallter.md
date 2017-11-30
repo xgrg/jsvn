@@ -473,7 +473,7 @@ vallter
 <br>
 Els graus devallen a mesura que es segueixin les corbes. A prop del parquing casi buit de la estació de Vallter 2000, el termometre indica 4 petits graus.
 <br>
-Desprès de que em posi unes capes més, que faci una ultima verificació de la motxilla i un ràpid entrepà, i estaré llest per sortir.
+Desprès de que em posés unes capes més, que fes una ultima verificació de la motxilla i un ràpid entrepà, i estaré llest per sortir.
 
 ## Choices
 ### Portaré la meva jaqueta tallavent.

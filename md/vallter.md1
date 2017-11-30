@@ -226,7 +226,7 @@ return (vartable['lang']==='fr' && vartable['sc']==="7");
 alemany
 
 ## Text
-Je tombe sur une nouvelle cabane, ouverte cette fois-ci. C’est le <i>refuge de l’Alemany</i>.
+Je tombe sur une nouvelle cabane, ouverte. C’est le <i>refuge de l’Alemany</i>.
 
 ## Choices
 ### Continuer

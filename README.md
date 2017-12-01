@@ -1,13 +1,10 @@
-# jsvn [![CircleCI](https://circleci.com/gh/xgrg/jsvn.svg?style=svg)](https://circleci.com/gh/xgrg/jsvn)
+# Nonlinear branching story-driven interactive fictions [![CircleCI](https://circleci.com/gh/xgrg/jsvn.svg?style=svg)](https://circleci.com/gh/xgrg/jsvn)
 
-## Objectives:
-- Web-based and responsive
-- Simple syntax (and really human readable)
-- Usable, easy to deploy
-- Versatile, not only jap
-- KISS
+- Open, lightweight, portable, web-based (responsive)
+- Real writer-oriented human-friendly Markdown-based syntax
 
 ## Inspiration:
+- [Twine](http://twinery.org)
 - [StoryNexus](http://www.storynexus.com)
 - [Ren'Py]()
 - Lots of repos out there ([js-vine](https://github.com/jdeisenberg/js-vine), [monogatari](https://github.com/Monogatari/Monogatari), etc)

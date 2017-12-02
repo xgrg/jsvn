@@ -1,10 +1,11 @@
 import json
+import markdown
 
 def get_playsequence(code):
     seq = ''
     for each in code.split('\n'):
-        #print each
 
+        each = markdown.markdown(each)
         eachcode = '{addDialog("%s", "fadeIn")}, 1000'%each
         seq = seq + '    [function()%s],\n'%(eachcode)
     return seq

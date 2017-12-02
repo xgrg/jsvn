@@ -5,7 +5,7 @@ return (vartable['sc']===undefined);
 
 ## Text
 Choisissez une langue.
-<br>
+
 Tria una llengua.
 
 ## Choices
@@ -24,10 +24,10 @@ return (vartable['lang']=='fr' && vartable['sc']=='0');
 vallter
 
 ## Text
-<i>13 heures 30, route de Vallter, Pyrénées Catalanes</i>
-<br>
+_13 heures 30, route de Vallter, Pyrénées Catalanes_
+
 Les degrés fondent à mesure que s’enchaînent les virages. A l’approche du parking quasi-vide de la station de Vallter 2000, le compteur indique 4 timides degrés.
-<br>
+
 Le temps d’enfiler quelques couches supplémentaires, d’une dernière vérification du sac et d’un rapide casse-croûte et je serai prêt(e) à partir.
 
 ## Choices
@@ -49,11 +49,11 @@ return (vartable['sc']==='1');
 vallter2
 
 ## Text
-<i>14 heures, départ de la station de Vallter</i>
-<br>
+_14 heures, départ de la station de Vallter_
+
 Le chemin débute en montée suivant le tracé du GR10.
 La station s’éloigne progressivement dans le dos.
-<br>
+
 Bien que les télésièges soient à l’arrêt, quelques tâches de neige semblent signaler que la saison de ski est en phase d’approche.
 La montée s’effectue sans encombres.
 
@@ -71,10 +71,10 @@ return (vartable['lang']==='fr' && vartable['sc']==='Scene_croise_marcheurs');
 
 ## Text
 Je salue quelques marcheurs en les croisant dans leur descente.. C’est en effet davantage une heure de fin de parcours que de début...  
-<br>
+
 L’un d’entre eux, vêtu d’un combinaison de secouriste rouge, s’adresse à moi :
-<br>
-<i>\"- Bon dia, on vas ?  Cap al pic de la Dona ?\"</i>
+
+_\"- Bon dia, on vas ?  Cap al pic de la Dona ?\"_
 
 ## Choices
 ### Si, puja i baixa (mensonge)
@@ -90,7 +90,7 @@ return (vartable['lang']==='fr' && vartable['sc']==='mensonge');
 
 ## Text
 L'homme me lance un regard sceptique et poursuit sa descente.
-<br>
+
 Je poursuis la montée.
 
 ## Choices
@@ -113,8 +113,8 @@ sc:2
 return (vartable['lang']==='fr' && vartable['sc']==='verite');
 
 ## Text
-<i>\"- Que tinguis bona ruta.\"</i>
-<br>
+_\"- Que tinguis bona ruta.\"_
+
 Je poursuis la montée.
 
 ## Choices
@@ -147,9 +147,9 @@ return (vartable['lang']==='fr' && vartable['sc']==="back-to-vallter");
 
 ## Text
 La sécurité avant tout. Je redescends vers Vallter et suis de retour à la voiture avant même le coucher du soleil.
-<br>
+
 Mais une chose est sûre : je reviendrai.
-<br>
+
 Fin.
 
 ## Choices
@@ -165,7 +165,7 @@ vallee
 
 ## Text
 Le passage du col laisse entrevoir du côté Nord une vallée boisée tirant droit vers le petit village de Mantet.
-<br>
+
 A mesure que l’ombre la recouvre, la température se fait de plus en plus fraîche.
 Les taches éparses de neige sont à présent de fiers névés.
 La descente est sans difficulté, le pas est sûr jusqu’à atteindre l’orée du bois.
@@ -182,7 +182,7 @@ bois
 
 ## Text
 Le chemin longe sagement un ruisseau portant également les premières marques de l’hiver approchant.
-<br>
+
 Les balises se suivent le long du sentier.
 
 ## Choices
@@ -215,16 +215,16 @@ berger2
 ## Text
 Les volets sont fermés.
 La cheminée ne fume pas.
-<br>
+
 Seul un crâne de vache accueille les randonneurs de passage.
-<br>
+
 Une serrure sur la porte.
 Ce doit être la cabane du berger.
 Fermée, sans surprise.
-<br>
+
 Quelques beaux morceaux de bois jonchent le sol devant la cabane.
-<br>
-A proximité, sur une large pierre plate, se lit l’inscription gravée <i>“Refuge à 250 m”</i>.
+
+A proximité, sur une large pierre plate, se lit l’inscription gravée _“Refuge à 250 m”_.
 
 ## Choices
 ### Je reprends ma route
@@ -240,7 +240,7 @@ return (vartable['lang']==='fr' && vartable['sc']==="7");
 alemany
 
 ## Text
-Je tombe sur une nouvelle cabane, ouverte. C’est le <i>refuge de l’Alemany</i>.
+Je tombe sur une nouvelle cabane, ouverte. C’est le _refuge de l’Alemany_.
 
 ## Choices
 ### Continuer
@@ -257,7 +257,7 @@ interieur
 A l’intérieur, tout le confort d’un refuge libre.
 Cheminée, table, bancs, scie, balai, pelle, et couchages superposés.
 Dans un coin de la cabane repose un tas de branches de pins aux aiguilles encore vertes.
-<br>
+
 Il n’est pas encore 17 heures mais la vallée est déjà plongée dans l’ombre.
 
 ## Choices
@@ -273,9 +273,9 @@ return (vartable['lang']==='fr' && vartable['sc']==="9");
 ## Text
 Pas de bois sec à proximité et la plupart des arbres aux alentours de la cabane présentent déjà des marques de prélèvement.
 Ne restent que d’énormes troncs au sol.
-<br>
+
 J’entreprends de scier l’un d’entre eux à son extrémité.
-<br>
+
 La pièce est lourde et demandera certainement à être débitée de nouveau à l’intérieur de la cabane.
 
 ## Choices
@@ -288,9 +288,9 @@ return (vartable['lang']==='fr' && vartable['sc']==="10");
 
 ## Text
 A 18 heures, il fait déjà nuit et le thermomètre à l’intérieur du refuge ne dépasse guère 0°C.
-<br>
+
 Je démarre un feu avec des pommes de pins et quelques branches. Le bois est vert et peine à prendre feu.
-<br>
+
 J’allume une bougie que je place au coeur du foyer. Les aiguilles crépitent, résistent...
 
 ## Choices
@@ -306,7 +306,7 @@ feu
 
 ## Text
 Le feu finit par démarrer.
-<br>
+
 J’insère le premier morceau de bûche et place le second à proximité, dans l’espoir de le faire sécher le plus possible.
 Le poêle dispense une chaleur agréable mais qui chute très rapidement dès lors qu’on s’en écarte.
 
@@ -323,7 +323,7 @@ tisane
 
 ## Text
 Une fois le dîner terminé, il n’est pas encore 21 heures mais je m’apprête à enfiler mon sac de couchage.
-<br>
+
 Avant cela, je prends soin de ranger les affaires, en prévision d’éventuels visiteurs nocturnes.
 
 ## Choices
@@ -354,12 +354,12 @@ return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='cl
 
 ## Text
 Au milieu de la nuit, de petits bruits perturbent mon sommeil.
-<br>
+
 J'ouvre l'oeil et inspecte les lieux.
 Une souris est affairée autour de mon sac pendu et grignote une de mes barres énergétiques à travers l'une des poches !
-<br>
+
 Je chasse la voleuse et entreprends de suspendre la nourriture hors du sac au bout d'un fil.
-<br>
+
 Le reste de la nuit sera d'une tranquilité absolue.
 ## Choices
 ### Continuer
@@ -371,13 +371,13 @@ return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='ba
 
 ## Text
 Le lendemain, le feu est éteint, il fait 4 degrés à l’intérieur et il neige au dehors.
-<br>
+
 J'entreprends de rassembler mes affaires et... HORREUR !
-<br>
+
 Les poches de mon sac ont été rongées de toutes parts par des visiteurs nocturnes !
-<br>
+
 Une bonne partie de mes réserves en nourriture est bonne à être jetée.
-<br>
+
 Tout en pestant contre cette mésaventure, je finis de me préparer pour le départ.
 
 ## Choices
@@ -393,9 +393,9 @@ neige
 
 ## Text
 Le lendemain, le feu est éteint, il fait 4 degrés à l’intérieur et il neige au dehors.
-<br>
+
 Je rallume le feu et y place le dernier morceau de bûche, le temps du petit-déjeuner.
-<br>
+
 J’éteins le feu avec de la neige, léguant la dernière bûche aux prochains occupants, rassemble les affaires et me prépare pour le départ.
 
 ## Choices
@@ -411,7 +411,7 @@ presque-mantet
 
 ## Text
 La neige fait place au grand ciel bleu.
-<br>
+
 En contrebas se devinent quelques maisons.
 
 ## Choices
@@ -441,7 +441,7 @@ panneau
 
 ## Text
 Je poursuis la descente et parviens au village.
-<br>
+
 Il est 12 heures 30.
 
 ## Choices
@@ -470,10 +470,10 @@ return (vartable['lang']==='ca' && vartable['sc']==0);
 vallter
 
 ## Text
-<i>Dos quarts de un, carretera de Vallter, Pirineus Catalans</i>
-<br>
+_Dos quarts de un, carretera de Vallter, Pirineus Catalans_
+
 Els graus devallen a mesura que es segueixin les corbes. A prop del parquing casi buit de la estació de Vallter 2000, el termometre indica 4 petits graus.
-<br>
+
 Desprès de que em posés unes capes més, que fes una ultima verificació de la motxilla i un ràpid entrepà, i estaré llest per sortir.
 
 ## Choices
@@ -495,11 +495,11 @@ return (vartable['lang']==='ca' && vartable['sc']==='1');
 vallter2
 
 ## Text
-<i>Son les dues de la tarda, hora de la sortida de Vallter.</i>
-<br>
+_Son les dues de la tarda, hora de la sortida de Vallter._
+
 El camí comença amb una pujada seguint el GR10.
 L'estació s’allunya poc a poc darrere.
-<br>
+
 Encara que les remuntades mecàniques fossin apagades, unes manxes de neu semblen avisar que la temporada de esqui s’està apropant.
 La pujada es fa sense cap dificultat.
 
@@ -517,10 +517,10 @@ return (vartable['lang']==='ca' && vartable['sc']==='Scene_croise_marcheurs');
 
 ## Text
 Saludo a uns excursionistes que ja estan baixant. Efectivament sembla més una hora per baixar que per pujar.
-<br>
+
 Un d’ells, que portava un vestit vermell de socorrista, es dirigeix a mi:
-<br>
-<i>\"- Bon dia, on vas ?  Cap al pic de la Dona ?\"</i>
+
+_\"- Bon dia, on vas ?  Cap al pic de la Dona ?\"_
 
 ## Choices
 ### Si, puja i baixa (mentida)
@@ -536,7 +536,7 @@ return (vartable['lang']==='ca' && vartable['sc']==='mensonge');
 
 ## Text
 L’home em dirigeix una mirada escèptica i continua la seva baixada.
-<br>
+
 Continuo la pujada.
 
 ## Choices
@@ -559,8 +559,8 @@ sc:2
 return (vartable['lang']==='ca' && vartable['sc']==='verite');
 
 ## Text
-<i>\"- Que tinguis bona ruta.\"</i>
-<br>
+_\"- Que tinguis bona ruta.\"_
+
 Segueixo amb la pujada.
 
 ## Choices
@@ -593,9 +593,9 @@ return (vartable['lang']==='ca' && vartable['sc']==="back-to-vallter");
 
 ## Text
 Seguretat abans de tot. Baixo cap a Vallter i torno al cotxe fins i tot abans la posta del sol.
-<br>
+
 Però sé una cosa : ja hi tornaré.
-<br>
+
 Fi.
 
 ## Choices
@@ -611,7 +611,7 @@ vallee
 
 ## Text
 Al passar el coll es pot veure pel canto Nord un vall amb bosc tirant recta cap al poble de Mentet.
-<br>
+
 A mesura que l’ombra l’invadeixi, la temperatura es fa més fresca.
 Les poques manxes de neu ara son geleres orgulloses.
 La baixada es fa sense dificultat, els passos es segueixen amb seguretat fins l’entrada del bosc.
@@ -628,7 +628,7 @@ bois
 
 ## Text
 El camí segueix tranquil·lament una riera que porta igualment les primeres marques del proper invern.
-<br>
+
 Les marques es segueixen al llarg del sender.
 
 ## Choices
@@ -661,15 +661,15 @@ berger2
 ## Text
 Les persianes estan tancades.
 La xemeneia no fa fum.
-<br>
+
 Només un crani de vaca aculleix els senderistes que passen.
-<br>
+
 Una serradura sobre la porta.
 Sembla la cabana del pastor.
 Tancada, que no fa sorpresa.
-<br>
+
 Uns trossos bonics de llenya estan per la terra davant la cabana.
-<br>
+
 A prop, sobre una gran pedra plana, es llegeix l’inscripciò gravada “Refugi a 250 m”
 
 ## Choices
@@ -704,7 +704,7 @@ interieur
 A dins, tota la comoditat d’un refugi lliure.
 Xemeneia, taula, bancs, serra, escombra, pala, i lliteres.
 En un racó de la cabana es troben rams de pins amb agulles encara verdes.
-<br>
+
 Encara no son les 5 de la tarda, però el vall ja esta totalment en l’ombra.
 
 ## Choices
@@ -720,9 +720,9 @@ return (vartable['lang']==='ca' && vartable['sc']==="9");
 ## Text
 Cap fusta seca a prop, i la majoria dels arbres al voltant de la cabana ja mostren marques de destral.
 Només queden troncs enormes per la terra.
-<br>
+
 Començo a serrar un d’ells.
-<br>
+
 Aquest tros es pesat i necessitara segurament ser tallat de nou a dins la cabana.
 
 ## Choices
@@ -735,9 +735,9 @@ return (vartable['lang']==='ca' && vartable['sc']==="10");
 
 ## Text
 A les 6 de la tarda, ja es fa fosc i et termòmetre a dins el refugi ronda els 0°C.
-<br>
+
 Començo un foc amb pinyes i unes branques. La fusta esta verda i té dificultat per encendre’s.
-<br>
+
 Encenc una espelma que poso en mig de la llar del foc. Les agulles de pins crepiten, resisteixen...
 
 ## Choices
@@ -753,7 +753,7 @@ feu
 
 ## Text
 El foc finalment s’ha encès.
-<br>
+
 Introdueixo el primer tros de fusta i poso el segon a prop, amb l’esperança de fer-ho secar el mes aviat possible.
 La llar del foc distribueix una calor agradable però que devalla molt ràpid a mesura que t’en allunyes.
 
@@ -770,7 +770,7 @@ tisane
 
 ## Text
 Un cop el sopar ha acabat, encara no son les 9 del vespre però em preparo per entrar en el sac de dormir
-<br>
+
 Abans d’això, tinc cura d’arreglar les coses, en previsió de possibles visitants nocturns.
 
 ## Choices
@@ -801,12 +801,12 @@ return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='cl
 
 ## Text
 En mig de la nit, uns sorollets es posen a molestar el meu son.
-<br>
+
 Obro un ull i vigilo el lloc.
 Un ratolí esta al voltant de la meva motxilla penjada i esta rosegant una de les meves barretes energètiques a traves d’una butxaca !
-<br>
+
 Persegueixo la lladra i començo a penjar el menjar fora de la motxilla amb un fil.
-<br>
+
 La resta de la nit serà amb una tranquil·litat perfecta.
 ## Choices
 ### Endavant
@@ -818,13 +818,13 @@ return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='ba
 
 ## Text
 Al dia següent, el foc esta apagat, fan 4 graus a dintre i neva fora.
-<br>
+
 Començo per recollir les meves coses i… quin HORROR !
-<br>
+
 Les butxaques de la meva motxilla han sigut rosegades per totes bandes per visitors nocturns !
-<br>
+
 Ara una bona part de les meves reserves de menjar pot treure’s.
-<br>
+
 Mentre em queixo de aquest accident, acabo de preparar-me per la sortida.
 
 ## Choices
@@ -840,9 +840,9 @@ neige
 
 ## Text
 Al dia següent, el foc esta apagat, fan 4 graus a dintre i neva fora.
-<br>
+
 Encenc el foc de nou i hi poso l’ultim tros de fusta, mentre el esmorzar
-<br>
+
 Apago el foc amb neu, oferint l’ultim tros de fusta als propers inquilins, recullo les coses i em preparo per la sortida.
 
 ## Choices
@@ -858,7 +858,7 @@ presque-mantet
 
 ## Text
 La neu deixa de caure i deixa pas a un cel blau.
-<br>
+
 Cap a baix s’endivinen unes cases.
 
 ## Choices
@@ -888,7 +888,7 @@ panneau
 
 ## Text
 Segueixo amb la baixada i arribo al poble.
-<br>
+
 Son les 12 i mitja.
 
 ## Choices

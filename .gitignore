@@ -1,4 +1,5 @@
 *.md1
+*.js
 md/
 # Byte-compiled / optimized / DLL files
 __pycache__/

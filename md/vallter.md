@@ -16,6 +16,7 @@ lang:fr
 ### Catalan
 sc:0
 lang:ca
+
 -----------------
 # FrScene1
 ## Qualities
@@ -42,6 +43,7 @@ equip:polaire
 ### Réflexion faite, je pars en t-shirt.
 sc:1
 equip:tshirt
+
 -----------------------------------------------
 # FrScene2
 ## Qualities
@@ -66,6 +68,7 @@ sc:Scene_croise_marcheurs
 function(){return (vartable['equip']=='polaire')}
 ### Continuer
 sc:Scene_croise_marcheurs
+
 -------
 # FrScene_croise_marcheurs
 ## Qualities
@@ -86,6 +89,7 @@ sc:mensonge
 sc:verite
 ### Ne pas répondre et poursuivre sa route.
 sc:nepasrepondre
+
 -----------------------------------------------
 # FrScene_mensonge
 ## Qualities
@@ -100,6 +104,7 @@ Je poursuis la montée.
 ## Choices
 ### Continuer
 sc:2
+
 -----------------------------------------------
 # FrScene_nepasrepondre
 ## Qualities
@@ -112,6 +117,7 @@ Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacci
 ## Choices
 ### Continuer
 sc:2
+
 -----------------------------------------------
 # FrScene_verite
 ## Qualities
@@ -126,6 +132,7 @@ Je poursuis la montée.
 ## Choices
 ### Continuer
 sc:2
+
 -----------------------------------------------
 # FrScene3
 ## Qualities
@@ -147,6 +154,7 @@ sc:3
 sc:3
 @if
 function(){return (vartable['equip']=='tshirt')}
+
 -----------------------------------------------
 # FrScene3b
 ## Qualities
@@ -163,6 +171,7 @@ Fin.
 ## Choices
 ### Recommencer
 sc:0
+
 -----------------------------------------------
 # FrScene4
 ## Qualities
@@ -181,6 +190,7 @@ La descente est sans difficulté, le pas est sûr jusqu’à atteindre l’orée
 ## Choices
 ### Continuer
 sc:4
+
 -----------------------------------------------
 # FrScene5
 ## Qualities
@@ -198,6 +208,7 @@ Les balises se suivent le long du sentier.
 ## Choices
 ### Continuer
 sc:5
+
 -----------------------------------------------
 # FrScene6
 ## Qualities
@@ -215,6 +226,8 @@ Une cabane apparaît au fond sur la gauche.
 sc:7
 ### Je me rapproche.
 sc:6
+
+
 -----------------------------------------------
 # FrScene7
 ## Qualities
@@ -243,6 +256,7 @@ A proximité, sur une large pierre plate, se lit l’inscription gravée _“Ref
 sc:7
 ### Je ramasse un morceau de bois avant de poursuivre mon chemin
 sc:7
+
 -----------------------------------------------
 # FrScene8
 ## Qualities
@@ -258,6 +272,7 @@ Je tombe sur une nouvelle cabane, ouverte. C’est le _refuge de l’Alemany_.
 ## Choices
 ### Continuer
 sc:8
+
 -----------------------------------------------
 # FrScene9
 ## Qualities
@@ -279,6 +294,7 @@ Il n’est pas encore 17 heures mais la vallée est déjà plongée dans l’omb
 sc:9
 ### Pas de temps à perdre. Il faut couper du bois avant que la nuit ne tombe.
 sc:9
+
 -----------------------------------------------
 # FrScene10
 ## Qualities
@@ -296,6 +312,7 @@ La pièce est lourde et demandera certainement à être débitée de nouveau à 
 ## Choices
 ### Continuer
 sc:10
+
 -----------------------------------------------
 # FrScene11
 ## Qualities
@@ -312,6 +329,7 @@ J’allume une bougie que je place au coeur du foyer. Les aiguilles crépitent, 
 ## Choices
 ### Continuer
 sc:11
+
 -----------------------------------------------
 # FrScene12
 ## Qualities
@@ -330,6 +348,7 @@ Le poêle dispense une chaleur agréable mais qui chute très rapidement dès lo
 ## Choices
 ### Continuer
 sc:12
+
 -----------------------------------------------
 # FrScene13
 ## Qualities
@@ -354,6 +373,7 @@ sac:clou
 ### Je retire la nourriture du sac et la suspends à l’un des fils traversant la pièce.
 sc:13
 sac:nourriture
+
 -----------------------------------------------
 # FrScene14nourrit
 ## Qualities
@@ -367,6 +387,7 @@ Avec le feu se consumant tranquillement, et les quelques couvertures du refuge e
 ## Choices
 ### Continuer
 sc:14
+
 -----------------------------------------------
 # FrScene14clou
 ## Qualities
@@ -386,6 +407,7 @@ Le reste de la nuit sera d'une tranquilité absolue.
 ## Choices
 ### Continuer
 sc:14
+
 -----------------------------------------------
 # FrScene14banc
 ## Qualities
@@ -407,6 +429,7 @@ Tout en pestant contre cette mésaventure, je finis de me préparer pour le dép
 ## Choices
 ### Continuer
 sc:15
+
 -----------------------------------------------
 # FrScene15
 ## Qualities
@@ -427,6 +450,7 @@ J’éteins le feu avec de la neige, léguant la dernière bûche aux prochains 
 ## Choices
 ### Continuer
 sc:15
+
 -----------------------------------------------
 # FrScene16
 ## Qualities
@@ -444,6 +468,7 @@ En contrebas se devinent quelques maisons.
 ## Choices
 ### Continuer
 sc:16
+
 -----------------------------------------------
 # FrScene17
 ## Qualities
@@ -459,6 +484,7 @@ Il s’agit du village de Mantet, baigné par la lumière du soleil automnal.
 ## Choices
 ### Continuer
 sc:17
+
 -----------------------------------------------
 # FrScene18
 ## Qualities
@@ -476,6 +502,7 @@ Il est 12 heures 30.
 ## Choices
 ### Continuer
 sc:18
+
 -----------------------------------------------
 # FrScene19
 ## Qualities
@@ -492,6 +519,7 @@ A suivre.
 ## Choices
 ### Recommencer
 sc:0
+
 -----------------
 # CaScene1
 ## Qualities
@@ -518,6 +546,7 @@ equip:polaire
 ### Ho he pensat, i finalment surto amb la samarreta.
 sc:1
 equip:tshirt
+
 -----------------------------------------------
 # CaScene2
 ## Qualities
@@ -563,6 +592,7 @@ sc:mensonge
 sc:verite
 ### No respondre i seguir el camí.
 sc:nepasrepondre
+
 -----------------------------------------------
 # CaScene_mensonge
 ## Qualities
@@ -577,6 +607,7 @@ Continuo la pujada.
 ## Choices
 ### Endavant
 sc:2
+
 -----------------------------------------------
 # CaScene_nepasrepondre
 ## Qualities
@@ -589,6 +620,7 @@ Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacci
 ## Choices
 ### Endavant
 sc:2
+
 -----------------------------------------------
 # CaScene_verite
 ## Qualities
@@ -603,6 +635,7 @@ Segueixo amb la pujada.
 ## Choices
 ### Endavant
 sc:2
+
 -----------------------------------------------
 # CaScene3
 ## Qualities
@@ -624,6 +657,7 @@ sc:3
 sc:3
 @if
 function(){return (vartable['equip']=='tshirt')}
+
 -----------------------------------------------
 # CaScene3b
 ## Qualities
@@ -640,6 +674,7 @@ Fi.
 ## Choices
 ### Tornar al inici
 sc:0
+
 -----------------------------------------------
 # CaScene4
 ## Qualities
@@ -658,6 +693,7 @@ La baixada es fa sense dificultat, els passos es segueixen amb seguretat fins l�
 ## Choices
 ### Endavant
 sc:4
+
 -----------------------------------------------
 # CaScene5
 ## Qualities
@@ -675,6 +711,7 @@ Les marques es segueixen al llarg del sender.
 ## Choices
 ### Endavant
 sc:5
+
 -----------------------------------------------
 # CaScene6
 ## Qualities
@@ -692,6 +729,7 @@ Una cabana apareix al fons a ma esquerra.
 sc:7
 ### M’hi apropo.
 sc:6
+
 -----------------------------------------------
 # CaScene7
 ## Qualities
@@ -721,6 +759,7 @@ sc:7
 ### Recullo un tros de fusta abans d’anar mes endavant.
 
 sc:7
+
 -----------------------------------------------
 # CaScene8
 ## Qualities
@@ -736,6 +775,7 @@ Trobo una nova cabana, oberta. Es el refugi de l’Alemany.
 ## Choices
 ### Endavant
 sc:8
+
 -----------------------------------------------
 # CaScene9
 ## Qualities
@@ -757,6 +797,7 @@ Encara no son les 5 de la tarda, però el vall ja esta totalment en l’ombra.
 sc:9
 ### Cal no perdre temps. Cal tallar fusta abans de que la nit caigui.
 sc:9
+
 -----------------------------------------------
 # CaScene10
 ## Qualities
@@ -774,6 +815,7 @@ Aquest tros es pesat i necessitara segurament ser tallat de nou a dins la cabana
 ## Choices
 ### Endavant
 sc:10
+
 -----------------------------------------------
 # CaScene11
 ## Qualities
@@ -790,6 +832,7 @@ Encenc una espelma que poso en mig de la llar del foc. Les agulles de pins crepi
 ## Choices
 ### Endavant
 sc:11
+
 -----------------------------------------------
 # CaScene12
 ## Qualities
@@ -809,6 +852,7 @@ La llar del foc distribueix una calor agradable però que devalla molt ràpid a 
 ## Choices
 ### Endavant
 sc:12
+
 -----------------------------------------------
 # CaScene13
 ## Qualities
@@ -833,6 +877,7 @@ sac:clou
 ### Trec el menjar de la motxilla i el penjo d’un dels fils que creua la sala.
 sc:13
 sac:nourriture
+
 -----------------------------------------------
 # CaScene14nourrit
 ## Qualities
@@ -846,6 +891,7 @@ Amb el foc que es va consumint poc a poc, i unes mantes del refugi de sobres, la
 ## Choices
 ### Endavant
 sc:14
+
 -----------------------------------------------
 # CaScene14clou
 ## Qualities
@@ -865,6 +911,7 @@ La resta de la nit serà amb una tranquil·litat perfecta.
 ## Choices
 ### Endavant
 sc:14
+
 -----------------------------------------------
 # CaScene14banc
 ## Qualities
@@ -886,6 +933,7 @@ Mentre em queixo de aquest accident, acabo de preparar-me per la sortida.
 ## Choices
 ### Endavant
 sc:15
+
 -----------------------------------------------
 # CaScene15
 ## Qualities
@@ -906,6 +954,7 @@ Apago el foc amb neu, oferint l’ultim tros de fusta als propers inquilins, rec
 ## Choices
 ### Endavant
 sc:15
+
 -----------------------------------------------
 # CaScene16
 ## Qualities
@@ -923,6 +972,7 @@ Cap a baix s’endivinen unes cases.
 ## Choices
 ### Endavant
 sc:16
+
 -----------------------------------------------
 # CaScene17
 ## Qualities
@@ -938,6 +988,7 @@ Es el poble de Mentet, banyat per la llum del sol de tardor.
 ## Choices
 ### Endavant
 sc:17
+
 -----------------------------------------------
 # CaScene18
 ## Qualities
@@ -955,6 +1006,7 @@ Son les 12 i mitja.
 ## Choices
 ### Endavant
 sc:18
+
 -----------------------------------------------
 # CaScene19
 ## Qualities

@@ -1,7 +1,12 @@
 #! /usr/bin/env python
 
-def markdown_to_js(md_fp, json_fp, js_fp):
+def markdown_to_js(md_fp, json_fp, js_fp, verbose=1):
     import jsvn, json
+    if verbose == 1:
+        print('Markdown file:', md_fp)
+        print('JSON file:', json_fp)
+        print('JS file:', js_fp)
+
     # Creates a new .md file without lines full of --------
     # This new file is named [markdown_file].md1
     jsvn.remove_minuslines(md_fp)
@@ -17,7 +22,7 @@ def markdown_to_js(md_fp, json_fp, js_fp):
     w.write(js)
     w.close()
 
-if __name__ == '__main__':
+def __parse_args__(args=None):
     import argparse
 
     # Parsing options
@@ -29,11 +34,13 @@ if __name__ == '__main__':
     parser.add_argument('md', help='Markdown file')
     parser.add_argument('json', nargs='?', help='Json file')
     parser.add_argument('js', nargs='?', help='JS file')
-    args = parser.parse_args()
+    args = parser.parse_args(args)
+    return args
 
+if __name__ == '__main__':
+    args = __parse_args__()
     md_fp = args.md
     json_fp = args.json if not args.json is None else md_fp.replace('.md','.json')
     js_fp = args.js if not args.js is None else md_fp.replace('.md','.js')
 
-    print md_fp, json_fp, js_fp
     markdown_to_js(md_fp, json_fp, js_fp)

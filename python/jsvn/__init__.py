@@ -1,5 +1,18 @@
 import json
 import markdown
+import tabulate
+import pandas as pd
+
+def beautify_tables(d):
+    res = tabulate.tabulate(d.items(), ['variable', 'value'], tablefmt="pipe")
+    return res
+
+def markdown_table_to_dict(code):
+    from markdown.extensions import tables
+    html = markdown.markdown(code, extensions=[tables.makeExtension()])
+    df = pd.read_html(html)[0]
+    rec = [(e[1], e[2]) for e in df.to_records()]
+    return df.to_dict()
 
 def get_qualities_code(code):
     f = []
@@ -61,8 +74,13 @@ def remove_minuslines(md_fp):
     lines = open(md_fp).readlines()
     w = open(md_fp+'1', 'w')
     for each in lines:
-        if not '----' in each:
-           w.write(each)
+        is_line = False
+        if len(set(each)) == 1:
+            for s in ['---', '***', '###']:
+                if each.startswith(s):
+                    is_line = True
+        if not is_line:
+            w.write(each)
     w.close()
 
 def get_preamble(md_fp, verbose=1):

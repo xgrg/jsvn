@@ -24,7 +24,7 @@ jobs:
             git config --global user.email goperto@gmail.com
             python -m virtualenv virtualenv
             . virtualenv/bin/activate
-            pip install nose coverage markdown_to_json ghp-import
+            pip install nose coverage markdown_to_json ghp-import markdown
 
       # run tests!
       - run:
@@ -32,6 +32,8 @@ jobs:
           command: |
             . virtualenv/bin/activate
             nosetests --nocapture --with-coverage tests
+            coverage report --omit 'markdown*' -m
+
 
       - run:
           name: build site and commit to gh-pages

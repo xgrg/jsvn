@@ -39,6 +39,45 @@ def remove_minuslines(md_fp):
            w.write(each)
     w.close()
 
+def get_preamble(md_fp, verbose=1):
+    ''' Returns the current version of the Markdown-based language used
+    Note: actually runs on the .md1 file so that these optional lines get removed
+    as are breaking lines.'''
+
+    def clean_line(line):
+        ''' removes any space and convert to lowercase'''
+        import string
+        return string.lower(''.join(line.split(' '))).rstrip('\n')
+
+    lines = open(md_fp+'1').readlines()
+    if verbose == 1:
+        print('Reading %s.'%(md_fp+'1'))
+    w = open(md_fp+'1', 'w')
+    is_preamble = True
+    preamble = {'version': None}
+    for each in lines:
+        if each.startswith('#'):
+            is_preamble = False
+        if is_preamble:
+            if ':' not in each:
+                raise Exception('%s not interpreted'%each)
+            k, v = clean_line(each).split(':')
+            if not k in preamble:
+                raise Exception('%s not known (%s)'\
+                    %(k, ','.join(preamble.keys())))
+            preamble[k] = v
+        if not is_preamble:
+            w.write(each)
+
+    w.close()
+    if verbose == 1:
+        print ('Writing %s.'%(md_fp+'1'))
+        print ('Found preamble:')
+        from pprint import pprint
+        pprint(preamble, indent=2)
+
+    return preamble
+
 def get_javascript(j):
     js = ''
     for sc_name, sc in j.items():

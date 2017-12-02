@@ -1,3 +1,4 @@
+Version: 1.1
 # SceneChoixLangues
 ## Qualities
 return (vartable['sc']===undefined);

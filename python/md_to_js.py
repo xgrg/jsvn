@@ -5,6 +5,7 @@ def markdown_to_js(md_fp, json_fp, js_fp):
     # Creates a new .md file without lines full of --------
     # This new file is named [markdown_file].md1
     jsvn.remove_minuslines(md_fp)
+    preamble = jsvn.get_preamble(md_fp, verbose=1)
 
     # Creates a Json from Markdown
     j = jsvn.jsonify_markdown(md_fp+"1")

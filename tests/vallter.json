@@ -1,6 +1,6 @@
 {
   "SceneChoixLangues": {
-    "Qualities": "return (vartable['sc']===undefined);", 
+    "Qualities": "@function\nfunction(){return (vartable['sc']===undefined);}", 
     "Text": "Choisissez une langue.\n\nTria una llengua.", 
     "Choices": {
       "Français": "sc:0\nlang:fr", 
@@ -8,7 +8,7 @@
     }
   }, 
   "FrScene1": {
-    "Qualities": "return (vartable['lang']=='fr' && vartable['sc']=='0');", 
+    "Qualities": "lang:fr\nsc:0", 
     "Image": "vallter", 
     "Text": "_13 heures 30, route de Vallter, Pyrénées Catalanes_\n\nLes degrés fondent à mesure que s’enchaînent les virages. A l’approche du parking quasi-vide de la station de Vallter 2000, le compteur indique 4 timides degrés.\n\nLe temps d’enfiler quelques couches supplémentaires, d’une dernière vérification du sac et d’un rapide casse-croûte et je serai prêt(e) à partir.", 
     "Choices": {
@@ -18,7 +18,7 @@
     }
   }, 
   "FrScene2": {
-    "Qualities": "return (vartable['sc']==='1');", 
+    "Qualities": "sc:1", 
     "Image": "vallter2", 
     "Text": "_14 heures, départ de la station de Vallter_\n\nLe chemin débute en montée suivant le tracé du GR10.\nLa station s’éloigne progressivement dans le dos.\n\nBien que les télésièges soient à l’arrêt, quelques tâches de neige semblent signaler que la saison de ski est en phase d’approche.\nLa montée s’effectue sans encombres.", 
     "Choices": {
@@ -27,7 +27,7 @@
     }
   }, 
   "FrScene_croise_marcheurs": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']==='Scene_croise_marcheurs');", 
+    "Qualities": "lang:fr\nsc:Scene_croise_marcheurs", 
     "Text": "Je salue quelques marcheurs en les croisant dans leur descente.. C’est en effet davantage une heure de fin de parcours que de début...  \n\nL’un d’entre eux, vêtu d’un combinaison de secouriste rouge, s’adresse à moi :\n\n_\\\"- Bon dia, on vas ?  Cap al pic de la Dona ?\\\"_", 
     "Choices": {
       "Si, puja i baixa (mensonge)": "sc:mensonge", 
@@ -36,28 +36,28 @@
     }
   }, 
   "FrScene_mensonge": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']==='mensonge');", 
+    "Qualities": "lang:fr\nsc:mensonge", 
     "Text": "L'homme me lance un regard sceptique et poursuit sa descente.\n\nJe poursuis la montée.", 
     "Choices": {
       "Continuer": "sc:2"
     }
   }, 
   "FrScene_nepasrepondre": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']==='nepasrepondre');", 
+    "Qualities": "lang:fr\nsc:nepasrepondre", 
     "Text": "Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.", 
     "Choices": {
       "Continuer": "sc:2"
     }
   }, 
   "FrScene_verite": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']==='verite');", 
+    "Qualities": "lang:fr\nsc:verite", 
     "Text": "_\\\"- Que tinguis bona ruta.\\\"_\n\nJe poursuis la montée.", 
     "Choices": {
       "Continuer": "sc:2"
     }
   }, 
   "FrScene3": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"2\");", 
+    "Qualities": "lang:fr\nsc:2", 
     "Image": "borne", 
     "Text": "A l’arrivée à la Porteille de Mantet, une borne indique la frontière avec la France. La montre indique 15 heures.", 
     "Choices": {
@@ -67,14 +67,14 @@
     }
   }, 
   "FrScene3b": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"back-to-vallter\");", 
+    "Qualities": "lang:fr\nsc:back-to-vallter", 
     "Text": "La sécurité avant tout. Je redescends vers Vallter et suis de retour à la voiture avant même le coucher du soleil.\n\nMais une chose est sûre : je reviendrai.\n\nFin.", 
     "Choices": {
       "Recommencer": "sc:0"
     }
   }, 
   "FrScene4": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"3\");", 
+    "Qualities": "lang:fr\nsc:3", 
     "Image": "vallee", 
     "Text": "Le passage du col laisse entrevoir du côté Nord une vallée boisée tirant droit vers le petit village de Mantet.\n\nA mesure que l’ombre la recouvre, la température se fait de plus en plus fraîche.\nLes taches éparses de neige sont à présent de fiers névés.\nLa descente est sans difficulté, le pas est sûr jusqu’à atteindre l’orée du bois.", 
     "Choices": {
@@ -82,7 +82,7 @@
     }
   }, 
   "FrScene5": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"4\");", 
+    "Qualities": "lang:fr\nsc:4", 
     "Image": "bois", 
     "Text": "Le chemin longe sagement un ruisseau portant également les premières marques de l’hiver approchant.\n\nLes balises se suivent le long du sentier.", 
     "Choices": {
@@ -90,7 +90,7 @@
     }
   }, 
   "FrScene6": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"5\");", 
+    "Qualities": "lang:fr\nsc:5", 
     "Image": "berger", 
     "Text": "Une cabane apparaît au fond sur la gauche.", 
     "Choices": {
@@ -99,7 +99,7 @@
     }
   }, 
   "FrScene7": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"6\");", 
+    "Qualities": "lang:fr\nsc:6", 
     "Image": "berger2", 
     "Text": "Les volets sont fermés.\nLa cheminée ne fume pas.\n\nSeul un crâne de vache accueille les randonneurs de passage.\n\nUne serrure sur la porte.\nCe doit être la cabane du berger.\nFermée, sans surprise.\n\nQuelques beaux morceaux de bois jonchent le sol devant la cabane.\n\nA proximité, sur une large pierre plate, se lit l’inscription gravée _“Refuge à 250 m”_.", 
     "Choices": {
@@ -108,7 +108,7 @@
     }
   }, 
   "FrScene8": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"7\");", 
+    "Qualities": "lang:fr\nsc:7", 
     "Image": "alemany", 
     "Text": "Je tombe sur une nouvelle cabane, ouverte. C’est le _refuge de l’Alemany_.", 
     "Choices": {
@@ -116,7 +116,7 @@
     }
   }, 
   "FrScene9": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"8\");", 
+    "Qualities": "lang:fr\nsc:8", 
     "Image": "interieur", 
     "Text": "A l’intérieur, tout le confort d’un refuge libre.\nCheminée, table, bancs, scie, balai, pelle, et couchages superposés.\nDans un coin de la cabane repose un tas de branches de pins aux aiguilles encore vertes.\n\nIl n’est pas encore 17 heures mais la vallée est déjà plongée dans l’ombre.", 
     "Choices": {
@@ -125,21 +125,21 @@
     }
   }, 
   "FrScene10": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"9\");", 
+    "Qualities": "lang:fr\nsc:9", 
     "Text": "Pas de bois sec à proximité et la plupart des arbres aux alentours de la cabane présentent déjà des marques de prélèvement.\nNe restent que d’énormes troncs au sol.\n\nJ’entreprends de scier l’un d’entre eux à son extrémité.\n\nLa pièce est lourde et demandera certainement à être débitée de nouveau à l’intérieur de la cabane.", 
     "Choices": {
       "Continuer": "sc:10"
     }
   }, 
   "FrScene11": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"10\");", 
+    "Qualities": "lang:fr\nsc:10", 
     "Text": "A 18 heures, il fait déjà nuit et le thermomètre à l’intérieur du refuge ne dépasse guère 0°C.\n\nJe démarre un feu avec des pommes de pins et quelques branches. Le bois est vert et peine à prendre feu.\n\nJ’allume une bougie que je place au coeur du foyer. Les aiguilles crépitent, résistent...", 
     "Choices": {
       "Continuer": "sc:11"
     }
   }, 
   "FrScene12": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"11\");", 
+    "Qualities": "lang:fr\nsc:11", 
     "Image": "feu", 
     "Text": "Le feu finit par démarrer.\n\nJ’insère le premier morceau de bûche et place le second à proximité, dans l’espoir de le faire sécher le plus possible.\nLe poêle dispense une chaleur agréable mais qui chute très rapidement dès lors qu’on s’en écarte.", 
     "Choices": {
@@ -147,7 +147,7 @@
     }
   }, 
   "FrScene13": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"12\");", 
+    "Qualities": "lang:fr\nsc:12", 
     "Image": "tisane", 
     "Text": "Une fois le dîner terminé, il n’est pas encore 21 heures mais je m’apprête à enfiler mon sac de couchage.\n\nAvant cela, je prends soin de ranger les affaires, en prévision d’éventuels visiteurs nocturnes.", 
     "Choices": {
@@ -157,28 +157,28 @@
     }
   }, 
   "FrScene14nourrit": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"13\" && vartable['sac']=='nourriture');", 
+    "Qualities": "lang:fr\nsc:13\nsac:nourriture", 
     "Text": "Avec le feu se consumant tranquillement, et les quelques couvertures du refuge en supplément, la nuit passera en étant protégé du froid.", 
     "Choices": {
       "Continuer": "sc:14"
     }
   }, 
   "FrScene14clou": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"13\" && vartable['sac']=='clou');", 
+    "Qualities": "lang:fr\nsc:13\nsac:clou", 
     "Text": "Au milieu de la nuit, de petits bruits perturbent mon sommeil.\n\nJ'ouvre l'oeil et inspecte les lieux.\nUne souris est affairée autour de mon sac pendu et grignote une de mes barres énergétiques à travers l'une des poches !\n\nJe chasse la voleuse et entreprends de suspendre la nourriture hors du sac au bout d'un fil.\n\nLe reste de la nuit sera d'une tranquilité absolue.", 
     "Choices": {
       "Continuer": "sc:14"
     }
   }, 
   "FrScene14banc": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"13\" && vartable['sac']=='banc');", 
+    "Qualities": "lang:fr\nsc:13\nsac:banc", 
     "Text": "Le lendemain, le feu est éteint, il fait 4 degrés à l’intérieur et il neige au dehors.\n\nJ'entreprends de rassembler mes affaires et... HORREUR !\n\nLes poches de mon sac ont été rongées de toutes parts par des visiteurs nocturnes !\n\nUne bonne partie de mes réserves en nourriture est bonne à être jetée.\n\nTout en pestant contre cette mésaventure, je finis de me préparer pour le départ.", 
     "Choices": {
       "Continuer": "sc:15"
     }
   }, 
   "FrScene15": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"14\" && vartable['sac']!='banc');", 
+    "Qualities": "lang:fr\nsc:14\nsac']!='banc", 
     "Image": "neige", 
     "Text": "Le lendemain, le feu est éteint, il fait 4 degrés à l’intérieur et il neige au dehors.\n\nJe rallume le feu et y place le dernier morceau de bûche, le temps du petit-déjeuner.\n\nJ’éteins le feu avec de la neige, léguant la dernière bûche aux prochains occupants, rassemble les affaires et me prépare pour le départ.", 
     "Choices": {
@@ -186,7 +186,7 @@
     }
   }, 
   "FrScene16": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"15\");", 
+    "Qualities": "lang:fr\nsc:15", 
     "Image": "presque-mantet", 
     "Text": "La neige fait place au grand ciel bleu.\n\nEn contrebas se devinent quelques maisons.", 
     "Choices": {
@@ -194,7 +194,7 @@
     }
   }, 
   "FrScene17": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"16\");", 
+    "Qualities": "lang:fr\nsc:16", 
     "Image": "vue-mantet", 
     "Text": "Il s’agit du village de Mantet, baigné par la lumière du soleil automnal.", 
     "Choices": {
@@ -202,7 +202,7 @@
     }
   }, 
   "FrScene18": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"17\");", 
+    "Qualities": "lang:fr\nsc:17", 
     "Image": "panneau", 
     "Text": "Je poursuis la descente et parviens au village.\n\nIl est 12 heures 30.", 
     "Choices": {
@@ -210,7 +210,7 @@
     }
   }, 
   "FrScene19": {
-    "Qualities": "return (vartable['lang']==='fr' && vartable['sc']===\"18\");", 
+    "Qualities": "lang:fr\nsc:\n18", 
     "Image": "mantet", 
     "Text": "A suivre.", 
     "Choices": {
@@ -218,7 +218,7 @@
     }
   }, 
   "CaScene1": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==0);", 
+    "Qualities": "lang:ca\nsc']==0);}", 
     "Image": "vallter", 
     "Text": "_Dos quarts de un, carretera de Vallter, Pirineus Catalans_\n\nEls graus devallen a mesura que es segueixin les corbes. A prop del parquing casi buit de la estació de Vallter 2000, el termometre indica 4 petits graus.\n\nDesprès de que em posés unes capes més, que fes una ultima verificació de la motxilla i un ràpid entrepà, i estaré llest per sortir.", 
     "Choices": {
@@ -228,7 +228,7 @@
     }
   }, 
   "CaScene2": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='1');", 
+    "Qualities": "lang:ca\nsc:1", 
     "Image": "vallter2", 
     "Text": "_Son les dues de la tarda, hora de la sortida de Vallter._\n\nEl camí comença amb una pujada seguint el GR10.\nL'estació s’allunya poc a poc darrere.\n\nEncara que les remuntades mecàniques fossin apagades, unes manxes de neu semblen avisar que la temporada de esqui s’està apropant.\nLa pujada es fa sense cap dificultat.", 
     "Choices": {
@@ -237,7 +237,7 @@
     }
   }, 
   "CaScene_croise_marcheurs": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='Scene_croise_marcheurs');", 
+    "Qualities": "lang:ca\nsc:Scene_croise_marcheurs", 
     "Text": "Saludo a uns excursionistes que ja estan baixant. Efectivament sembla més una hora per baixar que per pujar.\n\nUn d’ells, que portava un vestit vermell de socorrista, es dirigeix a mi:\n\n_\\\"- Bon dia, on vas ?  Cap al pic de la Dona ?\\\"_", 
     "Choices": {
       "Si, puja i baixa (mentida)": "sc:mensonge", 
@@ -246,28 +246,28 @@
     }
   }, 
   "CaScene_mensonge": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='mensonge');", 
+    "Qualities": "lang:ca\nsc:mensonge", 
     "Text": "L’home em dirigeix una mirada escèptica i continua la seva baixada.\n\nContinuo la pujada.", 
     "Choices": {
       "Endavant": "sc:2"
     }
   }, 
   "CaScene_nepasrepondre": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='nepasrepondre');", 
+    "Qualities": "lang:ca\nsc:nepasrepondre", 
     "Text": "Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.", 
     "Choices": {
       "Endavant": "sc:2"
     }
   }, 
   "CaScene_verite": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']==='verite');", 
+    "Qualities": "lang:ca\nsc:verite", 
     "Text": "_\\\"- Que tinguis bona ruta.\\\"_\n\nSegueixo amb la pujada.", 
     "Choices": {
       "Endavant": "sc:2"
     }
   }, 
   "CaScene3": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"2\");", 
+    "Qualities": "lang:ca\nsc:2", 
     "Image": "borne", 
     "Text": "Arribant a la Porteille de Mentet, una fita senyala la frontera amb França. El rellotge marca les 3.", 
     "Choices": {
@@ -277,14 +277,14 @@
     }
   }, 
   "CaScene3b": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"back-to-vallter\");", 
+    "Qualities": "lang:ca\nsc:back-to-vallter", 
     "Text": "Seguretat abans de tot. Baixo cap a Vallter i torno al cotxe fins i tot abans la posta del sol.\n\nPerò sé una cosa : ja hi tornaré.\n\nFi.", 
     "Choices": {
       "Tornar al inici": "sc:0"
     }
   }, 
   "CaScene4": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"3\");", 
+    "Qualities": "lang:ca\nsc:3", 
     "Image": "vallee", 
     "Text": "Al passar el coll es pot veure pel canto Nord un vall amb bosc tirant recta cap al poble de Mentet.\n\nA mesura que l’ombra l’invadeixi, la temperatura es fa més fresca.\nLes poques manxes de neu ara son geleres orgulloses.\nLa baixada es fa sense dificultat, els passos es segueixen amb seguretat fins l’entrada del bosc.", 
     "Choices": {
@@ -292,7 +292,7 @@
     }
   }, 
   "CaScene5": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"4\");", 
+    "Qualities": "lang:ca\nsc:4", 
     "Image": "bois", 
     "Text": "El camí segueix tranquil·lament una riera que porta igualment les primeres marques del proper invern.\n\nLes marques es segueixen al llarg del sender.", 
     "Choices": {
@@ -300,7 +300,7 @@
     }
   }, 
   "CaScene6": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"5\");", 
+    "Qualities": "lang:ca\nsc:5", 
     "Image": "berger", 
     "Text": "Una cabana apareix al fons a ma esquerra.", 
     "Choices": {
@@ -309,7 +309,7 @@
     }
   }, 
   "CaScene7": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"6\");", 
+    "Qualities": "lang:ca\nsc:6", 
     "Image": "berger2", 
     "Text": "Les persianes estan tancades.\nLa xemeneia no fa fum.\n\nNomés un crani de vaca aculleix els senderistes que passen.\n\nUna serradura sobre la porta.\nSembla la cabana del pastor.\nTancada, que no fa sorpresa.\n\nUns trossos bonics de llenya estan per la terra davant la cabana.\n\nA prop, sobre una gran pedra plana, es llegeix l’inscripciò gravada “Refugi a 250 m”", 
     "Choices": {
@@ -318,7 +318,7 @@
     }
   }, 
   "CaScene8": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"7\");", 
+    "Qualities": "lang:ca\nsc:7", 
     "Image": "alemany", 
     "Text": "Trobo una nova cabana, oberta. Es el refugi de l’Alemany.", 
     "Choices": {
@@ -326,7 +326,7 @@
     }
   }, 
   "CaScene9": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"8\");", 
+    "Qualities": "lang:ca\nsc:8", 
     "Image": "interieur", 
     "Text": "A dins, tota la comoditat d’un refugi lliure.\nXemeneia, taula, bancs, serra, escombra, pala, i lliteres.\nEn un racó de la cabana es troben rams de pins amb agulles encara verdes.\n\nEncara no son les 5 de la tarda, però el vall ja esta totalment en l’ombra.", 
     "Choices": {
@@ -335,21 +335,21 @@
     }
   }, 
   "CaScene10": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"9\");", 
+    "Qualities": "lang:ca\nsc:9", 
     "Text": "Cap fusta seca a prop, i la majoria dels arbres al voltant de la cabana ja mostren marques de destral.\nNomés queden troncs enormes per la terra.\n\nComenço a serrar un d’ells.\n\nAquest tros es pesat i necessitara segurament ser tallat de nou a dins la cabana.", 
     "Choices": {
       "Endavant": "sc:10"
     }
   }, 
   "CaScene11": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"10\");", 
+    "Qualities": "lang:ca\nsc:10", 
     "Text": "A les 6 de la tarda, ja es fa fosc i et termòmetre a dins el refugi ronda els 0°C.\n\nComenço un foc amb pinyes i unes branques. La fusta esta verda i té dificultat per encendre’s.\n\nEncenc una espelma que poso en mig de la llar del foc. Les agulles de pins crepiten, resisteixen...", 
     "Choices": {
       "Endavant": "sc:11"
     }
   }, 
   "CaScene12": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"11\");", 
+    "Qualities": "lang:ca\nsc:11", 
     "Image": "feu", 
     "Text": "El foc finalment s’ha encès.\n\nIntrodueixo el primer tros de fusta i poso el segon a prop, amb l’esperança de fer-ho secar el mes aviat possible.\nLa llar del foc distribueix una calor agradable però que devalla molt ràpid a mesura que t’en allunyes.", 
     "Choices": {
@@ -357,7 +357,7 @@
     }
   }, 
   "CaScene13": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"12\");", 
+    "Qualities": "lang:ca\nsc:12", 
     "Image": "tisane", 
     "Text": "Un cop el sopar ha acabat, encara no son les 9 del vespre però em preparo per entrar en el sac de dormir\n\nAbans d’això, tinc cura d’arreglar les coses, en previsió de possibles visitants nocturns.", 
     "Choices": {
@@ -367,28 +367,28 @@
     }
   }, 
   "CaScene14nourrit": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"13\" && vartable['sac']=='nourriture');", 
+    "Qualities": "lang:ca\nsc:13\nsac:nourriture", 
     "Text": "Amb el foc que es va consumint poc a poc, i unes mantes del refugi de sobres, la nit tindrà lloc sense cap problema de fred.", 
     "Choices": {
       "Endavant": "sc:14"
     }
   }, 
   "CaScene14clou": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"13\" && vartable['sac']=='clou');", 
+    "Qualities": "lang:ca\nsc:13\nsac:clou", 
     "Text": "En mig de la nit, uns sorollets es posen a molestar el meu son.\n\nObro un ull i vigilo el lloc.\nUn ratolí esta al voltant de la meva motxilla penjada i esta rosegant una de les meves barretes energètiques a traves d’una butxaca !\n\nPersegueixo la lladra i començo a penjar el menjar fora de la motxilla amb un fil.\n\nLa resta de la nit serà amb una tranquil·litat perfecta.", 
     "Choices": {
       "Endavant": "sc:14"
     }
   }, 
   "CaScene14banc": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"13\" && vartable['sac']=='banc');", 
+    "Qualities": "lang:ca\nsc:13\nsac:banc", 
     "Text": "Al dia següent, el foc esta apagat, fan 4 graus a dintre i neva fora.\n\nComenço per recollir les meves coses i… quin HORROR !\n\nLes butxaques de la meva motxilla han sigut rosegades per totes bandes per visitors nocturns !\n\nAra una bona part de les meves reserves de menjar pot treure’s.\n\nMentre em queixo de aquest accident, acabo de preparar-me per la sortida.", 
     "Choices": {
       "Endavant": "sc:15"
     }
   }, 
   "CaScene15": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"14\" && vartable['sac']!='banc');", 
+    "Qualities": "lang:ca\nsc:14\nsac']!='banc", 
     "Image": "neige", 
     "Text": "Al dia següent, el foc esta apagat, fan 4 graus a dintre i neva fora.\n\nEncenc el foc de nou i hi poso l’ultim tros de fusta, mentre el esmorzar\n\nApago el foc amb neu, oferint l’ultim tros de fusta als propers inquilins, recullo les coses i em preparo per la sortida.", 
     "Choices": {
@@ -396,7 +396,7 @@
     }
   }, 
   "CaScene16": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"15\");", 
+    "Qualities": "lang:ca\nsc:15", 
     "Image": "presque-mantet", 
     "Text": "La neu deixa de caure i deixa pas a un cel blau.\n\nCap a baix s’endivinen unes cases.", 
     "Choices": {
@@ -404,7 +404,7 @@
     }
   }, 
   "CaScene17": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"16\");", 
+    "Qualities": "lang:ca\nsc:16", 
     "Image": "vue-mantet", 
     "Text": "Es el poble de Mentet, banyat per la llum del sol de tardor.", 
     "Choices": {
@@ -412,7 +412,7 @@
     }
   }, 
   "CaScene18": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"17\");", 
+    "Qualities": "lang:ca\nsc:17", 
     "Image": "panneau", 
     "Text": "Segueixo amb la baixada i arribo al poble.\n\nSon les 12 i mitja.", 
     "Choices": {
@@ -420,7 +420,7 @@
     }
   }, 
   "CaScene19": {
-    "Qualities": "return (vartable['lang']==='ca' && vartable['sc']===\"18\");", 
+    "Qualities": "lang:ca\nsc:18", 
     "Image": "mantet", 
     "Text": "To be continued.", 
     "Choices": {

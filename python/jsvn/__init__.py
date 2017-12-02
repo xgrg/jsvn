@@ -1,6 +1,29 @@
 import json
 import markdown
 
+def get_qualities_code(code):
+    f = []
+    res = ''
+    varname = 'a'
+    for i, each in enumerate(code.split('\n')):
+        if each == '': continue # ignore blank lines
+
+        if ':' in each:
+            k1, v1 = each.replace(' ','').split(':')
+            f.append('a%s'%(len(f)+1))
+            res =  res + 'function %s(){ return (vartable["%s"]=="%s"); };'%(f[-1], k1, v1)
+        if each.startswith('@function'):
+            if_func = '\n'.join(code.split('\n')[i+1:])
+            f.append('a%s'%(len(f)+1))
+            if_func = if_func.replace('function', 'function %s'%f[-1])
+            res = res + if_func +';\n'
+
+    res = '\n%s'%res
+    c = ' && '.join(['%s()'%e for e in f])
+    res = res + 'return (%s);\n'%c
+
+    return res
+
 def get_playsequence(code):
     seq = ''
     for each in code.split('\n'):
@@ -18,9 +41,11 @@ def get_choice(code):
     res = ''
 
     for k,v in code.items():
+        # k is the text of the choice, v is the assigned code
         d = {}
         if_func = ''
         for i, each in enumerate(v.split('\n')):
+            if each == '': continue # ignore blank lines
 
             if ':' in each:
                 k1, v1 = each.replace(' ','').split(':')
@@ -82,7 +107,7 @@ def get_preamble(md_fp, verbose=1):
 def get_javascript(j):
     js = ''
     for sc_name, sc in j.items():
-        qual_code = sc['Qualities']
+        qual_code = get_qualities_code(sc['Qualities'])
         storylet_code = get_storylet_code(sc['Text'])
 
         image = '' if not 'Image' in sc.keys() else '[function(){displayImage("%s")}, 1000],\n'%sc['Image']
@@ -99,8 +124,7 @@ def get_javascript(j):
     for sc_name, _ in j.items():
         pushlist = pushlist + '  storylets.push(%s);\n'%sc_name
     js = js + '$(document).ready(function(){\n%s});'%pushlist
-    #print ''
-    #print js
+
     return js
 
 def jsonify_markdown(md_fp):

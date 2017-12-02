@@ -1,7 +1,8 @@
 Version: 1.1
 # SceneChoixLangues
 ## Qualities
-return (vartable['sc']===undefined);
+@function
+function(){return (vartable['sc']===undefined);}
 
 ## Text
 Choisissez une langue.
@@ -18,7 +19,8 @@ lang:ca
 -----------------
 # FrScene1
 ## Qualities
-return (vartable['lang']=='fr' && vartable['sc']=='0');
+lang:fr
+sc:0
 
 ## Image
 vallter
@@ -43,7 +45,7 @@ equip:tshirt
 -----------------------------------------------
 # FrScene2
 ## Qualities
-return (vartable['sc']==='1');
+sc:1
 
 ## Image
 vallter2
@@ -67,7 +69,8 @@ sc:Scene_croise_marcheurs
 -------
 # FrScene_croise_marcheurs
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==='Scene_croise_marcheurs');
+lang:fr
+sc:Scene_croise_marcheurs
 
 ## Text
 Je salue quelques marcheurs en les croisant dans leur descente.. C’est en effet davantage une heure de fin de parcours que de début...  
@@ -86,7 +89,8 @@ sc:nepasrepondre
 -----------------------------------------------
 # FrScene_mensonge
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==='mensonge');
+lang:fr
+sc:mensonge
 
 ## Text
 L'homme me lance un regard sceptique et poursuit sa descente.
@@ -99,7 +103,8 @@ sc:2
 -----------------------------------------------
 # FrScene_nepasrepondre
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==='nepasrepondre');
+lang:fr
+sc:nepasrepondre
 
 ## Text
 Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.
@@ -110,7 +115,8 @@ sc:2
 -----------------------------------------------
 # FrScene_verite
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==='verite');
+lang:fr
+sc:verite
 
 ## Text
 _\"- Que tinguis bona ruta.\"_
@@ -123,7 +129,8 @@ sc:2
 -----------------------------------------------
 # FrScene3
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="2");
+lang:fr
+sc:2
 
 ## Image
 borne
@@ -143,7 +150,8 @@ function(){return (vartable['equip']=='tshirt')}
 -----------------------------------------------
 # FrScene3b
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="back-to-vallter");
+lang:fr
+sc:back-to-vallter
 
 ## Text
 La sécurité avant tout. Je redescends vers Vallter et suis de retour à la voiture avant même le coucher du soleil.
@@ -158,7 +166,8 @@ sc:0
 -----------------------------------------------
 # FrScene4
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="3");
+lang:fr
+sc:3
 
 ## Image
 vallee
@@ -175,7 +184,8 @@ sc:4
 -----------------------------------------------
 # FrScene5
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="4");
+lang:fr
+sc:4
 
 ## Image
 bois
@@ -191,7 +201,8 @@ sc:5
 -----------------------------------------------
 # FrScene6
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="5");
+lang:fr
+sc:5
 
 ## Image
 berger
@@ -207,7 +218,8 @@ sc:6
 -----------------------------------------------
 # FrScene7
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="6");
+lang:fr
+sc:6
 
 ## Image
 berger2
@@ -234,7 +246,8 @@ sc:7
 -----------------------------------------------
 # FrScene8
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="7");
+lang:fr
+sc:7
 
 ## Image
 alemany
@@ -248,7 +261,8 @@ sc:8
 -----------------------------------------------
 # FrScene9
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="8");
+lang:fr
+sc:8
 
 ## Image
 interieur
@@ -268,7 +282,8 @@ sc:9
 -----------------------------------------------
 # FrScene10
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="9");
+lang:fr
+sc:9
 
 ## Text
 Pas de bois sec à proximité et la plupart des arbres aux alentours de la cabane présentent déjà des marques de prélèvement.
@@ -284,7 +299,8 @@ sc:10
 -----------------------------------------------
 # FrScene11
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="10");
+lang:fr
+sc:10
 
 ## Text
 A 18 heures, il fait déjà nuit et le thermomètre à l’intérieur du refuge ne dépasse guère 0°C.
@@ -299,7 +315,8 @@ sc:11
 -----------------------------------------------
 # FrScene12
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="11");
+lang:fr
+sc:11
 
 ## Image
 feu
@@ -316,7 +333,8 @@ sc:12
 -----------------------------------------------
 # FrScene13
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="12");
+lang:fr
+sc:12
 
 ## Image
 tisane
@@ -339,7 +357,9 @@ sac:nourriture
 -----------------------------------------------
 # FrScene14nourrit
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='nourriture');
+lang:fr
+sc:13
+sac:nourriture
 
 ## Text
 Avec le feu se consumant tranquillement, et les quelques couvertures du refuge en supplément, la nuit passera en étant protégé du froid.
@@ -350,7 +370,9 @@ sc:14
 -----------------------------------------------
 # FrScene14clou
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='clou');
+lang:fr
+sc:13
+sac:clou
 
 ## Text
 Au milieu de la nuit, de petits bruits perturbent mon sommeil.
@@ -367,7 +389,9 @@ sc:14
 -----------------------------------------------
 # FrScene14banc
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='banc');
+lang:fr
+sc:13
+sac:banc
 
 ## Text
 Le lendemain, le feu est éteint, il fait 4 degrés à l’intérieur et il neige au dehors.
@@ -386,7 +410,9 @@ sc:15
 -----------------------------------------------
 # FrScene15
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="14" && vartable['sac']!='banc');
+lang:fr
+sc:14
+sac']!='banc
 
 ## Image
 neige
@@ -404,7 +430,8 @@ sc:15
 -----------------------------------------------
 # FrScene16
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="15");
+lang:fr
+sc:15
 
 ## Image
 presque-mantet
@@ -420,7 +447,8 @@ sc:16
 -----------------------------------------------
 # FrScene17
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="16");
+lang:fr
+sc:16
 
 ## Image
 vue-mantet
@@ -434,7 +462,8 @@ sc:17
 -----------------------------------------------
 # FrScene18
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="17");
+lang:fr
+sc:17
 
 ## Image
 panneau
@@ -450,7 +479,9 @@ sc:18
 -----------------------------------------------
 # FrScene19
 ## Qualities
-return (vartable['lang']==='fr' && vartable['sc']==="18");
+lang:fr
+sc:
+18
 
 ## Image
 mantet
@@ -464,7 +495,8 @@ sc:0
 -----------------
 # CaScene1
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==0);
+lang:ca
+sc']==0);}
 
 ## Image
 vallter
@@ -489,7 +521,8 @@ equip:tshirt
 -----------------------------------------------
 # CaScene2
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==='1');
+lang:ca
+sc:1
 
 ## Image
 vallter2
@@ -513,7 +546,8 @@ sc:Scene_croise_marcheurs
 -------
 # CaScene_croise_marcheurs
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==='Scene_croise_marcheurs');
+lang:ca
+sc:Scene_croise_marcheurs
 
 ## Text
 Saludo a uns excursionistes que ja estan baixant. Efectivament sembla més una hora per baixar que per pujar.
@@ -532,7 +566,8 @@ sc:nepasrepondre
 -----------------------------------------------
 # CaScene_mensonge
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==='mensonge');
+lang:ca
+sc:mensonge
 
 ## Text
 L’home em dirigeix una mirada escèptica i continua la seva baixada.
@@ -545,7 +580,8 @@ sc:2
 -----------------------------------------------
 # CaScene_nepasrepondre
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==='nepasrepondre');
+lang:ca
+sc:nepasrepondre
 
 ## Text
 Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.
@@ -556,7 +592,8 @@ sc:2
 -----------------------------------------------
 # CaScene_verite
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==='verite');
+lang:ca
+sc:verite
 
 ## Text
 _\"- Que tinguis bona ruta.\"_
@@ -569,7 +606,8 @@ sc:2
 -----------------------------------------------
 # CaScene3
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="2");
+lang:ca
+sc:2
 
 ## Image
 borne
@@ -589,7 +627,8 @@ function(){return (vartable['equip']=='tshirt')}
 -----------------------------------------------
 # CaScene3b
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="back-to-vallter");
+lang:ca
+sc:back-to-vallter
 
 ## Text
 Seguretat abans de tot. Baixo cap a Vallter i torno al cotxe fins i tot abans la posta del sol.
@@ -604,7 +643,8 @@ sc:0
 -----------------------------------------------
 # CaScene4
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="3");
+lang:ca
+sc:3
 
 ## Image
 vallee
@@ -621,7 +661,8 @@ sc:4
 -----------------------------------------------
 # CaScene5
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="4");
+lang:ca
+sc:4
 
 ## Image
 bois
@@ -637,7 +678,8 @@ sc:5
 -----------------------------------------------
 # CaScene6
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="5");
+lang:ca
+sc:5
 
 ## Image
 berger
@@ -653,7 +695,8 @@ sc:6
 -----------------------------------------------
 # CaScene7
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="6");
+lang:ca
+sc:6
 
 ## Image
 berger2
@@ -681,7 +724,8 @@ sc:7
 -----------------------------------------------
 # CaScene8
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="7");
+lang:ca
+sc:7
 
 ## Image
 alemany
@@ -695,7 +739,8 @@ sc:8
 -----------------------------------------------
 # CaScene9
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="8");
+lang:ca
+sc:8
 
 ## Image
 interieur
@@ -715,7 +760,8 @@ sc:9
 -----------------------------------------------
 # CaScene10
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="9");
+lang:ca
+sc:9
 
 ## Text
 Cap fusta seca a prop, i la majoria dels arbres al voltant de la cabana ja mostren marques de destral.
@@ -731,7 +777,8 @@ sc:10
 -----------------------------------------------
 # CaScene11
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="10");
+lang:ca
+sc:10
 
 ## Text
 A les 6 de la tarda, ja es fa fosc i et termòmetre a dins el refugi ronda els 0°C.
@@ -746,7 +793,9 @@ sc:11
 -----------------------------------------------
 # CaScene12
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="11");
+lang:ca
+sc:11
+
 
 ## Image
 feu
@@ -763,7 +812,8 @@ sc:12
 -----------------------------------------------
 # CaScene13
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="12");
+lang:ca
+sc:12
 
 ## Image
 tisane
@@ -786,7 +836,9 @@ sac:nourriture
 -----------------------------------------------
 # CaScene14nourrit
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='nourriture');
+lang:ca
+sc:13
+sac:nourriture
 
 ## Text
 Amb el foc que es va consumint poc a poc, i unes mantes del refugi de sobres, la nit tindrà lloc sense cap problema de fred.
@@ -797,7 +849,9 @@ sc:14
 -----------------------------------------------
 # CaScene14clou
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='clou');
+lang:ca
+sc:13
+sac:clou
 
 ## Text
 En mig de la nit, uns sorollets es posen a molestar el meu son.
@@ -814,7 +868,9 @@ sc:14
 -----------------------------------------------
 # CaScene14banc
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='banc');
+lang:ca
+sc:13
+sac:banc
 
 ## Text
 Al dia següent, el foc esta apagat, fan 4 graus a dintre i neva fora.
@@ -833,7 +889,9 @@ sc:15
 -----------------------------------------------
 # CaScene15
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="14" && vartable['sac']!='banc');
+lang:ca
+sc:14
+sac']!='banc
 
 ## Image
 neige
@@ -851,7 +909,8 @@ sc:15
 -----------------------------------------------
 # CaScene16
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="15");
+lang:ca
+sc:15
 
 ## Image
 presque-mantet
@@ -867,7 +926,8 @@ sc:16
 -----------------------------------------------
 # CaScene17
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="16");
+lang:ca
+sc:16
 
 ## Image
 vue-mantet
@@ -881,7 +941,8 @@ sc:17
 -----------------------------------------------
 # CaScene18
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="17");
+lang:ca
+sc:17
 
 ## Image
 panneau
@@ -897,7 +958,8 @@ sc:18
 -----------------------------------------------
 # CaScene19
 ## Qualities
-return (vartable['lang']==='ca' && vartable['sc']==="18");
+lang:ca
+sc:18
 
 ## Image
 mantet

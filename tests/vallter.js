@@ -1,6 +1,9 @@
 SceneChoixLangues = {
   qualities:function(){
-    return (vartable['sc']===undefined);
+    
+function a1(){return (vartable['sc']===undefined);};
+return (a1());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Choisissez une langue.</p>", "fadeIn")}, 1000],
@@ -13,7 +16,9 @@ choices:[["Français", {"sc": "0", "lang": "fr"}],["Catalan", {"sc": "0", "lang"
 
 FrScene1 = {
   qualities:function(){
-    return (vartable['lang']=='fr' && vartable['sc']=='0');
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="0"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("vallter")}, 1000],
@@ -29,7 +34,9 @@ choices:[["J’enfile mon coupe-vent.", {"sc": "1", "equip": "coupe-vent"}],["J�
 
 FrScene2 = {
   qualities:function(){
-    return (vartable['sc']==='1');
+    
+function a1(){ return (vartable["sc"]=="1"); };return (a1());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("vallter2")}, 1000],
@@ -47,7 +54,9 @@ choices:[["La montée donne chaud. Je retire ma polaire.", {"sc": "Scene_croise_
 
 FrScene_croise_marcheurs = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==='Scene_croise_marcheurs');
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="Scene_croise_marcheurs"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Je salue quelques marcheurs en les croisant dans leur descente.. C’est en effet davantage une heure de fin de parcours que de début...  </p>", "fadeIn")}, 1000],
@@ -62,7 +71,9 @@ choices:[["Si, puja i baixa (mensonge)", {"sc": "mensonge"}],["No, cap al refugi
 
 FrScene_mensonge = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==='mensonge');
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="mensonge"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>L'homme me lance un regard sceptique et poursuit sa descente.</p>", "fadeIn")}, 1000],
@@ -75,7 +86,9 @@ choices:[["Continuer", {"sc": "2"}],]
 
 FrScene_nepasrepondre = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==='nepasrepondre');
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="nepasrepondre"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.</p>", "fadeIn")}, 1000],
@@ -86,7 +99,9 @@ choices:[["Continuer", {"sc": "2"}],]
 
 FrScene_verite = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==='verite');
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="verite"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p><em>\"- Que tinguis bona ruta.\"</em></p>", "fadeIn")}, 1000],
@@ -99,7 +114,9 @@ choices:[["Continuer", {"sc": "2"}],]
 
 FrScene3 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="2");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="2"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("borne")}, 1000],
@@ -111,7 +128,9 @@ choices:[["Il est tard pour passer au Nord. Je redescends vers Vallter.", {"sc":
 
 FrScene3b = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="back-to-vallter");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="back-to-vallter"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>La sécurité avant tout. Je redescends vers Vallter et suis de retour à la voiture avant même le coucher du soleil.</p>", "fadeIn")}, 1000],
@@ -126,7 +145,9 @@ choices:[["Recommencer", {"sc": "0"}],]
 
 FrScene4 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="3");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="3"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("vallee")}, 1000],
@@ -142,7 +163,9 @@ choices:[["Continuer", {"sc": "4"}],]
 
 FrScene5 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="4");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="4"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("bois")}, 1000],
@@ -156,7 +179,9 @@ choices:[["Continuer", {"sc": "5"}],]
 
 FrScene6 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="5");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="5"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("berger")}, 1000],
@@ -168,7 +193,9 @@ choices:[["C’est hors du sentier. Je poursuis ma route sans y prêter attentio
 
 FrScene7 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="6");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="6"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("berger2")}, 1000],
@@ -191,7 +218,9 @@ choices:[["Je reprends ma route", {"sc": "7"}],["Je ramasse un morceau de bois a
 
 FrScene8 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="7");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="7"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("alemany")}, 1000],
@@ -203,7 +232,9 @@ choices:[["Continuer", {"sc": "8"}],]
 
 FrScene9 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="8");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="8"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("interieur")}, 1000],
@@ -219,7 +250,9 @@ choices:[["J’ouvre les volets", {"sc": "9"}],["Pas de temps à perdre. Il faut
 
 FrScene10 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="9");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="9"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Pas de bois sec à proximité et la plupart des arbres aux alentours de la cabane présentent déjà des marques de prélèvement.</p>", "fadeIn")}, 1000],
@@ -235,7 +268,9 @@ choices:[["Continuer", {"sc": "10"}],]
 
 FrScene11 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="10");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="10"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>A 18 heures, il fait déjà nuit et le thermomètre à l’intérieur du refuge ne dépasse guère 0°C.</p>", "fadeIn")}, 1000],
@@ -250,7 +285,9 @@ choices:[["Continuer", {"sc": "11"}],]
 
 FrScene12 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="11");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="11"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("feu")}, 1000],
@@ -265,7 +302,9 @@ choices:[["Continuer", {"sc": "12"}],]
 
 FrScene13 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="12");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="12"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("tisane")}, 1000],
@@ -279,7 +318,9 @@ choices:[["Je cache le sac-à-dos sous un banc.", {"sc": "13", "sac": "banc"}],[
 
 FrScene14nourrit = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='nourriture');
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="13"); };function a3(){ return (vartable["sac"]=="nourriture"); };return (a1() && a2() && a3());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Avec le feu se consumant tranquillement, et les quelques couvertures du refuge en supplément, la nuit passera en étant protégé du froid.</p>", "fadeIn")}, 1000],
@@ -290,7 +331,9 @@ choices:[["Continuer", {"sc": "14"}],]
 
 FrScene14clou = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='clou');
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="13"); };function a3(){ return (vartable["sac"]=="clou"); };return (a1() && a2() && a3());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Au milieu de la nuit, de petits bruits perturbent mon sommeil.</p>", "fadeIn")}, 1000],
@@ -308,7 +351,9 @@ choices:[["Continuer", {"sc": "14"}],]
 
 FrScene14banc = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="13" && vartable['sac']=='banc');
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="13"); };function a3(){ return (vartable["sac"]=="banc"); };return (a1() && a2() && a3());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Le lendemain, le feu est éteint, il fait 4 degrés à l’intérieur et il neige au dehors.</p>", "fadeIn")}, 1000],
@@ -327,7 +372,9 @@ choices:[["Continuer", {"sc": "15"}],]
 
 FrScene15 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="14" && vartable['sac']!='banc');
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="14"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("neige")}, 1000],
@@ -343,7 +390,9 @@ choices:[["Continuer", {"sc": "15"}],]
 
 FrScene16 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="15");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="15"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("presque-mantet")}, 1000],
@@ -357,7 +406,9 @@ choices:[["Continuer", {"sc": "16"}],]
 
 FrScene17 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="16");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="16"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("vue-mantet")}, 1000],
@@ -369,7 +420,9 @@ choices:[["Continuer", {"sc": "17"}],]
 
 FrScene18 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="17");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="17"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("panneau")}, 1000],
@@ -383,7 +436,9 @@ choices:[["Continuer", {"sc": "18"}],]
 
 FrScene19 = {
   qualities:function(){
-    return (vartable['lang']==='fr' && vartable['sc']==="18");
+    
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]==""); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("mantet")}, 1000],
@@ -395,7 +450,9 @@ choices:[["Recommencer", {"sc": "0"}],]
 
 CaScene1 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==0);
+    
+function a1(){ return (vartable["lang"]=="ca"); };return (a1());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("vallter")}, 1000],
@@ -411,7 +468,9 @@ choices:[["Portaré la meva jaqueta tallavent.", {"sc": "1", "equip": "coupe-ven
 
 CaScene2 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==='1');
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="1"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("vallter2")}, 1000],
@@ -429,7 +488,9 @@ choices:[["La pujada dona calor. Trec el meu forro polar.", {"sc": "Scene_croise
 
 CaScene_croise_marcheurs = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==='Scene_croise_marcheurs');
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="Scene_croise_marcheurs"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Saludo a uns excursionistes que ja estan baixant. Efectivament sembla més una hora per baixar que per pujar.</p>", "fadeIn")}, 1000],
@@ -444,7 +505,9 @@ choices:[["Si, puja i baixa (mentida)", {"sc": "mensonge"}],["No, cap al refugi 
 
 CaScene_mensonge = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==='mensonge');
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="mensonge"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>L’home em dirigeix una mirada escèptica i continua la seva baixada.</p>", "fadeIn")}, 1000],
@@ -457,7 +520,9 @@ choices:[["Endavant", {"sc": "2"}],]
 
 CaScene_nepasrepondre = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==='nepasrepondre');
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="nepasrepondre"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.</p>", "fadeIn")}, 1000],
@@ -468,7 +533,9 @@ choices:[["Endavant", {"sc": "2"}],]
 
 CaScene_verite = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==='verite');
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="verite"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p><em>\"- Que tinguis bona ruta.\"</em></p>", "fadeIn")}, 1000],
@@ -481,7 +548,9 @@ choices:[["Endavant", {"sc": "2"}],]
 
 CaScene3 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="2");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="2"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("borne")}, 1000],
@@ -493,7 +562,9 @@ choices:[["Es massa tard per passar al Nord. Torno cap a Vallter.", {"sc": "back
 
 CaScene3b = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="back-to-vallter");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="back-to-vallter"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Seguretat abans de tot. Baixo cap a Vallter i torno al cotxe fins i tot abans la posta del sol.</p>", "fadeIn")}, 1000],
@@ -508,7 +579,9 @@ choices:[["Tornar al inici", {"sc": "0"}],]
 
 CaScene4 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="3");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="3"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("vallee")}, 1000],
@@ -524,7 +597,9 @@ choices:[["Endavant", {"sc": "4"}],]
 
 CaScene5 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="4");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="4"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("bois")}, 1000],
@@ -538,7 +613,9 @@ choices:[["Endavant", {"sc": "5"}],]
 
 CaScene6 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="5");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="5"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("berger")}, 1000],
@@ -550,7 +627,9 @@ choices:[["Esta fora del sender. Segueixo el meu camí sense hi fer cas.", {"sc"
 
 CaScene7 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="6");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="6"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("berger2")}, 1000],
@@ -573,7 +652,9 @@ choices:[["Segueixo amb la meva ruta.", {"sc": "7"}],["Recullo un tros de fusta 
 
 CaScene8 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="7");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="7"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("alemany")}, 1000],
@@ -585,7 +666,9 @@ choices:[["Endavant", {"sc": "8"}],]
 
 CaScene9 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="8");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="8"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("interieur")}, 1000],
@@ -601,7 +684,9 @@ choices:[["Obro les persianes.", {"sc": "9"}],["Cal no perdre temps. Cal tallar 
 
 CaScene10 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="9");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="9"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Cap fusta seca a prop, i la majoria dels arbres al voltant de la cabana ja mostren marques de destral.</p>", "fadeIn")}, 1000],
@@ -617,7 +702,9 @@ choices:[["Endavant", {"sc": "10"}],]
 
 CaScene11 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="10");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="10"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>A les 6 de la tarda, ja es fa fosc i et termòmetre a dins el refugi ronda els 0°C.</p>", "fadeIn")}, 1000],
@@ -632,7 +719,9 @@ choices:[["Endavant", {"sc": "11"}],]
 
 CaScene12 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="11");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="11"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("feu")}, 1000],
@@ -647,7 +736,9 @@ choices:[["Endavant", {"sc": "12"}],]
 
 CaScene13 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="12");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="12"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("tisane")}, 1000],
@@ -661,7 +752,9 @@ choices:[["Amago la motxilla sota el banc.", {"sc": "13", "sac": "banc"}],["Penj
 
 CaScene14nourrit = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='nourriture');
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="13"); };function a3(){ return (vartable["sac"]=="nourriture"); };return (a1() && a2() && a3());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Amb el foc que es va consumint poc a poc, i unes mantes del refugi de sobres, la nit tindrà lloc sense cap problema de fred.</p>", "fadeIn")}, 1000],
@@ -672,7 +765,9 @@ choices:[["Endavant", {"sc": "14"}],]
 
 CaScene14clou = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='clou');
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="13"); };function a3(){ return (vartable["sac"]=="clou"); };return (a1() && a2() && a3());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>En mig de la nit, uns sorollets es posen a molestar el meu son.</p>", "fadeIn")}, 1000],
@@ -690,7 +785,9 @@ choices:[["Endavant", {"sc": "14"}],]
 
 CaScene14banc = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="13" && vartable['sac']=='banc');
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="13"); };function a3(){ return (vartable["sac"]=="banc"); };return (a1() && a2() && a3());
+
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Al dia següent, el foc esta apagat, fan 4 graus a dintre i neva fora.</p>", "fadeIn")}, 1000],
@@ -709,7 +806,9 @@ choices:[["Endavant", {"sc": "15"}],]
 
 CaScene15 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="14" && vartable['sac']!='banc');
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="14"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("neige")}, 1000],
@@ -725,7 +824,9 @@ choices:[["Endavant", {"sc": "15"}],]
 
 CaScene16 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="15");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="15"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("presque-mantet")}, 1000],
@@ -739,7 +840,9 @@ choices:[["Endavant", {"sc": "16"}],]
 
 CaScene17 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="16");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="16"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("vue-mantet")}, 1000],
@@ -751,7 +854,9 @@ choices:[["Endavant", {"sc": "17"}],]
 
 CaScene18 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="17");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="17"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("panneau")}, 1000],
@@ -765,7 +870,9 @@ choices:[["Endavant", {"sc": "18"}],]
 
 CaScene19 = {
   qualities:function(){
-    return (vartable['lang']==='ca' && vartable['sc']==="18");
+    
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="18"); };return (a1() && a2());
+
   },
   storylet:function(choice){
   playSequence([[function(){displayImage("mantet")}, 1000],

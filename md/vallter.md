@@ -9,7 +9,6 @@ Qualities:
 Extensions:test1.md,test2.md
 # SceneChoixLangues
 ## Qualities
-
 @function
 function(){vartable['toto'] = 'test'; return (vartable['sc']===undefined);}
 ## Text

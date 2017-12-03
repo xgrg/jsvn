@@ -38,7 +38,7 @@ def parse_dict(code):
         d = markdown_table_to_dict(code)
         return d
     except:
-        if code == '': return {}
+        if clean_line(code) == '': return {}
         d = get_dict(code)
         return d
 
@@ -48,7 +48,6 @@ def remove_minuslines(lines):
     #log.info('Reading: %s'%md_fp)
 
     res = []
-    #w = open(md_fp+'1', 'w')
     for each in lines:
         is_line = False
         clean = clean_line(each)
@@ -58,10 +57,7 @@ def remove_minuslines(lines):
                     is_line = True
                     break
         if not is_line:
-            #w.write(each)
             res.append(each)
-    #w.close()
-    #log.info('Written: %s'%md_fp+'1')
     return res
 
 def clean_line(line):

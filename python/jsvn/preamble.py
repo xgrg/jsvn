@@ -42,12 +42,13 @@ def parse_dict(code):
         d = get_dict(code)
         return d
 
-def remove_minuslines(md_fp):
+def remove_minuslines(lines):
     ''' Creates a new file with same content minus lines full of ------'''
     log.info('* Removing minus lines.')
-    log.info('Reading: %s'%md_fp)
-    lines = open(md_fp).readlines()
-    w = open(md_fp+'1', 'w')
+    #log.info('Reading: %s'%md_fp)
+
+    res = []
+    #w = open(md_fp+'1', 'w')
     for each in lines:
         is_line = False
         clean = clean_line(each)
@@ -57,9 +58,11 @@ def remove_minuslines(md_fp):
                     is_line = True
                     break
         if not is_line:
-            w.write(each)
-    w.close()
-    log.info('Written: %s'%md_fp+'1')
+            #w.write(each)
+            res.append(each)
+    #w.close()
+    #log.info('Written: %s'%md_fp+'1')
+    return res
 
 def clean_line(line):
     ''' removes any space and convert to lowercase'''
@@ -71,17 +74,17 @@ def does_start_by_preamble_key(line, preamble):
             return each
     return False
 
-def get_preamble(md_fp):
+def get_preamble(lines):
     ''' Returns the current version of the Markdown-based language used
     Note: actually runs on the .md1 file so that these optional lines get removed
     as are breaking lines.'''
 
-    lines = open(md_fp).readlines()
+    #lines = open(md_fp).readlines()
 
     log.info('* Fetching preamble.')
-    log.info('Reading %s.'%(md_fp+'1'))
+    #log.info('Reading %s.'%(md_fp+'1'))
 
-    w = open(md_fp+'1', 'w')
+    #w = open(md_fp+'1', 'w')
     preamble = {'version': None, 'qualities':None}
     # Splitting preamble
     split = []
@@ -104,9 +107,11 @@ def get_preamble(md_fp):
         i = i + 1
     split.append(''.join(lines[curr:i]))
 
+    body = []
     for each in lines[i:]:
-        w.write(each)
-    w.close()
+        #w.write(each)
+        body.append(each)
+    #w.close()
 
     # Processing split preamble
     for each in split:
@@ -123,9 +128,9 @@ def get_preamble(md_fp):
             else:
                 raise Exception('%s unknown (%s)'%(k, ', '.join(preamble.keys())))
 
-    log.info('Writing %s.'%(md_fp+'1'))
+    #log.info('Writing %s.'%(md_fp+'1'))
     log.info('Found preamble:')
     from pprint import pprint
     pprint(preamble, indent=2)
 
-    return preamble
+    return preamble, body

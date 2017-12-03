@@ -18,8 +18,9 @@ def test_jsonify_markdown():
     print res
 
 def test_preamble():
-    jsvn.remove_minuslines(md_fp)
-    p = jsvn.get_preamble(md_fp)
+    lines = open(md_fp).readlines()
+    lines = jsvn.remove_minuslines(lines)
+    p = jsvn.get_preamble(lines)
 
 def test_parse_args():
     md_to_js.__parse_args__(args=[md_fp, json_fp, js_fp])

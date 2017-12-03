@@ -9,21 +9,11 @@ def markdown_to_js(md_fp, json_fp, js_fp):
     log.info('JSON file: %s'%json_fp)
     log.info('JS file: %s'%js_fp)
 
-    # Creates a new .md file without lines full of --------
-    # This new file is named [markdown_file].md1
-    jsvn.remove_minuslines(md_fp)
-    #jsvn.beautify_md(md_fp)
-    preamble = jsvn.get_preamble(md_fp+'1')
-
-    # Creates a Json from Markdown
-    j = jsvn.jsonify_markdown(md_fp+'1')
-
-    # Improves a few bits in the json
-    j = jsvn.clean_json(j)
-    json.dump(j, open(json_fp, 'w'), indent=2, ensure_ascii=False, encoding ='utf-8')
+    preamble, body = jsvn.markdown_to_json(md_fp)
+    json.dump(body, open(json_fp, 'w'), indent=2, ensure_ascii=False, encoding ='utf-8')
 
     # Generates JS from Json
-    js = jsvn.json_to_javascript(j, preamble)
+    js = jsvn.json_to_javascript(body, preamble)
     w = open(js_fp, 'w')
     w.write(js)
     w.close()

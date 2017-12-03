@@ -14,9 +14,7 @@ md_files = glob('./build/md/*.md')
 for md in md_files:
     print ""
     print '###',md,'###'
-    json_fp = md.replace('.md', '.json')
-    js_fp = md.replace('.md', '.js')
-    cmd = 'python python/md_to_js.py %s %s %s'%(md, json_fp, js_fp)
+    cmd = 'python python/md_to_js.py %s --verbose'%md
     print cmd
     res = os.system(cmd)
     if (res==0):

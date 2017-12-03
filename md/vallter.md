@@ -1,11 +1,9 @@
 Version: 1.1
 
 Qualities:
-
 | variable   | value   |
 |:-----------|:--------|
 | toto       | test    |
-
 Extensions:test1.md,test2.md
 # SceneChoixLangues
 ## Qualities

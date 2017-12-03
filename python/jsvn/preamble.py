@@ -33,11 +33,20 @@ def get_dict(code):
 def parse_dict(code):
     ''' From Markdown code to a dictionary (used for Qualities/Choices).
     Can be either simple text or Markdown table'''
+    def is_markdown(code):
+        is_md = 0
+        for each in code.split('\n'):
+            if ('variable' in each and 'value' in each) or \
+               len(set(each).intersection(set('-|:'))) > 2:
+                    is_md = is_md + 1
+        return is_md == 2
+
     # TODO find a way to identify in advance Markdown table / simple text
-    try:
+    log.info('is_markdown:%s'%is_markdown(code))
+    if is_markdown(code):
         d = markdown_table_to_dict(code)
         return d
-    except:
+    else:
         if clean_line(code) == '': return {}
         d = get_dict(code)
         return d

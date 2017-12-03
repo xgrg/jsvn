@@ -1,35 +1,120 @@
 import json
-import markdown
-import tabulate
-import pandas as pd
+from preamble import *
 
-def beautify_tables(d):
+def clean_line(line):
+    ''' removes any space and convert to lowercase'''
+    return ''.join(line.split(' ')).lower().rstrip('\n')
+
+
+def beautify_table(d):
+    ''' From a dictionary to a Markdown table'''
     res = tabulate.tabulate(d.items(), ['variable', 'value'], tablefmt="pipe")
     return res
 
-def markdown_table_to_dict(code):
-    from markdown.extensions import tables
-    html = markdown.markdown(code, extensions=[tables.makeExtension()])
-    df = pd.read_html(html)[0]
-    rec = [(e[1], e[2]) for e in df.to_records()]
-    return df.to_dict()
+
+def regenerate_md(preamble, j):
+    ''' From a JSON regenerates a Markdown file'''
+    # first copy preamble
+    md = 'Version: %s\n'%preamble['version']
+    md = md + 'Qualities:\n'
+    t = beautify_table(preamble['qualities'])
+    md = md + t + '\n'
+
+    # then appends scenes
+    for k, v in j.items():
+        md = md + '# %s\n'%k
+        md = md + '## Qualities\n'
+        if '@function' in v['Qualities']:
+            qual_d, qual_f = v['Qualities'].split('@function')
+        else:
+             qual_d, qual_f = v['Qualities'], ''
+        d = parse_dict(qual_d)
+        if d != {}:
+            md = md + beautify_table(d) +'\n'
+        if qual_f != '':
+            md = md + '\n@function' + qual_f + '\n'
+
+        for each in ['Image', 'Text']:
+            if each in v.keys():
+                md = md + '## %s\n%s\n'%(each, v[each])
+
+        md = md + '## Choices\n'
+        for k1, v1 in v['Choices'].items():
+            md = md + '### %s\n'%k1
+            if '@if' in v1:
+                qual_d, qual_f = v1.split('@if')
+            else:
+                qual_d, qual_f = v1, ''
+            d = parse_dict(qual_d)
+            md = md + beautify_table(d) + '\n'
+            if qual_f != '':
+                md = md + '\n@if' + qual_f + '\n'
+
+        # if section is choice or qualities
+        # then check for tables
+
+        # adds a breaking line
+        md = md + '\n---------------------------------\n'
+
+    w = open('/tmp/vallter.md2','w')
+    w.write(md)
+    w.close()
+    return md
+
+def clean_json(j, verbose=1):
+    if verbose==1:
+        print('* Cleaning JSON.')
+    from collections import OrderedDict
+    res = OrderedDict()
+    # then appends scenes
+    for k, v in j.items():
+        sc = {}
+        if '@function' in v['Qualities']:
+            qual_d, qual_f = v['Qualities'].split('@function')
+        else:
+             qual_d, qual_f = v['Qualities'], ''
+        d = parse_dict(qual_d)
+        qual_dict = dict(d)
+
+        if qual_f != '':
+            qual_dict['@function'] = qual_f
+        sc['Qualities'] = qual_dict
+
+        for each in ['Image', 'Text']:
+            if each in v.keys():
+                sc[each] = v[each]
+
+        ch = OrderedDict()
+        for k1, v1 in v['Choices'].items():
+            if '@if' in v1:
+                qual_d, qual_f = v1.split('@if')
+            else:
+                qual_d, qual_f = v1, ''
+
+            d = parse_dict(qual_d)
+            choice_dict = dict(d)
+            #d2 = ['%s:%s'%(k2,v2) for k2, v2 in d.items()]
+            #ch[k1] = '\n'.join(d2) + '\n'
+            if qual_f != '':
+                choice_dict['@if'] = qual_f
+                #ch[k1] = ch[k1] + '\n@if\n' + qual_f
+            ch[k1] = choice_dict
+        sc['Choices'] = ch
+        res[k] = sc
+    return res
 
 def get_qualities_code(code):
     f = []
     res = ''
     varname = 'a'
-    for i, each in enumerate(code.split('\n')):
-        if each == '': continue # ignore blank lines
 
-        if ':' in each:
-            k1, v1 = each.replace(' ','').split(':')
-            f.append('a%s'%(len(f)+1))
-            res =  res + 'function %s(){ return (vartable["%s"]=="%s"); };'%(f[-1], k1, v1)
-        if each.startswith('@function'):
-            if_func = '\n'.join(code.split('\n')[i+1:])
-            f.append('a%s'%(len(f)+1))
-            if_func = if_func.replace('function', 'function %s'%f[-1])
+    for k, v in code.items():
+        f.append('a%s'%(len(f)+1))
+        if k == '@function':
+            if_func = code['@function'].replace('function', 'function %s'%f[-1])
             res = res + if_func +';\n'
+        else:
+            res =  res + 'function %s(){ return (vartable["%s"]=="%s"); };'%(f[-1], k, v)
 
     res = '\n%s'%res
     c = ' && '.join(['%s()'%e for e in f])
@@ -52,77 +137,41 @@ def get_storylet_code(code):
 
 def get_choice(code):
     res = ''
-
-    for k,v in code.items():
+    for label, option in code.items():
         # k is the text of the choice, v is the assigned code
-        d = {}
         if_func = ''
-        for i, each in enumerate(v.split('\n')):
-            if each == '': continue # ignore blank lines
 
-            if ':' in each:
-                k1, v1 = each.replace(' ','').split(':')
-                d[k1] = v1
-            if each.startswith('@if'):
-                if_func = ',%s'%'\n'.join(v.split('\n')[i+1:])
-        res = res + '["%s", %s%s],'%(k,json.dumps(d), if_func)
+        if '@if' in option.keys():
+            if_func = ', ' + option['@if']
+            option.pop('@if')
+
+        res = res + '["%s", %s%s],'%(label, json.dumps(option), if_func)
 
     return 'choices:[%s]'%res
 
-def remove_minuslines(md_fp):
+def remove_minuslines(md_fp, verbose=1):
     ''' Creates a new file with same content minus lines full of ------'''
+    if verbose == 1:
+        print('* Removing minus lines.')
+        print('Reading: %s'%md_fp)
     lines = open(md_fp).readlines()
     w = open(md_fp+'1', 'w')
     for each in lines:
         is_line = False
-        if len(set(each)) == 1:
+        clean = clean_line(each)
+        if len(set(clean)) == 1:
             for s in ['---', '***', '###']:
-                if each.startswith(s):
+                if clean.startswith(s):
                     is_line = True
+                    break
         if not is_line:
             w.write(each)
     w.close()
+    print('Written: %s'%md_fp+'1')
 
-def get_preamble(md_fp, verbose=1):
-    ''' Returns the current version of the Markdown-based language used
-    Note: actually runs on the .md1 file so that these optional lines get removed
-    as are breaking lines.'''
 
-    def clean_line(line):
-        ''' removes any space and convert to lowercase'''
-        import string
-        return string.lower(''.join(line.split(' '))).rstrip('\n')
 
-    lines = open(md_fp+'1').readlines()
-    if verbose == 1:
-        print('Reading %s.'%(md_fp+'1'))
-    w = open(md_fp+'1', 'w')
-    is_preamble = True
-    preamble = {'version': None}
-    for each in lines:
-        if each.startswith('#'):
-            is_preamble = False
-        if is_preamble:
-            if ':' not in each:
-                raise Exception('%s not interpreted'%each)
-            k, v = clean_line(each).split(':')
-            if not k in preamble:
-                raise Exception('%s not known (%s)'\
-                    %(k, ','.join(preamble.keys())))
-            preamble[k] = v
-        if not is_preamble:
-            w.write(each)
-
-    w.close()
-    if verbose == 1:
-        print ('Writing %s.'%(md_fp+'1'))
-        print ('Found preamble:')
-        from pprint import pprint
-        pprint(preamble, indent=2)
-
-    return preamble
-
-def get_javascript(j):
+def json_to_javascript(j):
     js = ''
     for sc_name, sc in j.items():
         qual_code = get_qualities_code(sc['Qualities'])
@@ -145,7 +194,7 @@ def get_javascript(j):
 
     return js
 
-def jsonify_markdown(md_fp):
+def jsonify_markdown(md_fp, verbose=1):
     import sys
     reload(sys)
     sys.setdefaultencoding('utf-8')
@@ -179,5 +228,7 @@ def jsonify_markdown(md_fp):
         rendered = renderer.stringify_dict(nested)
         return rendered
 
+    if verbose == 1:
+        print('* Jsonifying %s'%md_fp)
     res = jsonify_markdown(md_fp)
     return res

@@ -412,7 +412,8 @@ sc:15
 ## Qualities
 lang:fr
 sc:14
-sac']!='banc
+@function
+function(){return (vartable['sac']!='banc')};
 
 ## Image
 neige
@@ -480,8 +481,7 @@ sc:18
 # FrScene19
 ## Qualities
 lang:fr
-sc:
-18
+sc:18
 
 ## Image
 mantet
@@ -496,7 +496,8 @@ sc:0
 # CaScene1
 ## Qualities
 lang:ca
-sc']==0);}
+@function
+function(){return (vartable['sc']==0);}
 
 ## Image
 vallter
@@ -891,7 +892,8 @@ sc:15
 ## Qualities
 lang:ca
 sc:14
-sac']!='banc
+@function
+function(){return (vartable['sac']!='banc')};
 
 ## Image
 neige

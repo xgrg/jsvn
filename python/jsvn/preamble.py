@@ -1,6 +1,9 @@
+from __future__ import print_function
 import markdown
 import tabulate
 import pandas as pd
+import logging as log
+
 
 def markdown_table_to_dict(code):
     ''' From a Markdown table to a dictionary '''
@@ -50,15 +53,15 @@ def does_start_by_preamble_key(line, preamble):
             return each
     return False
 
-def get_preamble(md_fp, verbose=1):
+def get_preamble(md_fp):
     ''' Returns the current version of the Markdown-based language used
     Note: actually runs on the .md1 file so that these optional lines get removed
     as are breaking lines.'''
 
     lines = open(md_fp).readlines()
-    if verbose == 1:
-        print('* Fetching preamble.')
-        print('Reading %s.'%(md_fp+'1'))
+
+    log.info('* Fetching preamble.')
+    log.info('Reading %s.'%(md_fp+'1'))
 
     w = open(md_fp+'1', 'w')
     preamble = {'version': None, 'qualities':None}
@@ -82,7 +85,6 @@ def get_preamble(md_fp, verbose=1):
                 split.append(''.join(lines[prev:curr]))
         i = i + 1
     split.append(''.join(lines[curr:i]))
-    print split
 
     for each in lines[i:]:
         w.write(each)
@@ -95,7 +97,6 @@ def get_preamble(md_fp, verbose=1):
         k, v = each[:each.find(':')], each[each.find(':')+1:]
         if k == 'qualities':
             v = v.strip('\n').rstrip('\n')
-            print 'v', v
             d = parse_dict(v)
             preamble[k] = d
         else:
@@ -104,10 +105,9 @@ def get_preamble(md_fp, verbose=1):
             else:
                 raise Exception('%s unknown (%s)'%(k, ', '.join(preamble.keys())))
 
-    if verbose == 1:
-        print ('Writing %s.'%(md_fp+'1'))
-        print ('Found preamble:')
-        from pprint import pprint
-        pprint(preamble, indent=2)
+    log.info('Writing %s.'%(md_fp+'1'))
+    log.info('Found preamble:')
+    from pprint import pprint
+    pprint(preamble, indent=2)
 
     return preamble

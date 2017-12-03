@@ -1,24 +1,26 @@
 #! /usr/bin/env python
+from __future__ import print_function
+import logging as log
 
-def markdown_to_js(md_fp, json_fp, js_fp, verbose=1):
+def markdown_to_js(md_fp, json_fp, js_fp):
     import jsvn, json
-    if verbose == 1:
-        print('Markdown file:', md_fp)
-        print('JSON file:', json_fp)
-        print('JS file:', js_fp)
+
+    log.info('Markdown file: %s'%md_fp)
+    log.info('JSON file: %s'%json_fp)
+    log.info('JS file: %s'%js_fp)
 
     # Creates a new .md file without lines full of --------
     # This new file is named [markdown_file].md1
-    jsvn.remove_minuslines(md_fp, verbose)
+    jsvn.remove_minuslines(md_fp)
     #jsvn.beautify_md(md_fp)
-    preamble = jsvn.get_preamble(md_fp+'1', verbose)
+    preamble = jsvn.get_preamble(md_fp+'1')
 
     # Creates a Json from Markdown
-    j = jsvn.jsonify_markdown(md_fp+'1', verbose)
+    j = jsvn.jsonify_markdown(md_fp+'1')
     json.dump(j, open(json_fp, 'w'), indent=2, ensure_ascii=False, encoding ='utf-8')
 
     # Improves a few bits in the json
-    j = jsvn.clean_json(j, verbose)
+    j = jsvn.clean_json(j)
 
     # Generates JS from Json
     js = jsvn.json_to_javascript(j)
@@ -38,12 +40,18 @@ def __parse_args__(args=None):
     parser.add_argument('md', help='Markdown file')
     parser.add_argument('json', nargs='?', help='Json file')
     parser.add_argument('js', nargs='?', help='JS file')
+    parser.add_argument('--verbose', action='store_true', help='verbosity')
     args = parser.parse_args(args)
+    if args.verbose:
+        log.basicConfig(format="%(levelname)s: %(message)s", level=log.INFO)
+    else:
+        log.basicConfig(format="%(levelname)s: %(message)s")
     return args
 
 if __name__ == '__main__':
     args = __parse_args__()
     md_fp = args.md
+
     json_fp = args.json if not args.json is None else md_fp.replace('.md','.json')
     js_fp = args.js if not args.js is None else md_fp.replace('.md','.js')
 

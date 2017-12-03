@@ -61,9 +61,9 @@ def regenerate_md(preamble, j):
     w.close()
     return md
 
-def clean_json(j, verbose=1):
-    if verbose==1:
-        print('* Cleaning JSON.')
+def clean_json(j):
+
+    log.info('* Cleaning JSON.')
     from collections import OrderedDict
     res = OrderedDict()
     # then appends scenes
@@ -149,11 +149,10 @@ def get_choice(code):
 
     return 'choices:[%s]'%res
 
-def remove_minuslines(md_fp, verbose=1):
+def remove_minuslines(md_fp):
     ''' Creates a new file with same content minus lines full of ------'''
-    if verbose == 1:
-        print('* Removing minus lines.')
-        print('Reading: %s'%md_fp)
+    log.info('* Removing minus lines.')
+    log.info('Reading: %s'%md_fp)
     lines = open(md_fp).readlines()
     w = open(md_fp+'1', 'w')
     for each in lines:
@@ -167,7 +166,7 @@ def remove_minuslines(md_fp, verbose=1):
         if not is_line:
             w.write(each)
     w.close()
-    print('Written: %s'%md_fp+'1')
+    log.info('Written: %s'%md_fp+'1')
 
 
 
@@ -194,7 +193,7 @@ def json_to_javascript(j):
 
     return js
 
-def jsonify_markdown(md_fp, verbose=1):
+def jsonify_markdown(md_fp):
     import sys
     reload(sys)
     sys.setdefaultencoding('utf-8')
@@ -205,16 +204,12 @@ def jsonify_markdown(md_fp, verbose=1):
 
     from markdown_to_json.markdown_to_json import Renderer, CMarkASTNester
 
-    import logging
-    logging.basicConfig(
-        format="%(message)s", stream=sys.stderr, level=logging.INFO)
-
     def get_markdown_ast(markdown_file):
         try:
             f = open(markdown_file, 'r')
             return CommonMark.DocParser().parse(f.read())
         except:
-            logging.error("Error: Can't open {0} for reading".format(
+            log.error("Error: Can't open {0} for reading".format(
                 markdown_file))
             sys.exit(1)
         finally:
@@ -228,7 +223,7 @@ def jsonify_markdown(md_fp, verbose=1):
         rendered = renderer.stringify_dict(nested)
         return rendered
 
-    if verbose == 1:
-        print('* Jsonifying %s'%md_fp)
+
+    log.info('* Jsonifying %s'%md_fp)
     res = jsonify_markdown(md_fp)
     return res

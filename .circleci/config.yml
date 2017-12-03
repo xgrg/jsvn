@@ -32,7 +32,7 @@ jobs:
           command: |
             . virtualenv/bin/activate
             nosetests --nocapture --with-coverage tests
-            coverage report --omit 'markdown*' -m
+            coverage report --include '*jsvn*' -m
 
 
       - run:

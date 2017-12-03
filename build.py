@@ -25,7 +25,6 @@ for md in md_files:
     else:
         errors.append(md)
 
-os.system('rm build/md/*.json')
 os.system('rm build/md/*.md')
 
 # summary

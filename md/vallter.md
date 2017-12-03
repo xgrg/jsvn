@@ -4,14 +4,14 @@ Qualities:
 
 | variable   | value   |
 |:-----------|:--------|
-| lang       | fr      |
+| toto       | test    |
 
 Extensions:test1.md,test2.md
 # SceneChoixLangues
 ## Qualities
 
 @function
-function(){return (vartable['sc']===undefined);}
+function(){vartable['toto'] = 'test'; return (vartable['sc']===undefined);}
 ## Text
 Choisissez une langue.
 

@@ -1,9 +1,7 @@
 SceneChoixLangues = {
   qualities:function(){
     
-
-function a1(){return (vartable['sc']===undefined);};
-return (a1());
+return ();
 
   },
   storylet:function(choice){
@@ -50,8 +48,7 @@ function a1(){ return (vartable["sc"]=="1"); };return (a1());
     [function(){addDialog("<p>La montée s’effectue sans encombres.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["La montée donne chaud. Je retire ma polaire.", {"sc": "scene_croise_marcheurs"}, 
-function(){return (vartable['equip']=='polaire')}],["Continuer", {"sc": "scene_croise_marcheurs"}],]
+choices:[["La montée donne chaud. Je retire ma polaire.", {"sc": "scene_croise_marcheurs"}],["Continuer", {"sc": "scene_croise_marcheurs"}],]
 }
 
 FrScene_croise_marcheurs = {
@@ -125,8 +122,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>A l’arrivée à la Porteille de Mantet, une borne indique la frontière avec la France. La montre indique 15 heures.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Il est tard pour passer au Nord. Je redescends vers Vallter.", {"sc": "back-to-vallter"}],["Je continue.", {"sc": "3"}],["Le vent souffle au col. J'enfile mon coupe-vent pour poursuivre la route.", {"sc": "3"}, 
-function(){return (vartable['equip']=='tshirt')}],]
+choices:[["Il est tard pour passer au Nord. Je redescends vers Vallter.", {"sc": "back-to-vallter"}],["Je continue.", {"sc": "3"}],["Le vent souffle au col. J'enfile mon coupe-vent pour poursuivre la route.", {"sc": "3"}],]
 }
 
 FrScene3b = {
@@ -376,9 +372,7 @@ choices:[["Continuer", {"sc": "15"}],]
 FrScene15 = {
   qualities:function(){
     
-function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="14"); };
-function a3(){return (vartable['sac']!='banc')};;
-return (a1() && a2() && a3());
+function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartable["sc"]=="14"); };return (a1() && a2());
 
   },
   storylet:function(choice){
@@ -456,9 +450,7 @@ choices:[["Recommencer", {"sc": "0"}],]
 CaScene1 = {
   qualities:function(){
     
-function a1(){ return (vartable["lang"]=="ca"); };
-function a2(){return (vartable['sc']==0);};
-return (a1() && a2());
+function a1(){ return (vartable["lang"]=="ca"); };return (a1());
 
   },
   storylet:function(choice){
@@ -490,8 +482,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>La pujada es fa sense cap dificultat.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["La pujada dona calor. Trec el meu forro polar.", {"sc": "scene_croise_marcheurs"}, 
-function(){return (vartable['equip']=='polaire')}],["Endavant", {"sc": "scene_croise_marcheurs"}],]
+choices:[["La pujada dona calor. Trec el meu forro polar.", {"sc": "scene_croise_marcheurs"}],["Endavant", {"sc": "scene_croise_marcheurs"}],]
 }
 
 CaScene_croise_marcheurs = {
@@ -565,8 +556,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Arribant a la Porteille de Mentet, una fita senyala la frontera amb França. El rellotge marca les 3.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Es massa tard per passar al Nord. Torno cap a Vallter.", {"sc": "back-to-vallter"}],["Segueixo.", {"sc": "3"}],["El vent bufa al coll. Em poso la meva jaqueta talla-vent per seguir el camí.", {"sc": "3"}, 
-function(){return (vartable['equip']=='tshirt')}],]
+choices:[["Es massa tard per passar al Nord. Torno cap a Vallter.", {"sc": "back-to-vallter"}],["Segueixo.", {"sc": "3"}],["El vent bufa al coll. Em poso la meva jaqueta talla-vent per seguir el camí.", {"sc": "3"}],]
 }
 
 CaScene3b = {
@@ -816,9 +806,7 @@ choices:[["Endavant", {"sc": "15"}],]
 CaScene15 = {
   qualities:function(){
     
-function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="14"); };
-function a3(){return (vartable['sac']!='banc')};;
-return (a1() && a2() && a3());
+function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartable["sc"]=="14"); };return (a1() && a2());
 
   },
   storylet:function(choice){

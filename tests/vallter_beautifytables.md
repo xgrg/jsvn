@@ -1,18 +1,16 @@
 Version: 1.1
 
 Qualities:
-
 | variable   | value   |
 |:-----------|:--------|
 | toto       | test    |
 
-Extensions:test1.md,test2.md
+Extensions: test1.md,test2.md
 
 # SceneChoixLangues
 ## Qualities
 @function
 function(){vartable['toto'] = 'test'; return (vartable['sc']===undefined);}
-
 ## Text
 Choisissez une langue.
 
@@ -23,13 +21,11 @@ Tria una llengua.
 |:-----------|:--------|
 | sc         | 0       |
 | lang       | fr      |
-
 ### Catalan
 | variable   | value   |
 |:-----------|:--------|
 | sc         | 0       |
 | lang       | ca      |
-
 
 #####
 # FrScene1
@@ -38,7 +34,6 @@ Tria una llengua.
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 0       |
-
 ## Image
 vallter
 ## Text
@@ -53,19 +48,16 @@ Le temps d’enfiler quelques couches supplémentaires, d’une dernière vérif
 |:-----------|:-----------|
 | sc         | 1          |
 | equip      | coupe-vent |
-
 ### J’enfile polaire, doudoune et coupe-vent.
 | variable   | value   |
 |:-----------|:--------|
 | sc         | 1       |
 | equip      | polaire |
-
 ### Réflexion faite, je pars en t-shirt.
 | variable   | value   |
 |:-----------|:--------|
 | sc         | 1       |
 | equip      | tshirt  |
-
 
 #####
 # FrScene2
@@ -73,7 +65,6 @@ Le temps d’enfiler quelques couches supplémentaires, d’une dernière vérif
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       1 |
-
 ## Image
 vallter2
 ## Text
@@ -89,15 +80,12 @@ La montée s’effectue sans encombres.
 | variable   | value                  |
 |:-----------|:-----------------------|
 | sc         | scene_croise_marcheurs |
-
 @if
 function(){return (vartable['equip']=='polaire')}
-
 ### Continuer
 | variable   | value                  |
 |:-----------|:-----------------------|
 | sc         | scene_croise_marcheurs |
-
 
 #####
 # FrScene_croise_marcheurs
@@ -106,7 +94,6 @@ function(){return (vartable['equip']=='polaire')}
 |:-----------|:-----------------------|
 | lang       | fr                     |
 | sc         | scene_croise_marcheurs |
-
 ## Text
 Je salue quelques marcheurs en les croisant dans leur descente.. C’est en effet davantage une heure de fin de parcours que de début...  
 
@@ -118,17 +105,14 @@ _\"- Bon dia, on vas ?  Cap al pic de la Dona ?\"_
 | variable   | value    |
 |:-----------|:---------|
 | sc         | mensonge |
-
 ### No, cap al refugi del Alemany (vérité)
 | variable   | value   |
 |:-----------|:--------|
 | sc         | verite  |
-
 ### Ne pas répondre et poursuivre sa route.
 | variable   | value         |
 |:-----------|:--------------|
 | sc         | nepasrepondre |
-
 
 #####
 # FrScene_mensonge
@@ -137,7 +121,6 @@ _\"- Bon dia, on vas ?  Cap al pic de la Dona ?\"_
 |:-----------|:---------|
 | lang       | fr       |
 | sc         | mensonge |
-
 ## Text
 L'homme me lance un regard sceptique et poursuit sa descente.
 
@@ -148,7 +131,6 @@ Je poursuis la montée.
 |:-----------|--------:|
 | sc         |       2 |
 
-
 #####
 # FrScene_nepasrepondre
 ## Qualities
@@ -156,7 +138,6 @@ Je poursuis la montée.
 |:-----------|:--------------|
 | lang       | fr            |
 | sc         | nepasrepondre |
-
 ## Text
 Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.
 ## Choices
@@ -165,7 +146,6 @@ Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacci
 |:-----------|--------:|
 | sc         |       2 |
 
-
 #####
 # FrScene_verite
 ## Qualities
@@ -173,7 +153,6 @@ Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacci
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | verite  |
-
 ## Text
 _\"- Que tinguis bona ruta.\"_
 
@@ -184,7 +163,6 @@ Je poursuis la montée.
 |:-----------|--------:|
 | sc         |       2 |
 
-
 #####
 # FrScene3
 ## Qualities
@@ -192,7 +170,6 @@ Je poursuis la montée.
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 2       |
-
 ## Image
 borne
 ## Text
@@ -202,20 +179,16 @@ A l’arrivée à la Porteille de Mantet, une borne indique la frontière avec l
 | variable   | value           |
 |:-----------|:----------------|
 | sc         | back-to-vallter |
-
 ### Je continue.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       3 |
-
 ### Le vent souffle au col. J'enfile mon coupe-vent pour poursuivre la route.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       3 |
-
 @if
 function(){return (vartable['equip']=='tshirt')}
-
 
 #####
 # FrScene3b
@@ -224,7 +197,6 @@ function(){return (vartable['equip']=='tshirt')}
 |:-----------|:----------------|
 | lang       | fr              |
 | sc         | back-to-vallter |
-
 ## Text
 La sécurité avant tout. Je redescends vers Vallter et suis de retour à la voiture avant même le coucher du soleil.
 
@@ -237,7 +209,6 @@ Fin.
 |:-----------|--------:|
 | sc         |       0 |
 
-
 #####
 # FrScene4
 ## Qualities
@@ -245,7 +216,6 @@ Fin.
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 3       |
-
 ## Image
 vallee
 ## Text
@@ -260,7 +230,6 @@ La descente est sans difficulté, le pas est sûr jusqu’à atteindre l’orée
 |:-----------|--------:|
 | sc         |       4 |
 
-
 #####
 # FrScene5
 ## Qualities
@@ -268,7 +237,6 @@ La descente est sans difficulté, le pas est sûr jusqu’à atteindre l’orée
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 4       |
-
 ## Image
 bois
 ## Text
@@ -281,7 +249,6 @@ Les balises se suivent le long du sentier.
 |:-----------|--------:|
 | sc         |       5 |
 
-
 #####
 # FrScene6
 ## Qualities
@@ -289,7 +256,6 @@ Les balises se suivent le long du sentier.
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 5       |
-
 ## Image
 berger
 ## Text
@@ -299,12 +265,10 @@ Une cabane apparaît au fond sur la gauche.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       7 |
-
 ### Je me rapproche.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       6 |
-
 
 #####
 # FrScene7
@@ -313,7 +277,6 @@ Une cabane apparaît au fond sur la gauche.
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 6       |
-
 ## Image
 berger2
 ## Text
@@ -334,12 +297,10 @@ A proximité, sur une large pierre plate, se lit l’inscription gravée _“Ref
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       7 |
-
 ### Je ramasse un morceau de bois avant de poursuivre mon chemin
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       7 |
-
 
 #####
 # FrScene8
@@ -348,7 +309,6 @@ A proximité, sur une large pierre plate, se lit l’inscription gravée _“Ref
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 7       |
-
 ## Image
 alemany
 ## Text
@@ -359,7 +319,6 @@ Je tombe sur une nouvelle cabane, ouverte. C’est le _refuge de l’Alemany_.
 |:-----------|--------:|
 | sc         |       8 |
 
-
 #####
 # FrScene9
 ## Qualities
@@ -367,7 +326,6 @@ Je tombe sur une nouvelle cabane, ouverte. C’est le _refuge de l’Alemany_.
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 8       |
-
 ## Image
 interieur
 ## Text
@@ -381,12 +339,10 @@ Il n’est pas encore 17 heures mais la vallée est déjà plongée dans l’omb
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       9 |
-
 ### Pas de temps à perdre. Il faut couper du bois avant que la nuit ne tombe.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       9 |
-
 
 #####
 # FrScene10
@@ -395,7 +351,6 @@ Il n’est pas encore 17 heures mais la vallée est déjà plongée dans l’omb
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 9       |
-
 ## Text
 Pas de bois sec à proximité et la plupart des arbres aux alentours de la cabane présentent déjà des marques de prélèvement.
 Ne restent que d’énormes troncs au sol.
@@ -409,7 +364,6 @@ La pièce est lourde et demandera certainement à être débitée de nouveau à 
 |:-----------|--------:|
 | sc         |      10 |
 
-
 #####
 # FrScene11
 ## Qualities
@@ -417,7 +371,6 @@ La pièce est lourde et demandera certainement à être débitée de nouveau à 
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 10      |
-
 ## Text
 A 18 heures, il fait déjà nuit et le thermomètre à l’intérieur du refuge ne dépasse guère 0°C.
 
@@ -430,7 +383,6 @@ J’allume une bougie que je place au coeur du foyer. Les aiguilles crépitent, 
 |:-----------|--------:|
 | sc         |      11 |
 
-
 #####
 # FrScene12
 ## Qualities
@@ -438,7 +390,6 @@ J’allume une bougie que je place au coeur du foyer. Les aiguilles crépitent, 
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 11      |
-
 ## Image
 feu
 ## Text
@@ -452,7 +403,6 @@ Le poêle dispense une chaleur agréable mais qui chute très rapidement dès lo
 |:-----------|--------:|
 | sc         |      12 |
 
-
 #####
 # FrScene13
 ## Qualities
@@ -460,7 +410,6 @@ Le poêle dispense une chaleur agréable mais qui chute très rapidement dès lo
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 12      |
-
 ## Image
 tisane
 ## Text
@@ -473,19 +422,16 @@ Avant cela, je prends soin de ranger les affaires, en prévision d’éventuels 
 |:-----------|:--------|
 | sc         | 13      |
 | sac        | banc    |
-
 ### J’accroche le sac à l’un des clous plantés aux murs de la cabane
 | variable   | value   |
 |:-----------|:--------|
 | sc         | 13      |
 | sac        | clou    |
-
 ### Je retire la nourriture du sac et la suspends à l’un des fils traversant la pièce.
 | variable   | value      |
 |:-----------|:-----------|
 | sc         | 13         |
 | sac        | nourriture |
-
 
 #####
 # FrScene14nourrit
@@ -495,7 +441,6 @@ Avant cela, je prends soin de ranger les affaires, en prévision d’éventuels 
 | lang       | fr         |
 | sc         | 13         |
 | sac        | nourriture |
-
 ## Text
 Avec le feu se consumant tranquillement, et les quelques couvertures du refuge en supplément, la nuit passera en étant protégé du froid.
 ## Choices
@@ -503,7 +448,6 @@ Avec le feu se consumant tranquillement, et les quelques couvertures du refuge e
 | variable   |   value |
 |:-----------|--------:|
 | sc         |      14 |
-
 
 #####
 # FrScene14clou
@@ -513,7 +457,6 @@ Avec le feu se consumant tranquillement, et les quelques couvertures du refuge e
 | lang       | fr      |
 | sc         | 13      |
 | sac        | clou    |
-
 ## Text
 Au milieu de la nuit, de petits bruits perturbent mon sommeil.
 
@@ -529,7 +472,6 @@ Le reste de la nuit sera d'une tranquilité absolue.
 |:-----------|--------:|
 | sc         |      14 |
 
-
 #####
 # FrScene14banc
 ## Qualities
@@ -538,7 +480,6 @@ Le reste de la nuit sera d'une tranquilité absolue.
 | lang       | fr      |
 | sc         | 13      |
 | sac        | banc    |
-
 ## Text
 Le lendemain, le feu est éteint, il fait 4 degrés à l’intérieur et il neige au dehors.
 
@@ -555,7 +496,6 @@ Tout en pestant contre cette mésaventure, je finis de me préparer pour le dép
 |:-----------|--------:|
 | sc         |      15 |
 
-
 #####
 # FrScene15
 ## Qualities
@@ -563,10 +503,8 @@ Tout en pestant contre cette mésaventure, je finis de me préparer pour le dép
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 14      |
-
 @function
 function(){return (vartable['sac']!='banc')};
-
 ## Image
 neige
 ## Text
@@ -581,7 +519,6 @@ J’éteins le feu avec de la neige, léguant la dernière bûche aux prochains 
 |:-----------|--------:|
 | sc         |      15 |
 
-
 #####
 # FrScene16
 ## Qualities
@@ -589,7 +526,6 @@ J’éteins le feu avec de la neige, léguant la dernière bûche aux prochains 
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 15      |
-
 ## Image
 presque-mantet
 ## Text
@@ -602,7 +538,6 @@ En contrebas se devinent quelques maisons.
 |:-----------|--------:|
 | sc         |      16 |
 
-
 #####
 # FrScene17
 ## Qualities
@@ -610,7 +545,6 @@ En contrebas se devinent quelques maisons.
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 16      |
-
 ## Image
 vue-mantet
 ## Text
@@ -621,7 +555,6 @@ Il s’agit du village de Mantet, baigné par la lumière du soleil automnal.
 |:-----------|--------:|
 | sc         |      17 |
 
-
 #####
 # FrScene18
 ## Qualities
@@ -629,7 +562,6 @@ Il s’agit du village de Mantet, baigné par la lumière du soleil automnal.
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 17      |
-
 ## Image
 panneau
 ## Text
@@ -642,7 +574,6 @@ Il est 12 heures 30.
 |:-----------|--------:|
 | sc         |      18 |
 
-
 #####
 # FrScene19
 ## Qualities
@@ -650,7 +581,6 @@ Il est 12 heures 30.
 |:-----------|:--------|
 | lang       | fr      |
 | sc         | 18      |
-
 ## Image
 mantet
 ## Text
@@ -661,7 +591,6 @@ A suivre.
 |:-----------|--------:|
 | sc         |       0 |
 
-
 #####
 # CaScene1
 ## Qualities
@@ -669,7 +598,6 @@ A suivre.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 0       |
-
 ## Image
 vallter
 ## Text
@@ -684,19 +612,16 @@ Desprès de que em posés unes capes més, que fes una ultima verificació de la
 |:-----------|:-----------|
 | sc         | 1          |
 | equip      | coupe-vent |
-
 ### Portaré el forro polar, abric i jaqueta tallavent.
 | variable   | value   |
 |:-----------|:--------|
 | sc         | 1       |
 | equip      | polaire |
-
 ### Ho he pensat, i finalment surto amb la samarreta.
 | variable   | value   |
 |:-----------|:--------|
 | sc         | 1       |
 | equip      | tshirt  |
-
 
 #####
 # CaScene2
@@ -705,7 +630,6 @@ Desprès de que em posés unes capes més, que fes una ultima verificació de la
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 1       |
-
 ## Image
 vallter2
 ## Text
@@ -721,15 +645,12 @@ La pujada es fa sense cap dificultat.
 | variable   | value                  |
 |:-----------|:-----------------------|
 | sc         | scene_croise_marcheurs |
-
 @if
 function(){return (vartable['equip']=='polaire')}
-
 ### Endavant
 | variable   | value                  |
 |:-----------|:-----------------------|
 | sc         | scene_croise_marcheurs |
-
 
 #####
 # CaScene_croise_marcheurs
@@ -738,7 +659,6 @@ function(){return (vartable['equip']=='polaire')}
 |:-----------|:-----------------------|
 | lang       | ca                     |
 | sc         | scene_croise_marcheurs |
-
 ## Text
 Saludo a uns excursionistes que ja estan baixant. Efectivament sembla més una hora per baixar que per pujar.
 
@@ -750,17 +670,14 @@ _\"- Bon dia, on vas ?  Cap al pic de la Dona ?\"_
 | variable   | value    |
 |:-----------|:---------|
 | sc         | mensonge |
-
 ### No, cap al refugi del Alemany (veritat)
 | variable   | value   |
 |:-----------|:--------|
 | sc         | verite  |
-
 ### No respondre i seguir el camí.
 | variable   | value         |
 |:-----------|:--------------|
 | sc         | nepasrepondre |
-
 
 #####
 # CaScene_mensonge
@@ -769,7 +686,6 @@ _\"- Bon dia, on vas ?  Cap al pic de la Dona ?\"_
 |:-----------|:---------|
 | lang       | ca       |
 | sc         | mensonge |
-
 ## Text
 L’home em dirigeix una mirada escèptica i continua la seva baixada.
 
@@ -780,7 +696,6 @@ Continuo la pujada.
 |:-----------|--------:|
 | sc         |       2 |
 
-
 #####
 # CaScene_nepasrepondre
 ## Qualities
@@ -788,7 +703,6 @@ Continuo la pujada.
 |:-----------|:--------------|
 | lang       | ca            |
 | sc         | nepasrepondre |
-
 ## Text
 Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.
 ## Choices
@@ -797,7 +711,6 @@ Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacci
 |:-----------|--------:|
 | sc         |       2 |
 
-
 #####
 # CaScene_verite
 ## Qualities
@@ -805,7 +718,6 @@ Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacci
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | verite  |
-
 ## Text
 _\"- Que tinguis bona ruta.\"_
 
@@ -816,7 +728,6 @@ Segueixo amb la pujada.
 |:-----------|--------:|
 | sc         |       2 |
 
-
 #####
 # CaScene3
 ## Qualities
@@ -824,7 +735,6 @@ Segueixo amb la pujada.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 2       |
-
 ## Image
 borne
 ## Text
@@ -834,20 +744,16 @@ Arribant a la Porteille de Mentet, una fita senyala la frontera amb França. El 
 | variable   | value           |
 |:-----------|:----------------|
 | sc         | back-to-vallter |
-
 ### Segueixo.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       3 |
-
 ### El vent bufa al coll. Em poso la meva jaqueta talla-vent per seguir el camí.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       3 |
-
 @if
 function(){return (vartable['equip']=='tshirt')}
-
 
 #####
 # CaScene3b
@@ -856,7 +762,6 @@ function(){return (vartable['equip']=='tshirt')}
 |:-----------|:----------------|
 | lang       | ca              |
 | sc         | back-to-vallter |
-
 ## Text
 Seguretat abans de tot. Baixo cap a Vallter i torno al cotxe fins i tot abans la posta del sol.
 
@@ -869,7 +774,6 @@ Fi.
 |:-----------|--------:|
 | sc         |       0 |
 
-
 #####
 # CaScene4
 ## Qualities
@@ -877,7 +781,6 @@ Fi.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 3       |
-
 ## Image
 vallee
 ## Text
@@ -892,7 +795,6 @@ La baixada es fa sense dificultat, els passos es segueixen amb seguretat fins l�
 |:-----------|--------:|
 | sc         |       4 |
 
-
 #####
 # CaScene5
 ## Qualities
@@ -900,7 +802,6 @@ La baixada es fa sense dificultat, els passos es segueixen amb seguretat fins l�
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 4       |
-
 ## Image
 bois
 ## Text
@@ -913,7 +814,6 @@ Les marques es segueixen al llarg del sender.
 |:-----------|--------:|
 | sc         |       5 |
 
-
 #####
 # CaScene6
 ## Qualities
@@ -921,7 +821,6 @@ Les marques es segueixen al llarg del sender.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 5       |
-
 ## Image
 berger
 ## Text
@@ -931,12 +830,10 @@ Una cabana apareix al fons a ma esquerra.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       7 |
-
 ### M’hi apropo.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       6 |
-
 
 #####
 # CaScene7
@@ -945,7 +842,6 @@ Una cabana apareix al fons a ma esquerra.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 6       |
-
 ## Image
 berger2
 ## Text
@@ -966,12 +862,10 @@ A prop, sobre una gran pedra plana, es llegeix l’inscripciò gravada “Refugi
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       7 |
-
 ### Recullo un tros de fusta abans d’anar mes endavant.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       7 |
-
 
 #####
 # CaScene8
@@ -980,7 +874,6 @@ A prop, sobre una gran pedra plana, es llegeix l’inscripciò gravada “Refugi
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 7       |
-
 ## Image
 alemany
 ## Text
@@ -991,7 +884,6 @@ Trobo una nova cabana, oberta. Es el refugi de l’Alemany.
 |:-----------|--------:|
 | sc         |       8 |
 
-
 #####
 # CaScene9
 ## Qualities
@@ -999,7 +891,6 @@ Trobo una nova cabana, oberta. Es el refugi de l’Alemany.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 8       |
-
 ## Image
 interieur
 ## Text
@@ -1013,12 +904,10 @@ Encara no son les 5 de la tarda, però el vall ja esta totalment en l’ombra.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       9 |
-
 ### Cal no perdre temps. Cal tallar fusta abans de que la nit caigui.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       9 |
-
 
 #####
 # CaScene10
@@ -1027,7 +916,6 @@ Encara no son les 5 de la tarda, però el vall ja esta totalment en l’ombra.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 9       |
-
 ## Text
 Cap fusta seca a prop, i la majoria dels arbres al voltant de la cabana ja mostren marques de destral.
 Només queden troncs enormes per la terra.
@@ -1041,7 +929,6 @@ Aquest tros es pesat i necessitara segurament ser tallat de nou a dins la cabana
 |:-----------|--------:|
 | sc         |      10 |
 
-
 #####
 # CaScene11
 ## Qualities
@@ -1049,7 +936,6 @@ Aquest tros es pesat i necessitara segurament ser tallat de nou a dins la cabana
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 10      |
-
 ## Text
 A les 6 de la tarda, ja es fa fosc i et termòmetre a dins el refugi ronda els 0°C.
 
@@ -1062,7 +948,6 @@ Encenc una espelma que poso en mig de la llar del foc. Les agulles de pins crepi
 |:-----------|--------:|
 | sc         |      11 |
 
-
 #####
 # CaScene12
 ## Qualities
@@ -1070,7 +955,6 @@ Encenc una espelma que poso en mig de la llar del foc. Les agulles de pins crepi
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 11      |
-
 ## Image
 feu
 ## Text
@@ -1084,7 +968,6 @@ La llar del foc distribueix una calor agradable però que devalla molt ràpid a 
 |:-----------|--------:|
 | sc         |      12 |
 
-
 #####
 # CaScene13
 ## Qualities
@@ -1092,7 +975,6 @@ La llar del foc distribueix una calor agradable però que devalla molt ràpid a 
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 12      |
-
 ## Image
 tisane
 ## Text
@@ -1105,19 +987,16 @@ Abans d’això, tinc cura d’arreglar les coses, en previsió de possibles vis
 |:-----------|:--------|
 | sc         | 13      |
 | sac        | banc    |
-
 ### Penjo la motxilla a un dels claus clavats dels murs de la cabana.
 | variable   | value   |
 |:-----------|:--------|
 | sc         | 13      |
 | sac        | clou    |
-
 ### Trec el menjar de la motxilla i el penjo d’un dels fils que creua la sala.
 | variable   | value      |
 |:-----------|:-----------|
 | sc         | 13         |
 | sac        | nourriture |
-
 
 #####
 # CaScene14nourrit
@@ -1127,7 +1006,6 @@ Abans d’això, tinc cura d’arreglar les coses, en previsió de possibles vis
 | lang       | ca         |
 | sc         | 13         |
 | sac        | nourriture |
-
 ## Text
 Amb el foc que es va consumint poc a poc, i unes mantes del refugi de sobres, la nit tindrà lloc sense cap problema de fred.
 ## Choices
@@ -1135,7 +1013,6 @@ Amb el foc que es va consumint poc a poc, i unes mantes del refugi de sobres, la
 | variable   |   value |
 |:-----------|--------:|
 | sc         |      14 |
-
 
 #####
 # CaScene14clou
@@ -1145,7 +1022,6 @@ Amb el foc que es va consumint poc a poc, i unes mantes del refugi de sobres, la
 | lang       | ca      |
 | sc         | 13      |
 | sac        | clou    |
-
 ## Text
 En mig de la nit, uns sorollets es posen a molestar el meu son.
 
@@ -1161,7 +1037,6 @@ La resta de la nit serà amb una tranquil·litat perfecta.
 |:-----------|--------:|
 | sc         |      14 |
 
-
 #####
 # CaScene14banc
 ## Qualities
@@ -1170,7 +1045,6 @@ La resta de la nit serà amb una tranquil·litat perfecta.
 | lang       | ca      |
 | sc         | 13      |
 | sac        | banc    |
-
 ## Text
 Al dia següent, el foc esta apagat, fan 4 graus a dintre i neva fora.
 
@@ -1187,7 +1061,6 @@ Mentre em queixo de aquest accident, acabo de preparar-me per la sortida.
 |:-----------|--------:|
 | sc         |      15 |
 
-
 #####
 # CaScene15
 ## Qualities
@@ -1195,10 +1068,8 @@ Mentre em queixo de aquest accident, acabo de preparar-me per la sortida.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 14      |
-
 @function
 function(){return(vartable['sac']!='banc')}
-
 ## Image
 neige
 ## Text
@@ -1213,7 +1084,6 @@ Apago el foc amb neu, oferint l’ultim tros de fusta als propers inquilins, rec
 |:-----------|--------:|
 | sc         |      15 |
 
-
 #####
 # CaScene16
 ## Qualities
@@ -1221,7 +1091,6 @@ Apago el foc amb neu, oferint l’ultim tros de fusta als propers inquilins, rec
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 15      |
-
 ## Image
 presque-mantet
 ## Text
@@ -1234,7 +1103,6 @@ Cap a baix s’endivinen unes cases.
 |:-----------|--------:|
 | sc         |      16 |
 
-
 #####
 # CaScene17
 ## Qualities
@@ -1242,7 +1110,6 @@ Cap a baix s’endivinen unes cases.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 16      |
-
 ## Image
 vue-mantet
 ## Text
@@ -1253,7 +1120,6 @@ Es el poble de Mentet, banyat per la llum del sol de tardor.
 |:-----------|--------:|
 | sc         |      17 |
 
-
 #####
 # CaScene18
 ## Qualities
@@ -1261,7 +1127,6 @@ Es el poble de Mentet, banyat per la llum del sol de tardor.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 17      |
-
 ## Image
 panneau
 ## Text
@@ -1274,7 +1139,6 @@ Son les 12 i mitja.
 |:-----------|--------:|
 | sc         |      18 |
 
-
 #####
 # CaScene19
 ## Qualities
@@ -1282,7 +1146,6 @@ Son les 12 i mitja.
 |:-----------|:--------|
 | lang       | ca      |
 | sc         | 18      |
-
 ## Image
 mantet
 ## Text
@@ -1292,6 +1155,5 @@ To be continued.
 | variable   |   value |
 |:-----------|--------:|
 | sc         |       0 |
-
 
 #####

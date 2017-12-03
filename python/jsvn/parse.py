@@ -9,24 +9,35 @@ def regenerate_md(preamble, j):
         return res
 
     # first copy preamble
-    md = 'Version: %s\n'%preamble['version']
-    md = md + 'Qualities:\n'
-    t = beautify_table(preamble['qualities'])
-    md = md + t + '\n'
+    log.info(preamble)
+    md = ''
+    if not preamble['version'] is None:
+        md = md + 'Version: %s\n\n'%preamble['version']
+        md = md + 'Qualities:\n\n'
+    if not preamble['qualities'] is None:
+        t = beautify_table(preamble['qualities'])
+        md = md + t + '\n\n'
+    if not preamble['extensions'] is None:
+        md = md + 'Extensions:%s\n\n'%','.join(preamble['extensions'])
 
     # then appends scenes
     for k, v in j.items():
         md = md + '# %s\n'%k
         md = md + '## Qualities\n'
-        if '@function' in v['Qualities']:
-            qual_d, qual_f = v['Qualities'].split('@function')
-        else:
-             qual_d, qual_f = v['Qualities'], ''
-        d = parse_dict(qual_d)
+
+        d = v['Qualities']
+        qual_f = ''
+        if 'Choix' in k:
+            log.info('########')
+            log.info(d)
+        if '@function' in d.keys():
+            qual_f = d['@function']
+            d.pop('@function')
+            log.info(qual_f)
         if d != {}:
-            md = md + beautify_table(d) +'\n'
+            md = md + beautify_table(d) +'\n\n'
         if qual_f != '':
-            md = md + '\n@function' + qual_f + '\n'
+            md = md + '@function' + qual_f + '\n\n'
 
         for each in ['Image', 'Text']:
             if each in v.keys():
@@ -35,24 +46,21 @@ def regenerate_md(preamble, j):
         md = md + '## Choices\n'
         for k1, v1 in v['Choices'].items():
             md = md + '### %s\n'%k1
+            qual_f = ''
             if '@if' in v1:
-                qual_d, qual_f = v1.split('@if')
-            else:
-                qual_d, qual_f = v1, ''
-            d = parse_dict(qual_d)
-            md = md + beautify_table(d) + '\n'
+                qual_f = v1['@if']
+                v1.pop('@if')
+            if v1 != {}:
+                md = md + beautify_table(v1) + '\n\n'
             if qual_f != '':
-                md = md + '\n@if' + qual_f + '\n'
+                md = md + '@if' + qual_f + '\n\n'
 
         # if section is choice or qualities
         # then check for tables
 
         # adds a breaking line
-        md = md + '\n---------------------------------\n'
+        md = md + '\n#####\n'
 
-    w = open('/tmp/vallter.md2','w')
-    w.write(md)
-    w.close()
     return md
 
 def clean_json(j):
@@ -71,8 +79,7 @@ def clean_json(j):
             qual_d, qual_f = v['Qualities'].split('@function')
         else:
              qual_d, qual_f = v['Qualities'], ''
-        d = parse_dict(qual_d)
-        qual_dict = dict(d)
+        qual_dict = dict(parse_dict(qual_d))
 
         if qual_f != '':
             qual_dict['@function'] = qual_f
@@ -99,6 +106,7 @@ def clean_json(j):
             ch[k1] = choice_dict
         sc['Choices'] = ch
         res[k] = sc
+
     return res
 
 def gen_qualities_code(conditions):
@@ -169,6 +177,9 @@ def json_to_javascript(j, preamble={}):
         log.info('%s conditions'%len(conditions))
         if len(preamble_cond) != 0:
             log.info('%s preamble conditions'%len(preamble_cond))
+        if sc_name == 'SceneChoixLangues':
+            log.info('####')
+            log.info(conditions)
         if '@function' in [e[0] for e in conditions]:
                 log.info('@function detected in these conditions')
 
@@ -236,9 +247,11 @@ def jsonify_markdown(md_fp):
     res = jsonify_markdown(md_fp)
     return res
 
-def markdown_to_json(md_fp):
-    # Creates a new .md file without lines full of --------
-    # This new file is named [markdown_file].md1
+def markdown_to_json(md_fp, rebuild_md=True):
+    ''' Creates a new .md file without lines full of --------
+    This new file is named [markdown_file].md1
+    If `rebuild_md` is True then the Markdown file is rewritten nicely (with
+    beautified tables)'''
     lines = open(md_fp).readlines()
 
     lines = remove_minuslines(lines)
@@ -254,4 +267,16 @@ def markdown_to_json(md_fp):
 
     # Improves a few bits in the json
     j = clean_json(j)
+    log.info("clean")
+    log.info(j['SceneChoixLangues'])
+
+    if rebuild_md:
+        log.info('* Rebuild MD')
+        md = regenerate_md(preamble, j)
+        md_fp2 = md_fp.replace('.md','.beautified.md')
+        with open(md_fp2, 'w') as w:
+            w.write(md)
+
+    log.info('fin')
+    log.info(j['SceneChoixLangues'])
     return preamble, j

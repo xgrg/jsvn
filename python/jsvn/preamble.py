@@ -41,8 +41,7 @@ def parse_dict(code):
                     is_md = is_md + 1
         return is_md == 2
 
-    # TODO find a way to identify in advance Markdown table / simple text
-    log.info('is_markdown:%s'%is_markdown(code))
+    #log.info('is_markdown:%s'%is_markdown(code))
     if is_markdown(code):
         d = markdown_table_to_dict(code)
         return d

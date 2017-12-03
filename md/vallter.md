@@ -6,6 +6,7 @@ Qualities:
 |:-----------|:--------|
 | lang       | fr      |
 
+Extensions:test1.md,test2.md
 # SceneChoixLangues
 ## Qualities
 

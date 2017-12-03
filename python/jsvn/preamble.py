@@ -79,6 +79,7 @@ def get_preamble(lines):
     Note: actually runs on the .md1 file so that these optional lines get removed
     as are breaking lines.'''
 
+    preamble = {'version': None, 'qualities':None, 'extensions':None}
 
     log.info('* Fetching preamble.')
     # Splitting preamble
@@ -115,6 +116,8 @@ def get_preamble(lines):
             v = v.strip('\n').rstrip('\n')
             d = parse_dict(v)
             preamble[k] = d
+        elif k == 'extensions':
+            preamble[k] = v.split(',')
         else:
             if k in preamble.keys():
                 preamble[k] = v

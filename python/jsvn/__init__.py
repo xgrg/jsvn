@@ -103,7 +103,7 @@ def clean_json(j):
         res[k] = sc
     return res
 
-def get_qualities_code(conditions):
+def gen_qualities_code(conditions):
     ''' From a JSON dict generates JS code for Qualities / conditions.
     `conditions` is a list of 2-uples built from dictionary/@function and
      preamble.'''
@@ -123,7 +123,7 @@ def get_qualities_code(conditions):
 
     return res
 
-def get_choice(code):
+def gen_choice(code):
     ''' From a JSON dict generates JS code for Choices'''
     res = ''
     for label, option in code.items():
@@ -138,11 +138,11 @@ def get_choice(code):
     return 'choices:[%s]'%res
 
 
-def get_storylet_code(code):
+def gen_storylet_code(code):
     ''' Turns the Text section in a JS playable sequence.
     By default, every bit appears with a 'fadeIn' effect in 1000 ms.'''
 
-    def get_playsequence(code):
+    def gen_playsequence(code):
         seq = ''
         for each in code.split('\n'):
             each = markdown.markdown(each)
@@ -151,9 +151,8 @@ def get_storylet_code(code):
         return seq
 
     storylet_code = '  playSequence([%s%s%s    [choice, 0]])'\
-        %("%s", get_playsequence(code), "%s")
+        %("%s", gen_playsequence(code), "%s")
     return storylet_code
-
 
 def json_to_javascript(j, preamble={}):
 
@@ -175,10 +174,10 @@ def json_to_javascript(j, preamble={}):
                 log.info('@function detected in these conditions')
 
         conditions.extend(preamble_cond)
-        qual_code = get_qualities_code(conditions)
+        qual_code = gen_qualities_code(conditions)
 
         # Generate the sequence for text, the image
-        storylet_code = get_storylet_code(sc['Text'])
+        storylet_code = gen_storylet_code(sc['Text'])
         image = '' if not 'Image' in sc.keys()\
             else '[function(){displayImage("%s")}, 1000],\n'%sc['Image']
         extra_code = '' if not 'Code' in sc.keys()\
@@ -186,7 +185,7 @@ def json_to_javascript(j, preamble={}):
 
         # Works with Choices
         choices_code = '' if not 'Choices' in sc.keys() \
-            else get_choice(sc['Choices'])
+            else gen_choice(sc['Choices'])
 
         # Compiles everything
         sc_code = '  qualities:function(){\n    %s\n  },\n'\

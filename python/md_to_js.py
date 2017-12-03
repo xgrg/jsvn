@@ -23,7 +23,7 @@ def markdown_to_js(md_fp, json_fp, js_fp):
     json.dump(j, open(json_fp, 'w'), indent=2, ensure_ascii=False, encoding ='utf-8')
 
     # Generates JS from Json
-    js = jsvn.json_to_javascript(j)
+    js = jsvn.json_to_javascript(j, preamble)
     w = open(js_fp, 'w')
     w.write(js)
     w.close()

@@ -137,18 +137,6 @@ def get_choice(code):
 
     return 'choices:[%s]'%res
 
-'''def get_playsequence(code):
-    seq = ''
-    for each in code.split('\n'):
-
-        each = markdown.markdown(each)
-        eachcode = '{addDialog("%s", "fadeIn")}, 1000'%each
-        seq = seq + '    [function()%s],\n'%(eachcode)
-    return seq
-
-def get_storylet_code(code):
-    storylet_code = '  playSequence([%s%s%s    [choice, 0]])'%("%s", get_playsequence(code), "%s")
-    return storylet_code'''
 
 def get_storylet_code(code):
     ''' Turns the Text section in a JS playable sequence.
@@ -164,18 +152,22 @@ def get_storylet_code(code):
 
     storylet_code = '  playSequence([%s%s%s    [choice, 0]])'\
         %("%s", get_playsequence(code), "%s")
-    log.info(storylet_code)
     return storylet_code
 
 
 def json_to_javascript(j, preamble={}):
+
+    if preamble == {}:
+        log.info('* No preamble provided.')
 
     js = ''
     for sc_name, sc in j.items():
 
         # Start with Qualities (adds conditions from preamble if any)
         conditions = sc['Qualities'].items()
-        preamble_cond = preamble.get('qualities', {})
+
+        preamble_cond = preamble['qualities'].items()\
+            if not preamble['qualities'] is None else []
         log.info('%s conditions'%len(conditions))
         if len(preamble_cond) != 0:
             log.info('%s preamble conditions'%len(preamble_cond))

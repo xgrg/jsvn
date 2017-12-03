@@ -79,13 +79,8 @@ def get_preamble(lines):
     Note: actually runs on the .md1 file so that these optional lines get removed
     as are breaking lines.'''
 
-    #lines = open(md_fp).readlines()
 
     log.info('* Fetching preamble.')
-    #log.info('Reading %s.'%(md_fp+'1'))
-
-    #w = open(md_fp+'1', 'w')
-    preamble = {'version': None, 'qualities':None}
     # Splitting preamble
     split = []
     i = 0
@@ -109,9 +104,7 @@ def get_preamble(lines):
 
     body = []
     for each in lines[i:]:
-        #w.write(each)
         body.append(each)
-    #w.close()
 
     # Processing split preamble
     for each in split:
@@ -128,7 +121,6 @@ def get_preamble(lines):
             else:
                 raise Exception('%s unknown (%s)'%(k, ', '.join(preamble.keys())))
 
-    #log.info('Writing %s.'%(md_fp+'1'))
     log.info('Found preamble:')
     from pprint import pprint
     pprint(preamble, indent=2)

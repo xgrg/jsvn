@@ -17,10 +17,10 @@ def markdown_to_js(md_fp, json_fp, js_fp):
 
     # Creates a Json from Markdown
     j = jsvn.jsonify_markdown(md_fp+'1')
-    json.dump(j, open(json_fp, 'w'), indent=2, ensure_ascii=False, encoding ='utf-8')
 
     # Improves a few bits in the json
     j = jsvn.clean_json(j)
+    json.dump(j, open(json_fp, 'w'), indent=2, ensure_ascii=False, encoding ='utf-8')
 
     # Generates JS from Json
     js = jsvn.json_to_javascript(j)

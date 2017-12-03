@@ -42,6 +42,24 @@ def parse_dict(code):
         d = get_dict(code)
         return d
 
+def remove_minuslines(md_fp):
+    ''' Creates a new file with same content minus lines full of ------'''
+    log.info('* Removing minus lines.')
+    log.info('Reading: %s'%md_fp)
+    lines = open(md_fp).readlines()
+    w = open(md_fp+'1', 'w')
+    for each in lines:
+        is_line = False
+        clean = clean_line(each)
+        if len(set(clean)) == 1:
+            for s in ['---', '***', '###']:
+                if clean.startswith(s):
+                    is_line = True
+                    break
+        if not is_line:
+            w.write(each)
+    w.close()
+    log.info('Written: %s'%md_fp+'1')
 
 def clean_line(line):
     ''' removes any space and convert to lowercase'''

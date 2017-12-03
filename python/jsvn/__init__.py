@@ -1,19 +1,15 @@
 import json
 from preamble import *
 
-def clean_line(line):
-    ''' removes any space and convert to lowercase'''
-    return ''.join(line.split(' ')).lower().rstrip('\n')
-
-
-def beautify_table(d):
-    ''' From a dictionary to a Markdown table'''
-    res = tabulate.tabulate(d.items(), ['variable', 'value'], tablefmt="pipe")
-    return res
-
 
 def regenerate_md(preamble, j):
     ''' From a JSON regenerates a Markdown file'''
+
+    def beautify_table(d):
+        ''' From a dictionary to a Markdown table'''
+        res = tabulate.tabulate(d.items(), ['variable', 'value'], tablefmt="pipe")
+        return res
+
     # first copy preamble
     md = 'Version: %s\n'%preamble['version']
     md = md + 'Qualities:\n'
@@ -62,13 +58,17 @@ def regenerate_md(preamble, j):
     return md
 
 def clean_json(j):
-
+    ''' From a JSONified Markdown file, reformats selected bits of the JSON when
+    necessary e.g. turning Quality/Choices tables to dictionaries '''
     log.info('* Cleaning JSON.')
+
     from collections import OrderedDict
     res = OrderedDict()
     # then appends scenes
     for k, v in j.items():
         sc = {}
+        # Starts with Qualities: looks for either one table or a function or both
+        # NB: the function is identified using @function
         if '@function' in v['Qualities']:
             qual_d, qual_f = v['Qualities'].split('@function')
         else:
@@ -80,38 +80,39 @@ def clean_json(j):
             qual_dict['@function'] = qual_f
         sc['Qualities'] = qual_dict
 
+        # Image and Text do not need to be touched at this stage
         for each in ['Image', 'Text']:
             if each in v.keys():
                 sc[each] = v[each]
 
+        # Ends with Choices: looks for either one table or a function or both
+        # NB: the function is identified using @if
         ch = OrderedDict()
         for k1, v1 in v['Choices'].items():
             if '@if' in v1:
                 qual_d, qual_f = v1.split('@if')
             else:
                 qual_d, qual_f = v1, ''
-
             d = parse_dict(qual_d)
             choice_dict = dict(d)
-            #d2 = ['%s:%s'%(k2,v2) for k2, v2 in d.items()]
-            #ch[k1] = '\n'.join(d2) + '\n'
+
             if qual_f != '':
                 choice_dict['@if'] = qual_f
-                #ch[k1] = ch[k1] + '\n@if\n' + qual_f
             ch[k1] = choice_dict
         sc['Choices'] = ch
         res[k] = sc
     return res
 
-def get_qualities_code(code):
+def get_qualities_code(conditions):
+    ''' From a JSON dict generates JS code for Qualities / conditions.
+    `conditions` is a list of 2-uples built from dictionary/@function and
+     preamble.'''
     f = []
     res = ''
-    varname = 'a'
-
-    for k, v in code.items():
+    for k, v in conditions:
         f.append('a%s'%(len(f)+1))
         if k == '@function':
-            if_func = code['@function'].replace('function', 'function %s'%f[-1])
+            if_func = v.replace('function', 'function %s'%f[-1])
             res = res + if_func +';\n'
         else:
             res =  res + 'function %s(){ return (vartable["%s"]=="%s"); };'%(f[-1], k, v)
@@ -122,7 +123,21 @@ def get_qualities_code(code):
 
     return res
 
-def get_playsequence(code):
+def get_choice(code):
+    ''' From a JSON dict generates JS code for Choices'''
+    res = ''
+    for label, option in code.items():
+        # label is the text of the choice, option is the assigned code
+        if_func = ''
+        if '@if' in option.keys():
+            if_func = ', ' + option['@if']
+            option.pop('@if')
+
+        res = res + '["%s", %s%s],'%(label, json.dumps(option), if_func)
+
+    return 'choices:[%s]'%res
+
+'''def get_playsequence(code):
     seq = ''
     for each in code.split('\n'):
 
@@ -133,67 +148,71 @@ def get_playsequence(code):
 
 def get_storylet_code(code):
     storylet_code = '  playSequence([%s%s%s    [choice, 0]])'%("%s", get_playsequence(code), "%s")
+    return storylet_code'''
+
+def get_storylet_code(code):
+    ''' Turns the Text section in a JS playable sequence.
+    By default, every bit appears with a 'fadeIn' effect in 1000 ms.'''
+
+    def get_playsequence(code):
+        seq = ''
+        for each in code.split('\n'):
+            each = markdown.markdown(each)
+            eachcode = '{addDialog("%s", "fadeIn")}, 1000'%each
+            seq = seq + '    [function()%s],\n'%(eachcode)
+        return seq
+
+    storylet_code = '  playSequence([%s%s%s    [choice, 0]])'\
+        %("%s", get_playsequence(code), "%s")
+    log.info(storylet_code)
     return storylet_code
 
-def get_choice(code):
-    res = ''
-    for label, option in code.items():
-        # k is the text of the choice, v is the assigned code
-        if_func = ''
 
-        if '@if' in option.keys():
-            if_func = ', ' + option['@if']
-            option.pop('@if')
+def json_to_javascript(j, preamble={}):
 
-        res = res + '["%s", %s%s],'%(label, json.dumps(option), if_func)
-
-    return 'choices:[%s]'%res
-
-def remove_minuslines(md_fp):
-    ''' Creates a new file with same content minus lines full of ------'''
-    log.info('* Removing minus lines.')
-    log.info('Reading: %s'%md_fp)
-    lines = open(md_fp).readlines()
-    w = open(md_fp+'1', 'w')
-    for each in lines:
-        is_line = False
-        clean = clean_line(each)
-        if len(set(clean)) == 1:
-            for s in ['---', '***', '###']:
-                if clean.startswith(s):
-                    is_line = True
-                    break
-        if not is_line:
-            w.write(each)
-    w.close()
-    log.info('Written: %s'%md_fp+'1')
-
-
-
-def json_to_javascript(j):
     js = ''
     for sc_name, sc in j.items():
-        qual_code = get_qualities_code(sc['Qualities'])
-        storylet_code = get_storylet_code(sc['Text'])
 
-        image = '' if not 'Image' in sc.keys() else '[function(){displayImage("%s")}, 1000],\n'%sc['Image']
-        extra_code = '' if not 'Code' in sc.keys() else '   [function(){%s}, 0],\n'%sc['Code']
-        choices_code = '' if not 'Choices' in sc.keys() else get_choice(sc['Choices'])
+        # Start with Qualities (adds conditions from preamble if any)
+        conditions = sc['Qualities'].items()
+        preamble_cond = preamble.get('qualities', {})
+        log.info('%s conditions'%len(conditions))
+        if len(preamble_cond) != 0:
+            log.info('%s preamble conditions'%len(preamble_cond))
+        if '@function' in [e[0] for e in conditions]:
+                log.info('@function detected in these conditions')
+
+        conditions.extend(preamble_cond)
+        qual_code = get_qualities_code(conditions)
+
+        # Generate the sequence for text, the image
+        storylet_code = get_storylet_code(sc['Text'])
+        image = '' if not 'Image' in sc.keys()\
+            else '[function(){displayImage("%s")}, 1000],\n'%sc['Image']
+        extra_code = '' if not 'Code' in sc.keys()\
+            else '   [function(){%s}, 0],\n'%sc['Code']
+
+        # Works with Choices
+        choices_code = '' if not 'Choices' in sc.keys() \
+            else get_choice(sc['Choices'])
+
+        # Compiles everything
         sc_code = '  qualities:function(){\n    %s\n  },\n'\
             '  storylet:function(choice){\n%s\n  },\n%s'\
             %(qual_code, storylet_code%(image, extra_code), choices_code)
         scene_js = '%s = {\n%s\n}'%(sc_name, sc_code)
         js = js + scene_js + '\n\n'
 
-
+    # Ends with listing all the scenes in the `ready` function
     pushlist = ''
     for sc_name, _ in j.items():
         pushlist = pushlist + '  storylets.push(%s);\n'%sc_name
-    js = js + '$(document).ready(function(){\n%s});'%pushlist
 
+    js = js + '$(document).ready(function(){\n%s});'%pushlist
     return js
 
 def jsonify_markdown(md_fp):
+    ''' Reads a Markdown file and parses it to build a first JSON object'''
     import sys
     reload(sys)
     sys.setdefaultencoding('utf-8')
@@ -201,7 +220,6 @@ def jsonify_markdown(md_fp):
     import markdown_to_json
     from markdown_to_json.vendor.docopt import docopt
     from markdown_to_json.vendor import CommonMark
-
     from markdown_to_json.markdown_to_json import Renderer, CMarkASTNester
 
     def get_markdown_ast(markdown_file):

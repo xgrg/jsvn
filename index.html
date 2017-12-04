@@ -78,6 +78,21 @@
                          'width': w-34})
     }
 
+    function preload(){
+      var arrayOfImages = ['images/vallter.jpg','images/vallter2.jpg']; //, 'media/bg.mp3']
+      $(arrayOfImages).each(function(i){   // Note the argument
+        var image = document.createElement('img');
+        console.log( arrayOfImages[i]);
+        image.setAttribute('src', arrayOfImages[i]);
+      });
+      var arrayOfImages = ['media/bg.mp3']
+      $(arrayOfImages).each(function(i){   // Note the argument
+        console.log( arrayOfImages[i]);
+        var image = document.createElement('source');
+        image.setAttribute('src', arrayOfImages[i]);
+      });
+    }
+    preload();
   </script>
 
   <script src="js/scene.js"></script>

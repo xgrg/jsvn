@@ -1,0 +1,105 @@
+{
+  "Début": {
+    "Text": "", 
+    "Qualities": {
+      "@function": "\nfunction(){\nreturn(vartable['sc']==undefined)};"
+    }, 
+    "Choices": {
+      "Démarrer": {
+        "sc": "0", 
+        "light": "no", 
+        "tried_switch": "false"
+      }
+    }
+  }, 
+  "Scene1": {
+    "Text": "Ils peuvent débarquer et me trouver ici d'une minute à l'autre.\n\nJe devrais quitter les lieux **au plus vite**.\n\nToutefois je n'y reviendrai pas avant longtemps, alors...\n\n...c'est le moment de savoir ce qui compte vraiment.\n\nSavoir quoi laisser ou ne pas laisser.", 
+    "Qualities": {
+      "sc": "0"
+    }, 
+    "Choices": {
+      "Continuer": {
+        "sc": "1"
+      }
+    }
+  }, 
+  "Scene2": {
+    "Text": "", 
+    "Qualities": {
+      "sc": "1"
+    }, 
+    "Choices": {
+      "Faire un rapide tour des lieux.": {
+        "sc": "-1", 
+        "look_around_the_room": "true"
+      }
+    }
+  }, 
+  "SceneLookAround": {
+    "Text": "L'appartement est plongé dans la pénombre.\nJe me tiens debout devant la porte d'entrée.\n\nJ'y verrais sensiblement mieux avec un peu de lumière.", 
+    "Qualities": {
+      "light": "no", 
+      "look_around_the_room": "true", 
+      "tried_switch": "false"
+    }, 
+    "Choices": {
+      "Chercher l'interrupteur près de la porte d'entrée.": {
+        "look_around_the_room": "false", 
+        "tried_switch": "true"
+      }
+    }
+  }, 
+  "SceneTrySwitch": {
+    "Text": "En tâtonnant à gauche de la porte je parviens à trouver l'interrupteur.\n\nJe l'actionne sans aucun effet et la pièce reste telle qu'elle est dans l'obscurité.", 
+    "Qualities": {
+      "light": "no", 
+      "look_around_the_room": "false", 
+      "tried_switch": "true"
+    }, 
+    "Choices": {
+      "Utiliser la lampe du téléphone portable": {
+        "light": "phone", 
+        "just_switched_phonelight": "true"
+      }
+    }
+  }, 
+  "ScenePhone": {
+    "Text": "La lumière du téléphone éclaire à courte distance.\n\nJe distingue le bureau sous la fenêtre avec les volets fermés.", 
+    "Qualities": {
+      "light": "phone", 
+      "just_switched_phonelight": "true"
+    }, 
+    "Choices": {
+      "Remonter les volets": {
+        "just_switched_phonelight": "false", 
+        "remonter_volets": "true"
+      }, 
+      "Explorer le reste de la pièce": {
+        "look_around_the_room": "true", 
+        "just_switched_phonelight": "false"
+      }
+    }
+  }, 
+  "SceneExplorePhoneLight": {
+    "Text": "Je m'avance dans l'appartement à la lumière du téléphone.\n\nC'est sans se préoccuper de la batterie de ce dernier qui se consomme à grande vitesse.\n\nSi le courant n'est pas rétabli dans l'appartement, alors vaudrait-il sans doute mieux chercher à l'économiser.", 
+    "Qualities": {
+      "light": "phone", 
+      "look_around_the_room": "true"
+    }, 
+    "Choices": {
+      "Retourner près de la fenêtre et remonter les volets.": {
+        "look_around_the_room": "false", 
+        "remonter_volets": "true"
+      }
+    }
+  }, 
+  "SceneRemonterVolets": {
+    "Text": "J'actionne non sans difficulté la manivelle à droite de la fenêtre et les volets remontent.\n\nLes rayons du crépuscule pénètrent dans la pièce, laissant voir la poussière en suspension.", 
+    "Qualities": {
+      "remonter_volets": "true"
+    }, 
+    "Choices": {
+      "Continuer": {}
+    }
+  }
+}

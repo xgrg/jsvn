@@ -267,8 +267,6 @@ def markdown_to_json(md_fp, rebuild_md=True):
 
     # Improves a few bits in the json
     j = clean_json(j)
-    log.info("clean")
-    log.info(j['SceneChoixLangues'])
 
     if rebuild_md:
         log.info('* Rebuild MD')
@@ -277,6 +275,4 @@ def markdown_to_json(md_fp, rebuild_md=True):
         with open(md_fp2, 'w') as w:
             w.write(md)
 
-    log.info('fin')
-    log.info(j['SceneChoixLangues'])
     return preamble, j

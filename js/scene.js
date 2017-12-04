@@ -197,9 +197,9 @@ function run_machine() {
 // MAIN FUNCTION
 
 $( document ).ready(function() {
-  var bgMusic = $('#audio-bg')[0];
-  bgMusic.play();
-  
+  preload();
+  var bgMusic = $('audio')[0];
+
   var f = QueryString.f;
   var b64 = QueryString.d;
   console.log('file ' + f)

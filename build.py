@@ -4,7 +4,7 @@ import os
 import os.path as osp
 from glob import glob
 os.system('mkdir build/')
-os.system('cp -r images/ css/ js/ index.html md/ build/')
+os.system('cp -r images/ media/ css/ js/ index.html md/ build/')
 
 
 # compile all md files in md:

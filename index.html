@@ -78,13 +78,25 @@
                          'width': w-34})
     }
 
+    function preload(){
+      var arrayOfImages = ['images/vallter.jpg','images/vallter2.jpg']; //, 'media/bg.mp3']
+      $(arrayOfImages).each(function(i){   // Note the argument
+        var image = document.createElement('img');
+        console.log( arrayOfImages[i]);
+        image.setAttribute('src', arrayOfImages[i]);
+      });
+      var arrayOfImages = ['media/bg.mp3']
+      $(arrayOfImages).each(function(i){   // Note the argument
+        console.log( arrayOfImages[i]);
+        var image = document.createElement('source');
+        image.setAttribute('src', arrayOfImages[i]);
+      });
+    }
+
   </script>
 
   <script src="js/scene.js"></script>
-  <audio id="audio-bg">
-      <source src="media/bg.mp3"></source>
-      Your browser isn't invited for super fun audio time.
-  </audio>
+  <audio src="media/bg.mp3"></audio>
 
 </body>
 </html>

@@ -6,6 +6,7 @@
 ## Inspiration:
 - [Twine](http://twinery.org)
 - [StoryNexus](http://www.storynexus.com)
+- [Choice of Games](http://www.choiceofgames.com)
 - [Ren'Py]()
 - Lots of repos out there ([js-vine](https://github.com/jdeisenberg/js-vine), [monogatari](https://github.com/Monogatari/Monogatari), etc)
 

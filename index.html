@@ -96,7 +96,14 @@
   </script>
 
   <script src="js/scene.js"></script>
-  <audio src="media/bg.mp3" audio id="audio-bg" />
+  <audio src="media/bg.mp3"></audio>
+  <div id="play">play</div>
+  <script>
+  $("div#play").click(function(){
+    var bgMusic = $('audio')[0];
+    bgMusic.play();
+  })
+  </script>
 
 </body>
 </html>

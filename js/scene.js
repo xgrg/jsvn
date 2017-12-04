@@ -198,7 +198,6 @@ function run_machine() {
 
 $( document ).ready(function() {
   var bgMusic = $('audio')[0];
-  //bgMusic.play();
 
   var f = QueryString.f;
   var b64 = QueryString.d;

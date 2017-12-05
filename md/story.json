@@ -8,8 +8,9 @@
       "Démarrer": {
         "sc": "0", 
         "light": "no", 
-        "@action": "Scene1", 
-        "tried_switch": "false"
+        "anxiety": "0", 
+        "tried_switch": "false", 
+        "@action": "Scene1"
       }
     }
   }, 
@@ -40,9 +41,9 @@
     "Text": "L'appartement est plongé dans la pénombre.\nJe me tiens debout devant la porte d'entrée.\n\nJ'y verrais sensiblement mieux avec un peu de lumière.", 
     "Qualities": {
       "light": "no", 
-      "@action": "RapideTourDesLieux", 
       "look_around_the_room": "true", 
-      "tried_switch": "false"
+      "tried_switch": "false", 
+      "@action": "RapideTourDesLieux"
     }, 
     "Choices": {
       "Chercher l'interrupteur près de la porte d'entrée.": {
@@ -81,23 +82,95 @@
     }
   }, 
   "SceneExplorePhoneLight": {
-    "Text": "Je m'avance dans l'appartement à la lumière du téléphone.\n\nC'est sans se préoccuper de la batterie de ce dernier qui se consomme à grande vitesse.\n\nSi le courant n'est pas rétabli dans l'appartement, alors vaudrait-il sans doute mieux chercher à l'économiser.", 
+    "Text": "Je m'avance dans l'appartement à la lumière du téléphone.\n\nC'est sans se préoccuper de la batterie de ce dernier qui se consomme à vue d'oeil.\nA ce rythme il sera bientôt totalement déchargé.\n\nS'il n'y a pas de courant dans l'appartement, alors vaudrait-il sans doute mieux chercher à l'économiser.", 
     "Qualities": {
       "light": "phone", 
       "look_around_the_room": "true"
     }, 
     "Choices": {
       "Retourner près de la fenêtre et remonter les volets.": {
-        "@action": "SceneRemonterVolets", 
+        "light": "volets", 
         "look_around_the_room": "false", 
-        "remonter_volets": "true"
+        "remonter_volets": "true", 
+        "@action": "SceneRemonterVolets"
       }
     }
   }, 
   "SceneRemonterVolets": {
-    "Text": "J'actionne non sans difficulté la manivelle à droite de la fenêtre et les volets remontent.\n\nLes rayons du crépuscule pénètrent dans la pièce, laissant voir la poussière en suspension.", 
+    "Text": "J'actionne non sans difficulté la manivelle à droite de la fenêtre et les volets remontent.\n\nLes rayons du crépuscule pénètrent dans l'appartement, laissant voir le reste de la pièce à travers la poussière en suspension.", 
     "Qualities": {
+      "@action": "SceneRemonterVolets", 
       "remonter_volets": "true"
+    }, 
+    "Choices": {
+      "Explorer la pièce": {}
+    }
+  }, 
+  "ExplorerAvecVoletsRemontés": {
+    "Text": "Je suis à présent dans la pièce à vivre. On y distingue le coin cuisine, un coin salon avec un canapé, une table basse, une table à manger, et le coin bureau sous la fenêtre.", 
+    "Qualities": {
+      "light": "volets", 
+      "remonter_volets": "true"
+    }, 
+    "Choices": {
+      "Explorer d'autres pièces": {
+        "exam_autrespieces": "true", 
+        "@action": "ExplorerAutresPièces"
+      }, 
+      "S'approcher du coin cuisine": {
+        "@action": "ApprocherCuisine", 
+        "exam_cuisine": "true"
+      }, 
+      "S'approcher du coin bureau": {
+        "@action": "ApprocherBureau", 
+        "exam_bureau": "true"
+      }, 
+      "S'approcher du coin salon": {
+        "exam_salon": "true", 
+        "@action": "ApprocherSalon"
+      }, 
+      "Inspecter les assiettes": {
+        "@if": "function(){ return (vartable['exam_salon'])}"
+      }, 
+      "Aller dans la salle de bains": {
+        "@if": "function(){ return (vartable['exam_autrespieces']=='true')}"
+      }, 
+      "Aller dans la chambre": {
+        "@if": "function(){ return (vartable['exam_autrespieces']=='true')}"
+      }
+    }
+  }, 
+  "ApprocherSalon": {
+    "Text": "Salon.", 
+    "Qualities": {
+      "@action": "ApprocherSalon"
+    }, 
+    "Choices": {
+      "Continuer": {}
+    }
+  }, 
+  "ApprocherCuisine": {
+    "Text": "Cuisine", 
+    "Qualities": {
+      "@action": "ApprocherCuisine"
+    }, 
+    "Choices": {
+      "Continuer": {}
+    }
+  }, 
+  "ApprocherBureau": {
+    "Text": "Bureau", 
+    "Qualities": {
+      "@action": "ApprocherBureau"
+    }, 
+    "Choices": {
+      "Continuer": {}
+    }
+  }, 
+  "ApprocherAutresPièces": {
+    "Text": "Autres Pièces.", 
+    "Qualities": {
+      "@action": "ExplorerAutresPièces"
     }, 
     "Choices": {
       "Continuer": {}

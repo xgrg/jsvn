@@ -12,7 +12,7 @@ return (a1());
   playSequence([    [function(){addDialog("", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Démarrer", {"sc": "0", "light": "no", "@action": "Scene1", "tried_switch": "false"}],]
+choices:[["Démarrer", {"sc": "0", "light": "no", "anxiety": "0", "tried_switch": "false", "@action": "Scene1"}],]
 }
 
 Scene1 = {
@@ -55,7 +55,7 @@ SceneLookAround = {
   name: 'SceneLookAround',
   qualities:function(){
     
-function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartable["@action"]=="RapideTourDesLieux"); };function a3(){ return (vartable["look_around_the_room"]=="true"); };function a4(){ return (vartable["tried_switch"]=="false"); };return (a1() && a2() && a3() && a4());
+function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartable["look_around_the_room"]=="true"); };function a3(){ return (vartable["tried_switch"]=="false"); };function a4(){ return (vartable["@action"]=="RapideTourDesLieux"); };return (a1() && a2() && a3() && a4());
 
   },
   storylet:function(choice){
@@ -110,25 +110,96 @@ function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (var
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>Je m'avance dans l'appartement à la lumière du téléphone.</p>", "fadeIn")}, 1000],
     [function(){addDialog("", "fadeIn")}, 1000],
-    [function(){addDialog("<p>C'est sans se préoccuper de la batterie de ce dernier qui se consomme à grande vitesse.</p>", "fadeIn")}, 1000],
+    [function(){addDialog("<p>C'est sans se préoccuper de la batterie de ce dernier qui se consomme à vue d'oeil.</p>", "fadeIn")}, 1000],
+    [function(){addDialog("<p>A ce rythme il sera bientôt totalement déchargé.</p>", "fadeIn")}, 1000],
     [function(){addDialog("", "fadeIn")}, 1000],
-    [function(){addDialog("<p>Si le courant n'est pas rétabli dans l'appartement, alors vaudrait-il sans doute mieux chercher à l'économiser.</p>", "fadeIn")}, 1000],
+    [function(){addDialog("<p>S'il n'y a pas de courant dans l'appartement, alors vaudrait-il sans doute mieux chercher à l'économiser.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Retourner près de la fenêtre et remonter les volets.", {"@action": "SceneRemonterVolets", "look_around_the_room": "false", "remonter_volets": "true"}],]
+choices:[["Retourner près de la fenêtre et remonter les volets.", {"light": "volets", "look_around_the_room": "false", "remonter_volets": "true", "@action": "SceneRemonterVolets"}],]
 }
 
 SceneRemonterVolets = {
   name: 'SceneRemonterVolets',
   qualities:function(){
     
-function a1(){ return (vartable["remonter_volets"]=="true"); };return (a1());
+function a1(){ return (vartable["@action"]=="SceneRemonterVolets"); };function a2(){ return (vartable["remonter_volets"]=="true"); };return (a1() && a2());
 
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("<p>J'actionne non sans difficulté la manivelle à droite de la fenêtre et les volets remontent.</p>", "fadeIn")}, 1000],
     [function(){addDialog("", "fadeIn")}, 1000],
-    [function(){addDialog("<p>Les rayons du crépuscule pénètrent dans la pièce, laissant voir la poussière en suspension.</p>", "fadeIn")}, 1000],
+    [function(){addDialog("<p>Les rayons du crépuscule pénètrent dans l'appartement, laissant voir le reste de la pièce à travers la poussière en suspension.</p>", "fadeIn")}, 1000],
+    [choice, 0]])
+  },
+choices:[["Explorer la pièce", {}],]
+}
+
+ExplorerAvecVoletsRemontés = {
+  name: 'ExplorerAvecVoletsRemontés',
+  qualities:function(){
+    
+function a1(){ return (vartable["light"]=="volets"); };function a2(){ return (vartable["remonter_volets"]=="true"); };return (a1() && a2());
+
+  },
+  storylet:function(choice){
+  playSequence([    [function(){addDialog("<p>Je suis à présent dans la pièce à vivre. On y distingue le coin cuisine, un coin salon avec un canapé, une table basse, une table à manger, et le coin bureau sous la fenêtre.</p>", "fadeIn")}, 1000],
+    [choice, 0]])
+  },
+choices:[["Explorer d'autres pièces", {"exam_autrespieces": "true", "@action": "ExplorerAutresPi\u00e8ces"}],["S'approcher du coin cuisine", {"@action": "ApprocherCuisine", "exam_cuisine": "true"}],["S'approcher du coin bureau", {"@action": "ApprocherBureau", "exam_bureau": "true"}],["S'approcher du coin salon", {"exam_salon": "true", "@action": "ApprocherSalon"}],["Inspecter les assiettes", {}, function(){ return (vartable['exam_salon'])}],["Aller dans la salle de bains", {}, function(){ return (vartable['exam_autrespieces']=='true')}],["Aller dans la chambre", {}, function(){ return (vartable['exam_autrespieces']=='true')}],]
+}
+
+ApprocherSalon = {
+  name: 'ApprocherSalon',
+  qualities:function(){
+    
+function a1(){ return (vartable["@action"]=="ApprocherSalon"); };return (a1());
+
+  },
+  storylet:function(choice){
+  playSequence([    [function(){addDialog("<p>Salon.</p>", "fadeIn")}, 1000],
+    [choice, 0]])
+  },
+choices:[["Continuer", {}],]
+}
+
+ApprocherCuisine = {
+  name: 'ApprocherCuisine',
+  qualities:function(){
+    
+function a1(){ return (vartable["@action"]=="ApprocherCuisine"); };return (a1());
+
+  },
+  storylet:function(choice){
+  playSequence([    [function(){addDialog("<p>Cuisine</p>", "fadeIn")}, 1000],
+    [choice, 0]])
+  },
+choices:[["Continuer", {}],]
+}
+
+ApprocherBureau = {
+  name: 'ApprocherBureau',
+  qualities:function(){
+    
+function a1(){ return (vartable["@action"]=="ApprocherBureau"); };return (a1());
+
+  },
+  storylet:function(choice){
+  playSequence([    [function(){addDialog("<p>Bureau</p>", "fadeIn")}, 1000],
+    [choice, 0]])
+  },
+choices:[["Continuer", {}],]
+}
+
+ApprocherAutresPièces = {
+  name: 'ApprocherAutresPièces',
+  qualities:function(){
+    
+function a1(){ return (vartable["@action"]=="ExplorerAutresPièces"); };return (a1());
+
+  },
+  storylet:function(choice){
+  playSequence([    [function(){addDialog("<p>Autres Pièces.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
 choices:[["Continuer", {}],]
@@ -143,4 +214,9 @@ $(document).ready(function(){
   storylets.push(ScenePhone);
   storylets.push(SceneExplorePhoneLight);
   storylets.push(SceneRemonterVolets);
+  storylets.push(ExplorerAvecVoletsRemontés);
+  storylets.push(ApprocherSalon);
+  storylets.push(ApprocherCuisine);
+  storylets.push(ApprocherBureau);
+  storylets.push(ApprocherAutresPièces);
 });

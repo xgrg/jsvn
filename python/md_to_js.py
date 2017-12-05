@@ -9,7 +9,7 @@ def markdown_to_js(md_fp, json_fp, js_fp):
     log.info('JSON file: %s'%json_fp)
     log.info('JS file: %s'%js_fp)
 
-    preamble, body = jsvn.markdown_to_json(md_fp,rebuild_md=False)
+    preamble, body = jsvn.markdown_to_json(md_fp, rebuild_md=True)
     json.dump(body, open(json_fp, 'w'), indent=2, ensure_ascii=False, encoding ='utf-8')
 
     # Generates JS from Json

@@ -9,7 +9,9 @@ def markdown_table_to_dict(code):
     ''' From a Markdown table to a dictionary '''
     from markdown.extensions import tables
     html = markdown.markdown(code, extensions=[tables.makeExtension()])
-    df = pd.read_html(html)[0]
+    df = pd.read_html(html, converters={'value': str})[0]
+    booleanDictionary = {True: 'true', False: 'false'}
+    df = df.replace(booleanDictionary)
     rec = [(e[1], e[2]) for e in df.to_records()]
     return dict(rec)
 

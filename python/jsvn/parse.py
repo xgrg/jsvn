@@ -47,13 +47,16 @@ def regenerate_md(preamble, j):
         for k1, v1 in v['Choices'].items():
             md = md + '### %s\n'%k1
             qual_f = ''
+            if '@action' in v1:
+                qual_f = '@action' + v1['@action'] + '\n'
+                v1.pop('@action')
             if '@if' in v1:
-                qual_f = v1['@if']
+                qual_f =  qual_f + '@if' + v1['@if'] + '\n'
                 v1.pop('@if')
             if v1 != {}:
-                md = md + beautify_table(v1) + '\n\n'
+                md = md + beautify_table(v1) + '\n'
             if qual_f != '':
-                md = md + '@if' + qual_f + '\n\n'
+                md = md + qual_f + '\n'
 
         # if section is choice or qualities
         # then check for tables
@@ -62,6 +65,53 @@ def regenerate_md(preamble, j):
         md = md + '\n#####\n'
 
     return md
+
+def does_start_by_preamble_key(line, preamble):
+    for each in preamble.keys():
+        if line.lower().startswith(each):
+            return each
+    return False
+
+def split_choice(v1):
+    lines = [e for e in v1.split('\n')]
+    preamble = {'@if': None, '@action':None}
+    # Splitting preamble
+    split = []
+    i = 0
+    prev = -1
+    curr = 0
+    while i < len(lines):
+        each = lines[i]
+        if each == '':
+            i = i + 1
+            continue
+        k = does_start_by_preamble_key(each, preamble)
+        if not k is False:
+            prev = curr
+            curr = i
+            if prev != -1:
+                split.append('\n'.join(lines[prev:curr]))
+        i = i + 1
+    if len(split) == 0 and curr != 0:
+        split.append('\n'.join(lines[:curr]))
+    split.append('\n'.join(lines[curr:i]))
+
+    body = []
+    for each in lines[i:]:
+        body.append(each)
+
+    # Processing split preamble
+    for each in split:
+        if '@if' in each:
+            preamble['@if'] = each.split('@if')[1]
+        elif '@action' in each:
+            preamble['@action'] = each.split('@action')[1]
+        else:
+            d = each
+
+    return d, preamble
+
+
 
 def clean_json(j):
     ''' From a JSONified Markdown file, reformats selected bits of the JSON when
@@ -94,15 +144,12 @@ def clean_json(j):
         # NB: the function is identified using @if
         ch = OrderedDict()
         for k1, v1 in v['Choices'].items():
-            if '@if' in v1:
-                qual_d, qual_f = v1.split('@if')
-            else:
-                qual_d, qual_f = v1, ''
+            qual_d, bits = split_choice(v1)
             d = parse_dict(qual_d)
             choice_dict = dict(d)
-
-            if qual_f != '':
-                choice_dict['@if'] = qual_f
+            for e in ['@if', '@action']:
+                if not bits[e] is None:
+                    choice_dict[e] = bits[e]
             ch[k1] = choice_dict
         sc['Choices'] = ch
         res[k] = sc

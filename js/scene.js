@@ -79,6 +79,7 @@ function addLink(text, vars, id){
   for (var i in vars)
     newtable[i] = vars[i];
   console.log(newtable)
+
   b64 = unescape(encodeURIComponent(Base64.encode(JSON.stringify(newtable))))
   line = "<div><span>"+text+"</span></div> <br><div class=\"gobtn\"><a href=\"?f="+scenefile+"&d="+b64+"\">Go.</a></div>";
 
@@ -157,23 +158,19 @@ function loadScene(scene){
 
 function update_cards(){
   console.log('@action', vartable['@action'])
-  if (vartable['@action']!==undefined)  {
-    var action = vartable['@action'];
-    delete vartable['@action'];
-  }
 
   for (var i=0;i<storylets.length;i++){
 
     if (storylets[i]['qualities']() == true){
-        console.log(storylets[i]['name'])
-        console.log("a")
-        console.log( action);
-        if (action === undefined || storylets[i]['name'] == action) {
-          console.log("test")
+        //if (action === undefined || storylets[i]['name'] == action) {
+          console.log(storylets[i]['name'] + ' is played')
            cards_to_play.push(i);
-        }
+        //}
     }
   }
+
+  console.log('vartable', vartable)
+
 }
 
 function loadScript(url, callback)
@@ -196,6 +193,7 @@ function loadScript(url, callback)
 function run_machine() {
   update_cards();
 
+  delete vartable['@action']
   console.log(cards_to_play)
   if (cards_to_play.length != 0){
     random = Math.floor((Math.random() * cards_to_play.length));

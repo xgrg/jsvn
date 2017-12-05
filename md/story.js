@@ -19,7 +19,7 @@ Scene1 = {
   name: 'Scene1',
   qualities:function(){
     
-function a1(){ return (vartable["sc"]=="0"); };return (a1());
+function a1(){ return (vartable["@action"]=="Scene1"); };return (a1());
 
   },
   storylet:function(choice){
@@ -34,28 +34,28 @@ function a1(){ return (vartable["sc"]=="0"); };return (a1());
     [function(){addDialog("<p>Savoir quoi laisser ou ne pas laisser.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": "1"}],]
+choices:[["Continuer", {"@action": "Scene2"}],]
 }
 
 Scene2 = {
   name: 'Scene2',
   qualities:function(){
     
-function a1(){ return (vartable["sc"]=="1"); };return (a1());
+function a1(){ return (vartable["@action"]=="Scene2"); };return (a1());
 
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Faire un rapide tour des lieux.", {"sc": "-1", "look_around_the_room": "true"}],]
+choices:[["Faire un rapide tour des lieux.", {"@action": "RapideTourDesLieux", "look_around_the_room": "true"}],]
 }
 
 SceneLookAround = {
   name: 'SceneLookAround',
   qualities:function(){
     
-function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartable["look_around_the_room"]=="true"); };function a3(){ return (vartable["tried_switch"]=="false"); };return (a1() && a2() && a3());
+function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartable["@action"]=="RapideTourDesLieux"); };function a3(){ return (vartable["look_around_the_room"]=="true"); };function a4(){ return (vartable["tried_switch"]=="false"); };return (a1() && a2() && a3() && a4());
 
   },
   storylet:function(choice){
@@ -81,14 +81,14 @@ function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartab
     [function(){addDialog("<p>Je l'actionne sans aucun effet et la pièce reste telle qu'elle est dans l'obscurité.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Utiliser la lampe du téléphone portable", {"light": "phone", "just_switched_phonelight": "true"}],]
+choices:[["Utiliser la lampe du téléphone portable", {"light": "phone", "@action": "ScenePhone"}],]
 }
 
 ScenePhone = {
   name: 'ScenePhone',
   qualities:function(){
     
-function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (vartable["just_switched_phonelight"]=="true"); };return (a1() && a2());
+function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (vartable["@action"]=="ScenePhone"); };return (a1() && a2());
 
   },
   storylet:function(choice){
@@ -97,7 +97,7 @@ function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (var
     [function(){addDialog("<p>Je distingue le bureau sous la fenêtre avec les volets fermés.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Remonter les volets", {"just_switched_phonelight": "false", "remonter_volets": "true"}],["Explorer le reste de la pièce", {"look_around_the_room": "true", "just_switched_phonelight": "false"}],]
+choices:[["Remonter les volets", {"remonter_volets": "true"}],["Explorer le reste de la pièce", {"look_around_the_room": "true"}],]
 }
 
 SceneExplorePhoneLight = {
@@ -115,7 +115,7 @@ function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (var
     [function(){addDialog("<p>Si le courant n'est pas rétabli dans l'appartement, alors vaudrait-il sans doute mieux chercher à l'économiser.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Retourner près de la fenêtre et remonter les volets.", {"look_around_the_room": "false", "remonter_volets": "true"}],]
+choices:[["Retourner près de la fenêtre et remonter les volets.", {"@action": "SceneRemonterVolets", "look_around_the_room": "false", "remonter_volets": "true"}],]
 }
 
 SceneRemonterVolets = {
@@ -131,7 +131,7 @@ function a1(){ return (vartable["remonter_volets"]=="true"); };return (a1());
     [function(){addDialog("<p>Les rayons du crépuscule pénètrent dans la pièce, laissant voir la poussière en suspension.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"@action": "Test"}],]
+choices:[["Continuer", {}],]
 }
 
 $(document).ready(function(){

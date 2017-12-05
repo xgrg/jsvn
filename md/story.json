@@ -16,22 +16,22 @@
   "Scene1": {
     "Text": "Ils peuvent débarquer et me trouver ici d'une minute à l'autre.\n\nJe devrais quitter les lieux **au plus vite**.\n\nToutefois je n'y reviendrai pas avant longtemps, alors...\n\n...c'est le moment de savoir ce qui compte vraiment.\n\nSavoir quoi laisser ou ne pas laisser.", 
     "Qualities": {
-      "sc": "0"
+      "@action": "Scene1"
     }, 
     "Choices": {
       "Continuer": {
-        "sc": "1"
+        "@action": "Scene2"
       }
     }
   }, 
   "Scene2": {
     "Text": "", 
     "Qualities": {
-      "sc": "1"
+      "@action": "Scene2"
     }, 
     "Choices": {
       "Faire un rapide tour des lieux.": {
-        "sc": "-1", 
+        "@action": "RapideTourDesLieux", 
         "look_around_the_room": "true"
       }
     }
@@ -40,6 +40,7 @@
     "Text": "L'appartement est plongé dans la pénombre.\nJe me tiens debout devant la porte d'entrée.\n\nJ'y verrais sensiblement mieux avec un peu de lumière.", 
     "Qualities": {
       "light": "no", 
+      "@action": "RapideTourDesLieux", 
       "look_around_the_room": "true", 
       "tried_switch": "false"
     }, 
@@ -60,7 +61,7 @@
     "Choices": {
       "Utiliser la lampe du téléphone portable": {
         "light": "phone", 
-        "just_switched_phonelight": "true"
+        "@action": "ScenePhone"
       }
     }
   }, 
@@ -68,16 +69,14 @@
     "Text": "La lumière du téléphone éclaire à courte distance.\n\nJe distingue le bureau sous la fenêtre avec les volets fermés.", 
     "Qualities": {
       "light": "phone", 
-      "just_switched_phonelight": "true"
+      "@action": "ScenePhone"
     }, 
     "Choices": {
       "Remonter les volets": {
-        "just_switched_phonelight": "false", 
         "remonter_volets": "true"
       }, 
       "Explorer le reste de la pièce": {
-        "look_around_the_room": "true", 
-        "just_switched_phonelight": "false"
+        "look_around_the_room": "true"
       }
     }
   }, 
@@ -89,6 +88,7 @@
     }, 
     "Choices": {
       "Retourner près de la fenêtre et remonter les volets.": {
+        "@action": "SceneRemonterVolets", 
         "look_around_the_room": "false", 
         "remonter_volets": "true"
       }
@@ -100,9 +100,7 @@
       "remonter_volets": "true"
     }, 
     "Choices": {
-      "Continuer": {
-        "@action": "Test"
-      }
+      "Continuer": {}
     }
   }
 }

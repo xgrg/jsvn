@@ -156,9 +156,22 @@ function loadScene(scene){
 }
 
 function update_cards(){
+  console.log('@action', vartable['@action'])
+  if (vartable['@action']!==undefined)  {
+    var action = vartable['@action'];
+    delete vartable['@action'];
+  }
+
   for (var i=0;i<storylets.length;i++){
-    if (storylets[i]['qualities']() == true) {
-       cards_to_play.push(i);
+
+    if (storylets[i]['qualities']() == true){
+        console.log(storylets[i]['name'])
+        console.log("a")
+        console.log( action);
+        if (action === undefined || storylets[i]['name'] == action) {
+          console.log("test")
+           cards_to_play.push(i);
+        }
     }
   }
 }
@@ -199,9 +212,9 @@ function run_machine() {
 $( document ).ready(function() {
   preload();
   var bgMusic = $('audio')[0];
-
   var f = QueryString.f;
   var b64 = QueryString.d;
+
   console.log('file ' + f)
   if (b64 !== undefined){
     d = Base64.decode(decodeURIComponent(escape(b64)));

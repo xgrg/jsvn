@@ -9,6 +9,8 @@ function(){
 sc:0
 light:no
 tried_switch:false
+@action
+Scene1
 
 
 # Scene1

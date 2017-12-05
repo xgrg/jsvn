@@ -1,17 +1,22 @@
 Début = {
+  name: 'Début',
   qualities:function(){
     
-return ();
+
+function a1(){
+return(vartable['sc']==undefined)};;
+return (a1());
 
   },
   storylet:function(choice){
   playSequence([    [function(){addDialog("", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Démarrer", {"sc": "0", "light": "no", "tried_switch": "false"}],]
+choices:[["Démarrer", {"sc": "0", "light": "no", "@action": "Scene1", "tried_switch": "false"}],]
 }
 
 Scene1 = {
+  name: 'Scene1',
   qualities:function(){
     
 function a1(){ return (vartable["sc"]=="0"); };return (a1());
@@ -33,6 +38,7 @@ choices:[["Continuer", {"sc": "1"}],]
 }
 
 Scene2 = {
+  name: 'Scene2',
   qualities:function(){
     
 function a1(){ return (vartable["sc"]=="1"); };return (a1());
@@ -46,6 +52,7 @@ choices:[["Faire un rapide tour des lieux.", {"sc": "-1", "look_around_the_room"
 }
 
 SceneLookAround = {
+  name: 'SceneLookAround',
   qualities:function(){
     
 function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartable["look_around_the_room"]=="true"); };function a3(){ return (vartable["tried_switch"]=="false"); };return (a1() && a2() && a3());
@@ -62,6 +69,7 @@ choices:[["Chercher l'interrupteur près de la porte d'entrée.", {"look_around_
 }
 
 SceneTrySwitch = {
+  name: 'SceneTrySwitch',
   qualities:function(){
     
 function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartable["look_around_the_room"]=="false"); };function a3(){ return (vartable["tried_switch"]=="true"); };return (a1() && a2() && a3());
@@ -77,6 +85,7 @@ choices:[["Utiliser la lampe du téléphone portable", {"light": "phone", "just_
 }
 
 ScenePhone = {
+  name: 'ScenePhone',
   qualities:function(){
     
 function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (vartable["just_switched_phonelight"]=="true"); };return (a1() && a2());
@@ -92,6 +101,7 @@ choices:[["Remonter les volets", {"just_switched_phonelight": "false", "remonter
 }
 
 SceneExplorePhoneLight = {
+  name: 'SceneExplorePhoneLight',
   qualities:function(){
     
 function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (vartable["look_around_the_room"]=="true"); };return (a1() && a2());
@@ -109,6 +119,7 @@ choices:[["Retourner près de la fenêtre et remonter les volets.", {"look_aroun
 }
 
 SceneRemonterVolets = {
+  name: 'SceneRemonterVolets',
   qualities:function(){
     
 function a1(){ return (vartable["remonter_volets"]=="true"); };return (a1());
@@ -120,7 +131,7 @@ function a1(){ return (vartable["remonter_volets"]=="true"); };return (a1());
     [function(){addDialog("<p>Les rayons du crépuscule pénètrent dans la pièce, laissant voir la poussière en suspension.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {}],]
+choices:[["Continuer", {"@action": "Test"}],]
 }
 
 $(document).ready(function(){

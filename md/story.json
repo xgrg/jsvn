@@ -1,11 +1,14 @@
 {
   "Début": {
     "Text": "", 
-    "Qualities": {}, 
+    "Qualities": {
+      "@function": "\nfunction(){\nreturn(vartable['sc']==undefined)};"
+    }, 
     "Choices": {
       "Démarrer": {
         "sc": "0", 
         "light": "no", 
+        "@action": "Scene1", 
         "tried_switch": "false"
       }
     }
@@ -97,7 +100,9 @@
       "remonter_volets": "true"
     }, 
     "Choices": {
-      "Continuer": {}
+      "Continuer": {
+        "@action": "Test"
+      }
     }
   }
 }

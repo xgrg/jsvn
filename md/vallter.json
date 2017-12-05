@@ -1,7 +1,9 @@
 {
   "SceneChoixLangues": {
     "Text": "Choisissez une langue.\n\nTria una llengua.", 
-    "Qualities": {}, 
+    "Qualities": {
+      "@function": "\nfunction(){vartable['toto'] = 'test'; return (vartable['sc']===undefined);}"
+    }, 
     "Choices": {
       "Français": {
         "sc": "0", 
@@ -43,7 +45,8 @@
     }, 
     "Choices": {
       "La montée donne chaud. Je retire ma polaire.": {
-        "sc": "scene_croise_marcheurs"
+        "sc": "scene_croise_marcheurs", 
+        "@if": "function(){return (vartable['equip']=='polaire')}"
       }, 
       "Continuer": {
         "sc": "scene_croise_marcheurs"
@@ -119,7 +122,8 @@
         "sc": "3"
       }, 
       "Le vent souffle au col. J'enfile mon coupe-vent pour poursuivre la route.": {
-        "sc": "3"
+        "sc": "3", 
+        "@if": "function(){return (vartable['equip']=='tshirt')}"
       }
     }
   }, 
@@ -325,7 +329,8 @@
     "Image": "neige", 
     "Qualities": {
       "lang": "fr", 
-      "sc": "14"
+      "sc": "14", 
+      "@function": "\nfunction(){return (vartable['sac']!='banc')};"
     }, 
     "Choices": {
       "Continuer": {
@@ -416,7 +421,8 @@
     }, 
     "Choices": {
       "La pujada dona calor. Trec el meu forro polar.": {
-        "sc": "scene_croise_marcheurs"
+        "sc": "scene_croise_marcheurs", 
+        "@if": "function(){return (vartable['equip']=='polaire')}"
       }, 
       "Endavant": {
         "sc": "scene_croise_marcheurs"
@@ -492,7 +498,8 @@
         "sc": "3"
       }, 
       "El vent bufa al coll. Em poso la meva jaqueta talla-vent per seguir el camí.": {
-        "sc": "3"
+        "sc": "3", 
+        "@if": "function(){return (vartable['equip']=='tshirt')}"
       }
     }
   }, 
@@ -698,7 +705,8 @@
     "Image": "neige", 
     "Qualities": {
       "lang": "ca", 
-      "sc": "14"
+      "sc": "14", 
+      "@function": "\nfunction(){return(vartable['sac']!='banc')}"
     }, 
     "Choices": {
       "Endavant": {

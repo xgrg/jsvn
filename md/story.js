@@ -48,14 +48,14 @@ function a1(){ return (vartable["@action"]=="Scene2"); };return (a1());
   playSequence([    [function(){addDialog("", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Faire un rapide tour des lieux.", {"@action": "RapideTourDesLieux", "look_around_the_room": "true"}],]
+choices:[["Faire un rapide tour des lieux.", {"@action": "RapideTourDesLieux"}],]
 }
 
 SceneLookAround = {
   name: 'SceneLookAround',
   qualities:function(){
     
-function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartable["look_around_the_room"]=="true"); };function a3(){ return (vartable["tried_switch"]=="false"); };function a4(){ return (vartable["@action"]=="RapideTourDesLieux"); };return (a1() && a2() && a3() && a4());
+function a1(){ return (vartable["@action"]=="RapideTourDesLieux"); };return (a1());
 
   },
   storylet:function(choice){
@@ -65,14 +65,14 @@ function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartab
     [function(){addDialog("<p>J'y verrais sensiblement mieux avec un peu de lumière.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Chercher l'interrupteur près de la porte d'entrée.", {"look_around_the_room": "false", "tried_switch": "true"}],]
+choices:[["Chercher l'interrupteur près de la porte d'entrée.", {"@action": "tryswitch"}],]
 }
 
 SceneTrySwitch = {
   name: 'SceneTrySwitch',
   qualities:function(){
     
-function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartable["look_around_the_room"]=="false"); };function a3(){ return (vartable["tried_switch"]=="true"); };return (a1() && a2() && a3());
+function a1(){ return (vartable["@action"]=="tryswitch"); };return (a1());
 
   },
   storylet:function(choice){
@@ -81,14 +81,14 @@ function a1(){ return (vartable["light"]=="no"); };function a2(){ return (vartab
     [function(){addDialog("<p>Je l'actionne sans aucun effet et la pièce reste telle qu'elle est dans l'obscurité.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Utiliser la lampe du téléphone portable", {"light": "phone", "@action": "ScenePhone"}],]
+choices:[["Utiliser la lampe du téléphone portable", {"@action": "ScenePhone"}],]
 }
 
 ScenePhone = {
   name: 'ScenePhone',
   qualities:function(){
     
-function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (vartable["@action"]=="ScenePhone"); };return (a1() && a2());
+function a1(){ return (vartable["@action"]=="ScenePhone"); };return (a1());
 
   },
   storylet:function(choice){
@@ -97,14 +97,14 @@ function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (var
     [function(){addDialog("<p>Je distingue le bureau sous la fenêtre avec les volets fermés.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Remonter les volets", {"remonter_volets": "true"}],["Explorer le reste de la pièce", {"look_around_the_room": "true"}],]
+choices:[["Remonter les volets", {"@action": "SceneRemonterVolets"}],["Explorer le reste de la pièce", {"@action": "ExplorePhone"}],]
 }
 
 SceneExplorePhoneLight = {
   name: 'SceneExplorePhoneLight',
   qualities:function(){
     
-function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (vartable["look_around_the_room"]=="true"); };return (a1() && a2());
+function a1(){ return (vartable["@action"]=="ExplorePhone"); };return (a1());
 
   },
   storylet:function(choice){
@@ -116,14 +116,14 @@ function a1(){ return (vartable["light"]=="phone"); };function a2(){ return (var
     [function(){addDialog("<p>S'il n'y a pas de courant dans l'appartement, alors vaudrait-il sans doute mieux chercher à l'économiser.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Retourner près de la fenêtre et remonter les volets.", {"light": "volets", "look_around_the_room": "false", "remonter_volets": "true", "@action": "SceneRemonterVolets"}],]
+choices:[["Retourner près de la fenêtre et remonter les volets.", {"@action": "SceneRemonterVolets"}],]
 }
 
 SceneRemonterVolets = {
   name: 'SceneRemonterVolets',
   qualities:function(){
     
-function a1(){ return (vartable["@action"]=="SceneRemonterVolets"); };function a2(){ return (vartable["remonter_volets"]=="true"); };return (a1() && a2());
+function a1(){ return (vartable["@action"]=="SceneRemonterVolets"); };return (a1());
 
   },
   storylet:function(choice){
@@ -139,7 +139,7 @@ ExplorerAvecVoletsRemontés = {
   name: 'ExplorerAvecVoletsRemontés',
   qualities:function(){
     
-function a1(){ return (vartable["light"]=="volets"); };function a2(){ return (vartable["remonter_volets"]=="true"); };return (a1() && a2());
+function a1(){ return (vartable["@action"]=="exploreroom"); };return (a1());
 
   },
   storylet:function(choice){
@@ -160,7 +160,7 @@ function a1(){ return (vartable["@action"]=="ApprocherSalon"); };return (a1());
   playSequence([    [function(){addDialog("<p>Salon.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {}],]
+choices:[["Continuer", {"@action": "exploreroom"}],]
 }
 
 ApprocherCuisine = {
@@ -174,7 +174,7 @@ function a1(){ return (vartable["@action"]=="ApprocherCuisine"); };return (a1())
   playSequence([    [function(){addDialog("<p>Cuisine</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {}],]
+choices:[["Continuer", {"@action": "exploreroom"}],]
 }
 
 ApprocherBureau = {
@@ -188,7 +188,7 @@ function a1(){ return (vartable["@action"]=="ApprocherBureau"); };return (a1());
   playSequence([    [function(){addDialog("<p>Bureau</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {}],]
+choices:[["Continuer", {"@action": "exploreroom"}],]
 }
 
 ApprocherAutresPièces = {
@@ -202,7 +202,7 @@ function a1(){ return (vartable["@action"]=="ExplorerAutresPièces"); };return (
   playSequence([    [function(){addDialog("<p>Autres Pièces.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {}],]
+choices:[["Continuer", {"@action": "exploreroom"}],]
 }
 
 $(document).ready(function(){

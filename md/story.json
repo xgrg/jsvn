@@ -32,36 +32,28 @@
     }, 
     "Choices": {
       "Faire un rapide tour des lieux.": {
-        "@action": "RapideTourDesLieux", 
-        "look_around_the_room": "true"
+        "@action": "RapideTourDesLieux"
       }
     }
   }, 
   "SceneLookAround": {
     "Text": "L'appartement est plongé dans la pénombre.\nJe me tiens debout devant la porte d'entrée.\n\nJ'y verrais sensiblement mieux avec un peu de lumière.", 
     "Qualities": {
-      "light": "no", 
-      "look_around_the_room": "true", 
-      "tried_switch": "false", 
       "@action": "RapideTourDesLieux"
     }, 
     "Choices": {
       "Chercher l'interrupteur près de la porte d'entrée.": {
-        "look_around_the_room": "false", 
-        "tried_switch": "true"
+        "@action": "tryswitch"
       }
     }
   }, 
   "SceneTrySwitch": {
     "Text": "En tâtonnant à gauche de la porte je parviens à trouver l'interrupteur.\n\nJe l'actionne sans aucun effet et la pièce reste telle qu'elle est dans l'obscurité.", 
     "Qualities": {
-      "light": "no", 
-      "look_around_the_room": "false", 
-      "tried_switch": "true"
+      "@action": "tryswitch"
     }, 
     "Choices": {
       "Utiliser la lampe du téléphone portable": {
-        "light": "phone", 
         "@action": "ScenePhone"
       }
     }
@@ -69,29 +61,24 @@
   "ScenePhone": {
     "Text": "La lumière du téléphone éclaire à courte distance.\n\nJe distingue le bureau sous la fenêtre avec les volets fermés.", 
     "Qualities": {
-      "light": "phone", 
       "@action": "ScenePhone"
     }, 
     "Choices": {
       "Remonter les volets": {
-        "remonter_volets": "true"
+        "@action": "SceneRemonterVolets"
       }, 
       "Explorer le reste de la pièce": {
-        "look_around_the_room": "true"
+        "@action": "ExplorePhone"
       }
     }
   }, 
   "SceneExplorePhoneLight": {
     "Text": "Je m'avance dans l'appartement à la lumière du téléphone.\n\nC'est sans se préoccuper de la batterie de ce dernier qui se consomme à vue d'oeil.\nA ce rythme il sera bientôt totalement déchargé.\n\nS'il n'y a pas de courant dans l'appartement, alors vaudrait-il sans doute mieux chercher à l'économiser.", 
     "Qualities": {
-      "light": "phone", 
-      "look_around_the_room": "true"
+      "@action": "ExplorePhone"
     }, 
     "Choices": {
       "Retourner près de la fenêtre et remonter les volets.": {
-        "light": "volets", 
-        "look_around_the_room": "false", 
-        "remonter_volets": "true", 
         "@action": "SceneRemonterVolets"
       }
     }
@@ -99,8 +86,7 @@
   "SceneRemonterVolets": {
     "Text": "J'actionne non sans difficulté la manivelle à droite de la fenêtre et les volets remontent.\n\nLes rayons du crépuscule pénètrent dans l'appartement, laissant voir le reste de la pièce à travers la poussière en suspension.", 
     "Qualities": {
-      "@action": "SceneRemonterVolets", 
-      "remonter_volets": "true"
+      "@action": "SceneRemonterVolets"
     }, 
     "Choices": {
       "Explorer la pièce": {}
@@ -109,8 +95,7 @@
   "ExplorerAvecVoletsRemontés": {
     "Text": "Je suis à présent dans la pièce à vivre. On y distingue le coin cuisine, un coin salon avec un canapé, une table basse, une table à manger, et le coin bureau sous la fenêtre.", 
     "Qualities": {
-      "light": "volets", 
-      "remonter_volets": "true"
+      "@action": "exploreroom"
     }, 
     "Choices": {
       "Explorer d'autres pièces": {
@@ -146,7 +131,9 @@
       "@action": "ApprocherSalon"
     }, 
     "Choices": {
-      "Continuer": {}
+      "Continuer": {
+        "@action": "exploreroom"
+      }
     }
   }, 
   "ApprocherCuisine": {
@@ -155,7 +142,9 @@
       "@action": "ApprocherCuisine"
     }, 
     "Choices": {
-      "Continuer": {}
+      "Continuer": {
+        "@action": "exploreroom"
+      }
     }
   }, 
   "ApprocherBureau": {
@@ -164,7 +153,9 @@
       "@action": "ApprocherBureau"
     }, 
     "Choices": {
-      "Continuer": {}
+      "Continuer": {
+        "@action": "exploreroom"
+      }
     }
   }, 
   "ApprocherAutresPièces": {
@@ -173,7 +164,9 @@
       "@action": "ExplorerAutresPièces"
     }, 
     "Choices": {
-      "Continuer": {}
+      "Continuer": {
+        "@action": "exploreroom"
+      }
     }
   }
 }

@@ -89,7 +89,9 @@
       "@action": "SceneRemonterVolets"
     }, 
     "Choices": {
-      "Explorer la pièce": {}
+      "Explorer la pièce": {
+        "@action": "exploreroom"
+      }
     }
   }, 
   "ExplorerAvecVoletsRemontés": {

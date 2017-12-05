@@ -136,6 +136,9 @@ J'actionne non sans difficulté la manivelle à droite de la fenêtre et les vol
 Les rayons du crépuscule pénètrent dans l'appartement, laissant voir le reste de la pièce à travers la poussière en suspension.
 ## Choices
 ### Explorer la pièce
+| variable   | value       |
+|:-----------|:------------|
+| @action    | exploreroom |
 
 # ExplorerAvecVoletsRemontés
 ## Qualities

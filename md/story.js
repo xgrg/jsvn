@@ -132,7 +132,7 @@ function a1(){ return (vartable["@action"]=="SceneRemonterVolets"); };return (a1
     [function(){addDialog("<p>Les rayons du crépuscule pénètrent dans l'appartement, laissant voir le reste de la pièce à travers la poussière en suspension.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Explorer la pièce", {}],]
+choices:[["Explorer la pièce", {"@action": "exploreroom"}],]
 }
 
 ExplorerAvecVoletsRemontés = {

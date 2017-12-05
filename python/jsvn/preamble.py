@@ -24,7 +24,10 @@ def get_dict(code):
     res = []
     for each in code.split('\n'):
         if each == '': continue #ignore blank lines
-        if '@' not in each: #ignore lines starting with @
+        if '@action' in each:
+            k, v = each.split(':')
+            res.append((k,''.join(v.split('\n'))))
+        elif '@' not in each: #ignore lines starting with @
             each = clean_line(each)
             k, v = each.split(':')
             res.append((k,v))

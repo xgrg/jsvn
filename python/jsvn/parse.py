@@ -1,6 +1,6 @@
 from preamble import *
 
-def regenerate_md(preamble, j):
+def regenerate_md(preamble, body):
     ''' From a JSON regenerates a Markdown file'''
 
     def beautify_table(d):
@@ -21,15 +21,17 @@ def regenerate_md(preamble, j):
         md = md + 'Extensions:%s\n\n'%','.join(preamble['extensions'])
 
     # then appends scenes
+
+    from copy import deepcopy
+    j = deepcopy(body)
+
     for k, v in j.items():
         md = md + '# %s\n'%k
         md = md + '## Qualities\n'
 
+        # if section is qualities check for tables
         d = v['Qualities']
         qual_f = ''
-        if 'Choix' in k:
-            log.info('########')
-            log.info(d)
         if '@function' in d.keys():
             qual_f = d['@function']
             d.pop('@function')
@@ -43,23 +45,21 @@ def regenerate_md(preamble, j):
             if each in v.keys():
                 md = md + '## %s\n%s\n'%(each, v[each])
 
+        # if section is choice check for tables
         md = md + '## Choices\n'
         for k1, v1 in v['Choices'].items():
             md = md + '### %s\n'%k1
             qual_f = ''
-            if '@action' in v1:
-                qual_f = '@action' + v1['@action'] + '\n'
-                v1.pop('@action')
+            #if '@action' in v1:
+            #    qual_f = '@action' + v1['@action'] + '\n'
+            #    v1.pop('@action')
             if '@if' in v1:
-                qual_f =  qual_f + '@if' + v1['@if'] + '\n'
+                qual_f =  qual_f + '@if\n' + v1['@if'] + '\n'
                 v1.pop('@if')
             if v1 != {}:
                 md = md + beautify_table(v1) + '\n'
             if qual_f != '':
                 md = md + qual_f + '\n'
-
-        # if section is choice or qualities
-        # then check for tables
 
         # adds a breaking line
         md = md + '\n#####\n'
@@ -74,7 +74,7 @@ def does_start_by_preamble_key(line, preamble):
 
 def split_choice(v1):
     lines = [e for e in v1.split('\n')]
-    preamble = {'@if': None, '@action':None}
+    preamble = {'@if': None}
     # Splitting preamble
     split = []
     i = 0
@@ -104,11 +104,10 @@ def split_choice(v1):
     for each in split:
         if '@if' in each:
             preamble['@if'] = each.split('@if')[1]
-        elif '@action' in each:
-            preamble['@action'] = each.split('@action')[1]
+        #elif '@action' in each:
+        #    preamble['@action'] = each.split('@action')[1]
         else:
             d = each
-
     return d, preamble
 
 
@@ -117,7 +116,6 @@ def clean_json(j):
     ''' From a JSONified Markdown file, reformats selected bits of the JSON when
     necessary e.g. turning Quality/Choices tables to dictionaries '''
     log.info('* Cleaning JSON.')
-
     from collections import OrderedDict
     res = OrderedDict()
     # then appends scenes
@@ -147,9 +145,9 @@ def clean_json(j):
             qual_d, bits = split_choice(v1)
             d = parse_dict(qual_d)
             choice_dict = dict(d)
-            for e in ['@if', '@action']:
+            for e in ['@if']:
                 if not bits[e] is None:
-                    choice_dict[e] = bits[e]
+                    choice_dict[e] = bits[e].strip('\n').rstrip('\n')
             ch[k1] = choice_dict
         sc['Choices'] = ch
         res[k] = sc
@@ -171,7 +169,7 @@ def gen_qualities_code(conditions):
             res =  res + 'function %s(){ return (vartable["%s"]=="%s"); };'%(f[-1], k, v)
 
     res = '\n%s'%res
-    c = ' && '.join(['%s()'%e for e in f])
+    c = ' && '.join(['%s()'%e for e in f]) if len(f) != 0 else 'true'
     res = res + 'return (%s);\n'%c
 
     return res
@@ -221,7 +219,7 @@ def json_to_javascript(j, preamble={}):
 
         preamble_cond = preamble['qualities'].items()\
             if not preamble['qualities'] is None else []
-        log.info('%s conditions'%len(conditions))
+        log.info('%s - %s conditions'%(sc_name, len(conditions)))
         if len(preamble_cond) != 0:
             log.info('%s preamble conditions'%len(preamble_cond))
         if sc_name == 'SceneChoixLangues':
@@ -245,9 +243,10 @@ def json_to_javascript(j, preamble={}):
             else gen_choice(sc['Choices'])
 
         # Compiles everything
-        sc_code = '  qualities:function(){\n    %s\n  },\n'\
+        sc_code = '  name: \'%s\',\n'\
+            '  qualities:function(){\n    %s\n  },\n'\
             '  storylet:function(choice){\n%s\n  },\n%s'\
-            %(qual_code, storylet_code%(image, extra_code), choices_code)
+            %(sc_name, qual_code, storylet_code%(image, extra_code), choices_code)
         scene_js = '%s = {\n%s\n}'%(sc_name, sc_code)
         js = js + scene_js + '\n\n'
 

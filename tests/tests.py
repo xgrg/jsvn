@@ -29,3 +29,8 @@ def test_uglytables():
     md_fp = './tests/vallter_uglytables.md'
     p, b = jsvn.markdown_to_json(md_fp, rebuild_md=False)
     md = jsvn.regenerate_md(p, b)
+
+def test_beautifiedtables():
+    md_fp = './tests/vallter_beautifytables.md'
+    p, b = jsvn.markdown_to_json(md_fp, rebuild_md=False)
+    md = jsvn.regenerate_md(p, b)

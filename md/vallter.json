@@ -39,7 +39,7 @@
     "Text": "_14 heures, départ de la station de Vallter_\n\nLe chemin débute en montée suivant le tracé du GR10.\nLa station s’éloigne progressivement dans le dos.\n\nBien que les télésièges soient à l’arrêt, quelques tâches de neige semblent signaler que la saison de ski est en phase d’approche.\nLa montée s’effectue sans encombres.", 
     "Image": "vallter2", 
     "Qualities": {
-      "sc": 1
+      "sc": "1"
     }, 
     "Choices": {
       "La montée donne chaud. Je retire ma polaire.": {
@@ -76,7 +76,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 2
+        "sc": "2"
       }
     }
   }, 
@@ -88,7 +88,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 2
+        "sc": "2"
       }
     }
   }, 
@@ -100,7 +100,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 2
+        "sc": "2"
       }
     }
   }, 
@@ -116,10 +116,10 @@
         "sc": "back-to-vallter"
       }, 
       "Je continue.": {
-        "sc": 3
+        "sc": "3"
       }, 
       "Le vent souffle au col. J'enfile mon coupe-vent pour poursuivre la route.": {
-        "sc": 3
+        "sc": "3"
       }
     }
   }, 
@@ -131,7 +131,7 @@
     }, 
     "Choices": {
       "Recommencer": {
-        "sc": 0
+        "sc": "0"
       }
     }
   }, 
@@ -144,7 +144,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 4
+        "sc": "4"
       }
     }
   }, 
@@ -157,7 +157,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 5
+        "sc": "5"
       }
     }
   }, 
@@ -170,10 +170,10 @@
     }, 
     "Choices": {
       "C’est hors du sentier. Je poursuis ma route sans y prêter attention.": {
-        "sc": 7
+        "sc": "7"
       }, 
       "Je me rapproche.": {
-        "sc": 6
+        "sc": "6"
       }
     }
   }, 
@@ -186,10 +186,10 @@
     }, 
     "Choices": {
       "Je reprends ma route": {
-        "sc": 7
+        "sc": "7"
       }, 
       "Je ramasse un morceau de bois avant de poursuivre mon chemin": {
-        "sc": 7
+        "sc": "7"
       }
     }
   }, 
@@ -202,7 +202,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 8
+        "sc": "8"
       }
     }
   }, 
@@ -215,10 +215,10 @@
     }, 
     "Choices": {
       "J’ouvre les volets": {
-        "sc": 9
+        "sc": "9"
       }, 
       "Pas de temps à perdre. Il faut couper du bois avant que la nuit ne tombe.": {
-        "sc": 9
+        "sc": "9"
       }
     }
   }, 
@@ -230,7 +230,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 10
+        "sc": "10"
       }
     }
   }, 
@@ -242,7 +242,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 11
+        "sc": "11"
       }
     }
   }, 
@@ -255,7 +255,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 12
+        "sc": "12"
       }
     }
   }, 
@@ -290,7 +290,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 14
+        "sc": "14"
       }
     }
   }, 
@@ -303,7 +303,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 14
+        "sc": "14"
       }
     }
   }, 
@@ -316,7 +316,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 15
+        "sc": "15"
       }
     }
   }, 
@@ -329,7 +329,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 15
+        "sc": "15"
       }
     }
   }, 
@@ -342,7 +342,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 16
+        "sc": "16"
       }
     }
   }, 
@@ -355,7 +355,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 17
+        "sc": "17"
       }
     }
   }, 
@@ -368,7 +368,7 @@
     }, 
     "Choices": {
       "Continuer": {
-        "sc": 18
+        "sc": "18"
       }
     }
   }, 
@@ -381,7 +381,7 @@
     }, 
     "Choices": {
       "Recommencer": {
-        "sc": 0
+        "sc": "0"
       }
     }
   }, 
@@ -449,7 +449,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 2
+        "sc": "2"
       }
     }
   }, 
@@ -461,7 +461,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 2
+        "sc": "2"
       }
     }
   }, 
@@ -473,7 +473,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 2
+        "sc": "2"
       }
     }
   }, 
@@ -489,10 +489,10 @@
         "sc": "back-to-vallter"
       }, 
       "Segueixo.": {
-        "sc": 3
+        "sc": "3"
       }, 
       "El vent bufa al coll. Em poso la meva jaqueta talla-vent per seguir el camí.": {
-        "sc": 3
+        "sc": "3"
       }
     }
   }, 
@@ -504,7 +504,7 @@
     }, 
     "Choices": {
       "Tornar al inici": {
-        "sc": 0
+        "sc": "0"
       }
     }
   }, 
@@ -517,7 +517,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 4
+        "sc": "4"
       }
     }
   }, 
@@ -530,7 +530,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 5
+        "sc": "5"
       }
     }
   }, 
@@ -543,10 +543,10 @@
     }, 
     "Choices": {
       "Esta fora del sender. Segueixo el meu camí sense hi fer cas.": {
-        "sc": 7
+        "sc": "7"
       }, 
       "M’hi apropo.": {
-        "sc": 6
+        "sc": "6"
       }
     }
   }, 
@@ -559,10 +559,10 @@
     }, 
     "Choices": {
       "Segueixo amb la meva ruta.": {
-        "sc": 7
+        "sc": "7"
       }, 
       "Recullo un tros de fusta abans d’anar mes endavant.": {
-        "sc": 7
+        "sc": "7"
       }
     }
   }, 
@@ -575,7 +575,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 8
+        "sc": "8"
       }
     }
   }, 
@@ -588,10 +588,10 @@
     }, 
     "Choices": {
       "Obro les persianes.": {
-        "sc": 9
+        "sc": "9"
       }, 
       "Cal no perdre temps. Cal tallar fusta abans de que la nit caigui.": {
-        "sc": 9
+        "sc": "9"
       }
     }
   }, 
@@ -603,7 +603,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 10
+        "sc": "10"
       }
     }
   }, 
@@ -615,7 +615,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 11
+        "sc": "11"
       }
     }
   }, 
@@ -628,7 +628,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 12
+        "sc": "12"
       }
     }
   }, 
@@ -663,7 +663,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 14
+        "sc": "14"
       }
     }
   }, 
@@ -676,7 +676,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 14
+        "sc": "14"
       }
     }
   }, 
@@ -689,7 +689,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 15
+        "sc": "15"
       }
     }
   }, 
@@ -702,7 +702,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 15
+        "sc": "15"
       }
     }
   }, 
@@ -715,7 +715,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 16
+        "sc": "16"
       }
     }
   }, 
@@ -728,7 +728,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 17
+        "sc": "17"
       }
     }
   }, 
@@ -741,7 +741,7 @@
     }, 
     "Choices": {
       "Endavant": {
-        "sc": 18
+        "sc": "18"
       }
     }
   }, 
@@ -754,7 +754,7 @@
     }, 
     "Choices": {
       "Tornar al inici": {
-        "sc": 0
+        "sc": "0"
       }
     }
   }

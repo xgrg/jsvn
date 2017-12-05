@@ -80,7 +80,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Je poursuis la montée.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 2}],]
+choices:[["Continuer", {"sc": "2"}],]
 }
 
 FrScene_nepasrepondre = {
@@ -93,7 +93,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
   playSequence([    [function(){addDialog("<p>Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 2}],]
+choices:[["Continuer", {"sc": "2"}],]
 }
 
 FrScene_verite = {
@@ -108,7 +108,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Je poursuis la montée.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 2}],]
+choices:[["Continuer", {"sc": "2"}],]
 }
 
 FrScene3 = {
@@ -122,7 +122,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>A l’arrivée à la Porteille de Mantet, une borne indique la frontière avec la France. La montre indique 15 heures.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Il est tard pour passer au Nord. Je redescends vers Vallter.", {"sc": "back-to-vallter"}],["Je continue.", {"sc": 3}],["Le vent souffle au col. J'enfile mon coupe-vent pour poursuivre la route.", {"sc": 3}],]
+choices:[["Il est tard pour passer au Nord. Je redescends vers Vallter.", {"sc": "back-to-vallter"}],["Je continue.", {"sc": "3"}],["Le vent souffle au col. J'enfile mon coupe-vent pour poursuivre la route.", {"sc": "3"}],]
 }
 
 FrScene3b = {
@@ -139,7 +139,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Fin.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Recommencer", {"sc": 0}],]
+choices:[["Recommencer", {"sc": "0"}],]
 }
 
 FrScene4 = {
@@ -157,7 +157,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>La descente est sans difficulté, le pas est sûr jusqu’à atteindre l’orée du bois.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 4}],]
+choices:[["Continuer", {"sc": "4"}],]
 }
 
 FrScene5 = {
@@ -173,7 +173,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Les balises se suivent le long du sentier.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 5}],]
+choices:[["Continuer", {"sc": "5"}],]
 }
 
 FrScene6 = {
@@ -187,7 +187,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Une cabane apparaît au fond sur la gauche.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["C’est hors du sentier. Je poursuis ma route sans y prêter attention.", {"sc": 7}],["Je me rapproche.", {"sc": 6}],]
+choices:[["C’est hors du sentier. Je poursuis ma route sans y prêter attention.", {"sc": "7"}],["Je me rapproche.", {"sc": "6"}],]
 }
 
 FrScene7 = {
@@ -212,7 +212,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>A proximité, sur une large pierre plate, se lit l’inscription gravée <em>“Refuge à 250 m”</em>.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Je reprends ma route", {"sc": 7}],["Je ramasse un morceau de bois avant de poursuivre mon chemin", {"sc": 7}],]
+choices:[["Je reprends ma route", {"sc": "7"}],["Je ramasse un morceau de bois avant de poursuivre mon chemin", {"sc": "7"}],]
 }
 
 FrScene8 = {
@@ -226,7 +226,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Je tombe sur une nouvelle cabane, ouverte. C’est le <em>refuge de l’Alemany</em>.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 8}],]
+choices:[["Continuer", {"sc": "8"}],]
 }
 
 FrScene9 = {
@@ -244,7 +244,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Il n’est pas encore 17 heures mais la vallée est déjà plongée dans l’ombre.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["J’ouvre les volets", {"sc": 9}],["Pas de temps à perdre. Il faut couper du bois avant que la nuit ne tombe.", {"sc": 9}],]
+choices:[["J’ouvre les volets", {"sc": "9"}],["Pas de temps à perdre. Il faut couper du bois avant que la nuit ne tombe.", {"sc": "9"}],]
 }
 
 FrScene10 = {
@@ -262,7 +262,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>La pièce est lourde et demandera certainement à être débitée de nouveau à l’intérieur de la cabane.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 10}],]
+choices:[["Continuer", {"sc": "10"}],]
 }
 
 FrScene11 = {
@@ -279,7 +279,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>J’allume une bougie que je place au coeur du foyer. Les aiguilles crépitent, résistent...</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 11}],]
+choices:[["Continuer", {"sc": "11"}],]
 }
 
 FrScene12 = {
@@ -296,7 +296,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Le poêle dispense une chaleur agréable mais qui chute très rapidement dès lors qu’on s’en écarte.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 12}],]
+choices:[["Continuer", {"sc": "12"}],]
 }
 
 FrScene13 = {
@@ -325,7 +325,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
   playSequence([    [function(){addDialog("<p>Avec le feu se consumant tranquillement, et les quelques couvertures du refuge en supplément, la nuit passera en étant protégé du froid.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 14}],]
+choices:[["Continuer", {"sc": "14"}],]
 }
 
 FrScene14clou = {
@@ -345,7 +345,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Le reste de la nuit sera d'une tranquilité absolue.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 14}],]
+choices:[["Continuer", {"sc": "14"}],]
 }
 
 FrScene14banc = {
@@ -366,7 +366,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Tout en pestant contre cette mésaventure, je finis de me préparer pour le départ.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 15}],]
+choices:[["Continuer", {"sc": "15"}],]
 }
 
 FrScene15 = {
@@ -384,7 +384,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>J’éteins le feu avec de la neige, léguant la dernière bûche aux prochains occupants, rassemble les affaires et me prépare pour le départ.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 15}],]
+choices:[["Continuer", {"sc": "15"}],]
 }
 
 FrScene16 = {
@@ -400,7 +400,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>En contrebas se devinent quelques maisons.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 16}],]
+choices:[["Continuer", {"sc": "16"}],]
 }
 
 FrScene17 = {
@@ -414,7 +414,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Il s’agit du village de Mantet, baigné par la lumière du soleil automnal.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 17}],]
+choices:[["Continuer", {"sc": "17"}],]
 }
 
 FrScene18 = {
@@ -430,7 +430,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Il est 12 heures 30.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Continuer", {"sc": 18}],]
+choices:[["Continuer", {"sc": "18"}],]
 }
 
 FrScene19 = {
@@ -444,7 +444,7 @@ function a1(){ return (vartable["lang"]=="fr"); };function a2(){ return (vartabl
     [function(){addDialog("<p>A suivre.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Recommencer", {"sc": 0}],]
+choices:[["Recommencer", {"sc": "0"}],]
 }
 
 CaScene1 = {
@@ -514,7 +514,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Continuo la pujada.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 2}],]
+choices:[["Endavant", {"sc": "2"}],]
 }
 
 CaScene_nepasrepondre = {
@@ -527,7 +527,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
   playSequence([    [function(){addDialog("<p>Segueixo amb la pujada ni sense respondre al home, que no pot impedir una reacció de sorpresa.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 2}],]
+choices:[["Endavant", {"sc": "2"}],]
 }
 
 CaScene_verite = {
@@ -542,7 +542,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Segueixo amb la pujada.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 2}],]
+choices:[["Endavant", {"sc": "2"}],]
 }
 
 CaScene3 = {
@@ -556,7 +556,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Arribant a la Porteille de Mentet, una fita senyala la frontera amb França. El rellotge marca les 3.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Es massa tard per passar al Nord. Torno cap a Vallter.", {"sc": "back-to-vallter"}],["Segueixo.", {"sc": 3}],["El vent bufa al coll. Em poso la meva jaqueta talla-vent per seguir el camí.", {"sc": 3}],]
+choices:[["Es massa tard per passar al Nord. Torno cap a Vallter.", {"sc": "back-to-vallter"}],["Segueixo.", {"sc": "3"}],["El vent bufa al coll. Em poso la meva jaqueta talla-vent per seguir el camí.", {"sc": "3"}],]
 }
 
 CaScene3b = {
@@ -573,7 +573,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Fi.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Tornar al inici", {"sc": 0}],]
+choices:[["Tornar al inici", {"sc": "0"}],]
 }
 
 CaScene4 = {
@@ -591,7 +591,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>La baixada es fa sense dificultat, els passos es segueixen amb seguretat fins l’entrada del bosc.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 4}],]
+choices:[["Endavant", {"sc": "4"}],]
 }
 
 CaScene5 = {
@@ -607,7 +607,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Les marques es segueixen al llarg del sender.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 5}],]
+choices:[["Endavant", {"sc": "5"}],]
 }
 
 CaScene6 = {
@@ -621,7 +621,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Una cabana apareix al fons a ma esquerra.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Esta fora del sender. Segueixo el meu camí sense hi fer cas.", {"sc": 7}],["M’hi apropo.", {"sc": 6}],]
+choices:[["Esta fora del sender. Segueixo el meu camí sense hi fer cas.", {"sc": "7"}],["M’hi apropo.", {"sc": "6"}],]
 }
 
 CaScene7 = {
@@ -646,7 +646,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>A prop, sobre una gran pedra plana, es llegeix l’inscripciò gravada “Refugi a 250 m”</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Segueixo amb la meva ruta.", {"sc": 7}],["Recullo un tros de fusta abans d’anar mes endavant.", {"sc": 7}],]
+choices:[["Segueixo amb la meva ruta.", {"sc": "7"}],["Recullo un tros de fusta abans d’anar mes endavant.", {"sc": "7"}],]
 }
 
 CaScene8 = {
@@ -660,7 +660,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Trobo una nova cabana, oberta. Es el refugi de l’Alemany.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 8}],]
+choices:[["Endavant", {"sc": "8"}],]
 }
 
 CaScene9 = {
@@ -678,7 +678,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Encara no son les 5 de la tarda, però el vall ja esta totalment en l’ombra.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Obro les persianes.", {"sc": 9}],["Cal no perdre temps. Cal tallar fusta abans de que la nit caigui.", {"sc": 9}],]
+choices:[["Obro les persianes.", {"sc": "9"}],["Cal no perdre temps. Cal tallar fusta abans de que la nit caigui.", {"sc": "9"}],]
 }
 
 CaScene10 = {
@@ -696,7 +696,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Aquest tros es pesat i necessitara segurament ser tallat de nou a dins la cabana.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 10}],]
+choices:[["Endavant", {"sc": "10"}],]
 }
 
 CaScene11 = {
@@ -713,7 +713,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Encenc una espelma que poso en mig de la llar del foc. Les agulles de pins crepiten, resisteixen...</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 11}],]
+choices:[["Endavant", {"sc": "11"}],]
 }
 
 CaScene12 = {
@@ -730,7 +730,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>La llar del foc distribueix una calor agradable però que devalla molt ràpid a mesura que t’en allunyes.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 12}],]
+choices:[["Endavant", {"sc": "12"}],]
 }
 
 CaScene13 = {
@@ -759,7 +759,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
   playSequence([    [function(){addDialog("<p>Amb el foc que es va consumint poc a poc, i unes mantes del refugi de sobres, la nit tindrà lloc sense cap problema de fred.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 14}],]
+choices:[["Endavant", {"sc": "14"}],]
 }
 
 CaScene14clou = {
@@ -779,7 +779,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>La resta de la nit serà amb una tranquil·litat perfecta.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 14}],]
+choices:[["Endavant", {"sc": "14"}],]
 }
 
 CaScene14banc = {
@@ -800,7 +800,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Mentre em queixo de aquest accident, acabo de preparar-me per la sortida.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 15}],]
+choices:[["Endavant", {"sc": "15"}],]
 }
 
 CaScene15 = {
@@ -818,7 +818,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Apago el foc amb neu, oferint l’ultim tros de fusta als propers inquilins, recullo les coses i em preparo per la sortida.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 15}],]
+choices:[["Endavant", {"sc": "15"}],]
 }
 
 CaScene16 = {
@@ -834,7 +834,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Cap a baix s’endivinen unes cases.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 16}],]
+choices:[["Endavant", {"sc": "16"}],]
 }
 
 CaScene17 = {
@@ -848,7 +848,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Es el poble de Mentet, banyat per la llum del sol de tardor.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 17}],]
+choices:[["Endavant", {"sc": "17"}],]
 }
 
 CaScene18 = {
@@ -864,7 +864,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>Son les 12 i mitja.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Endavant", {"sc": 18}],]
+choices:[["Endavant", {"sc": "18"}],]
 }
 
 CaScene19 = {
@@ -878,7 +878,7 @@ function a1(){ return (vartable["lang"]=="ca"); };function a2(){ return (vartabl
     [function(){addDialog("<p>To be continued.</p>", "fadeIn")}, 1000],
     [choice, 0]])
   },
-choices:[["Tornar al inici", {"sc": 0}],]
+choices:[["Tornar al inici", {"sc": "0"}],]
 }
 
 $(document).ready(function(){

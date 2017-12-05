@@ -1,9 +1,7 @@
 {
   "Début": {
     "Text": "", 
-    "Qualities": {
-      "@function": "\nfunction(){\nreturn(vartable['sc']==undefined)};"
-    }, 
+    "Qualities": {}, 
     "Choices": {
       "Démarrer": {
         "sc": "0", 

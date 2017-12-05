@@ -1,10 +1,7 @@
 Début = {
   qualities:function(){
     
-
-function a1(){
-return(vartable['sc']==undefined)};;
-return (a1());
+return ();
 
   },
   storylet:function(choice){
